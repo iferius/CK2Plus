@@ -1,9 +1,9 @@
 character_event = {
-	id = 1900000
+	id = 1000182651
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900000"
+	desc = "EVTDESC1000182651"
 
 	option = {
 		name = "OK"
@@ -13,7 +13,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900001 }
+					character_event = { id = 1000182652 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -24,7 +24,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900000 }
+						character_event = { id = 1000182651 }
 					}
 				}
 			}
@@ -34,10 +34,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900001
+	id = 1000182652
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900001"
+	desc = "EVTDESC1000182652"
 
 	option = {
 		name = "OK"
@@ -45,11 +45,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900002
+	id = 1000182653
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900002"
+	desc = "EVTDESC1000182653"
 
 	option = {
 		name = "OK"
@@ -59,7 +59,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900003 }
+					character_event = { id = 1000182654 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -70,7 +70,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900002 }
+						character_event = { id = 1000182653 }
 					}
 				}
 			}
@@ -80,10 +80,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900003
+	id = 1000182654
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900003"
+	desc = "EVTDESC1000182654"
 
 	option = {
 		name = "OK"
@@ -91,11 +91,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900004
+	id = 1000182655
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900004"
+	desc = "EVTDESC1000182655"
 
 	option = {
 		name = "OK"
@@ -105,7 +105,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900005 }
+					character_event = { id = 1000182656 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -116,7 +116,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900004 }
+						character_event = { id = 1000182655 }
 					}
 				}
 			}
@@ -126,10 +126,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900005
+	id = 1000182656
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900005"
+	desc = "EVTDESC1000182656"
 
 	option = {
 		name = "OK"
@@ -137,11 +137,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900006
+	id = 1000182657
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900006"
+	desc = "EVTDESC1000182657"
 
 	option = {
 		name = "OK"
@@ -151,7 +151,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900007 }
+					character_event = { id = 1000182658 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -162,7 +162,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900006 }
+						character_event = { id = 1000182657 }
 					}
 				}
 			}
@@ -172,10 +172,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900007
+	id = 1000182658
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900007"
+	desc = "EVTDESC1000182658"
 
 	option = {
 		name = "OK"
@@ -183,11 +183,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900008
+	id = 1000182659
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900008"
+	desc = "EVTDESC1000182659"
 
 	option = {
 		name = "OK"
@@ -197,7 +197,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900009 }
+					character_event = { id = 1000182660 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -208,7 +208,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900008 }
+						character_event = { id = 1000182659 }
 					}
 				}
 			}
@@ -218,10 +218,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900009
+	id = 1000182660
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900009"
+	desc = "EVTDESC1000182660"
 
 	option = {
 		name = "OK"
@@ -229,11 +229,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900010
+	id = 1000182661
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900010"
+	desc = "EVTDESC1000182661"
 
 	option = {
 		name = "OK"
@@ -243,7 +243,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900011 }
+					character_event = { id = 1000182662 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -254,7 +254,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900010 }
+						character_event = { id = 1000182661 }
 					}
 				}
 			}
@@ -264,10 +264,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900011
+	id = 1000182662
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900011"
+	desc = "EVTDESC1000182662"
 
 	option = {
 		name = "OK"
@@ -275,11 +275,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900012
+	id = 1000182663
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900012"
+	desc = "EVTDESC1000182663"
 
 	option = {
 		name = "OK"
@@ -289,7 +289,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900013 }
+					character_event = { id = 1000182664 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -300,7 +300,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900012 }
+						character_event = { id = 1000182663 }
 					}
 				}
 			}
@@ -310,10 +310,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900013
+	id = 1000182664
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900013"
+	desc = "EVTDESC1000182664"
 
 	option = {
 		name = "OK"
@@ -321,11 +321,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900014
+	id = 1000182665
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900014"
+	desc = "EVTDESC1000182665"
 
 	option = {
 		name = "OK"
@@ -335,7 +335,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900015 }
+					character_event = { id = 1000182666 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -346,7 +346,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900014 }
+						character_event = { id = 1000182665 }
 					}
 				}
 			}
@@ -356,10 +356,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900015
+	id = 1000182666
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900015"
+	desc = "EVTDESC1000182666"
 
 	option = {
 		name = "OK"
@@ -367,11 +367,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900016
+	id = 1000182667
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900016"
+	desc = "EVTDESC1000182667"
 
 	option = {
 		name = "OK"
@@ -381,7 +381,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900017 }
+					character_event = { id = 1000182668 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -392,7 +392,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900016 }
+						character_event = { id = 1000182667 }
 					}
 				}
 			}
@@ -402,10 +402,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900017
+	id = 1000182668
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900017"
+	desc = "EVTDESC1000182668"
 
 	option = {
 		name = "OK"
@@ -413,11 +413,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900018
+	id = 1000182669
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900018"
+	desc = "EVTDESC1000182669"
 
 	option = {
 		name = "OK"
@@ -427,7 +427,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900019 }
+					character_event = { id = 1000182670 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -438,7 +438,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900018 }
+						character_event = { id = 1000182669 }
 					}
 				}
 			}
@@ -448,10 +448,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900019
+	id = 1000182670
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900019"
+	desc = "EVTDESC1000182670"
 
 	option = {
 		name = "OK"
@@ -459,11 +459,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900020
+	id = 1000182671
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900020"
+	desc = "EVTDESC1000182671"
 
 	option = {
 		name = "OK"
@@ -473,7 +473,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900021 }
+					character_event = { id = 1000182672 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -484,7 +484,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900020 }
+						character_event = { id = 1000182671 }
 					}
 				}
 			}
@@ -494,10 +494,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900021
+	id = 1000182672
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900021"
+	desc = "EVTDESC1000182672"
 
 	option = {
 		name = "OK"
@@ -505,11 +505,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900022
+	id = 1000182673
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900022"
+	desc = "EVTDESC1000182673"
 
 	option = {
 		name = "OK"
@@ -519,7 +519,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900023 }
+					character_event = { id = 1000182674 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -530,7 +530,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900022 }
+						character_event = { id = 1000182673 }
 					}
 				}
 			}
@@ -540,10 +540,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900023
+	id = 1000182674
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900023"
+	desc = "EVTDESC1000182674"
 
 	option = {
 		name = "OK"
@@ -551,11 +551,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900024
+	id = 1000182675
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900024"
+	desc = "EVTDESC1000182675"
 
 	option = {
 		name = "OK"
@@ -565,7 +565,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900025 }
+					character_event = { id = 1000182676 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -576,7 +576,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900024 }
+						character_event = { id = 1000182675 }
 					}
 				}
 			}
@@ -586,10 +586,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900025
+	id = 1000182676
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900025"
+	desc = "EVTDESC1000182676"
 
 	option = {
 		name = "OK"
@@ -597,11 +597,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900026
+	id = 1000182677
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900026"
+	desc = "EVTDESC1000182677"
 
 	option = {
 		name = "OK"
@@ -611,7 +611,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900027 }
+					character_event = { id = 1000182678 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -622,7 +622,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900026 }
+						character_event = { id = 1000182677 }
 					}
 				}
 			}
@@ -632,10 +632,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900027
+	id = 1000182678
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900027"
+	desc = "EVTDESC1000182678"
 
 	option = {
 		name = "OK"
@@ -643,11 +643,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900028
+	id = 1000182679
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900028"
+	desc = "EVTDESC1000182679"
 
 	option = {
 		name = "OK"
@@ -657,7 +657,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900029 }
+					character_event = { id = 1000182680 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -668,7 +668,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900028 }
+						character_event = { id = 1000182679 }
 					}
 				}
 			}
@@ -678,10 +678,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900029
+	id = 1000182680
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900029"
+	desc = "EVTDESC1000182680"
 
 	option = {
 		name = "OK"
@@ -689,11 +689,11 @@ character_event = {
 }
 
 character_event = {
-	id = 1900030
+	id = 1000182681
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC1900030"
+	desc = "EVTDESC1000182681"
 
 	option = {
 		name = "OK"
@@ -703,7 +703,7 @@ character_event = {
 					NOT = { has_character_flag = no_notification }
 				}
 				liege = {
-					character_event = { id = 1900031 }
+					character_event = { id = 1000182682 }
 					any_vassal = {
 						limit = {
 							ai = no
@@ -714,7 +714,7 @@ character_event = {
 							}
 						}
 						set_character_flag = no_notification
-						character_event = { id = 1900030 }
+						character_event = { id = 1000182681 }
 					}
 				}
 			}
@@ -724,10 +724,10 @@ character_event = {
 }
 
 character_event = {
-	id = 1900031
+	id = 1000182682
 	is_triggered_only = yes
 
-	desc = "EVTDESC1900031"
+	desc = "EVTDESC1000182682"
 
 	option = {
 		name = "OK"

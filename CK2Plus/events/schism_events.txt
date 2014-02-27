@@ -18,9 +18,21 @@ character_event = {
 
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }		
+		
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
+		}
+		AND = {
+			OR = {
+				religion = orthodox
+				religion = bogomilist
+				religion = nestorian
+				religion = monothelite
+				religion = iconoclast
+			}
+			is_heretic = no
 		}
 		NOT = { has_global_flag = pat_antioch }
 		completely_controls = c_antiocheia
@@ -41,10 +53,22 @@ character_event = {
 
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }
+		
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 		}
+		AND = {
+			OR = {
+				religion = orthodox
+				religion = bogomilist
+				religion = nestorian
+				religion = monothelite
+				religion = iconoclast
+			}
+			is_heretic = no
+		}		
 		NOT = { has_global_flag = pat_jerusalem }
 		completely_controls = c_jerusalem
 	}
@@ -64,10 +88,22 @@ character_event = {
 
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }
+		
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 		}
+		AND = {
+			OR = {
+				religion = orthodox
+				religion = bogomilist
+				religion = nestorian
+				religion = monothelite
+				religion = iconoclast
+			}
+			is_heretic = no
+		}		
 		NOT = { has_global_flag = pat_alexandria }
 		completely_controls = c_alexandria
 	}
@@ -87,10 +123,22 @@ character_event = {
 
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }
+		
 		OR = {
 			has_landed_title = e_byzantium
 			has_landed_title = e_roman_empire
 		}
+		AND = {
+			OR = {
+				religion = orthodox
+				religion = bogomilist
+				religion = nestorian
+				religion = monothelite
+				religion = iconoclast
+			}
+			is_heretic = no
+		}		
 		NOT = { has_global_flag = pat_rome }
 		completely_controls = c_roma
 	}
@@ -107,16 +155,37 @@ character_event = {
 # The Schism Mended
 narrative_event = {
 	id = LoR.210
-	title = "EVTNAMELoR.210"
-	desc = "EVTDESCLoR.210"
-
-	picture = "GFX_evt_icon"
-
+	title = EVTNAMELoR.210
+	desc = EVTDESCLoR.210
+	
+	picture = GFX_evt_icon
+	
 	is_triggered_only = yes
-
+	
 	option = {
-		name = "EVTOPTALoR.200"
-		set_parent_religion = { religion = catholic parent = orthodox }
+		name = EVTOPTALoR.200
+
+		if = {
+			limit = { religion = orthodox }
+			set_parent_religion = { religion = catholic parent = orthodox }
+		}
+		if = {
+			limit = { religion = bogomilist }
+			set_parent_religion = { religion = catholic parent = bogomilist }
+		}		
+		if = {
+			limit = { religion = nestorian }
+			set_parent_religion = { religion = catholic parent = nestorian }
+		}
+		if = {
+			limit = { religion = monothelite }
+			set_parent_religion = { religion = catholic parent = monothelite }
+		}
+		if = {
+			limit = { religion = iconoclast }
+			set_parent_religion = { religion = catholic parent = iconoclast }
+		}
+
 		set_global_flag = schism_mended
 		give_nickname = nick_the_saint
 		hidden_tooltip = {
@@ -198,30 +267,30 @@ narrative_event = {
 				culture_group = magyar
 			}
 		}
-		religion = orthodox
+		religion = FROM
 		any_courtier = {
 			limit = {
 				is_ruler = no
 			}
-			religion = orthodox
+			religion = FROM
 		}
 		any_vassal = {
 			limit = {
 				tier = baron
 			}
-			religion = orthodox
+			religion = FROM
 		}
 		capital_scope = {
-			religion = orthodox
+			religion = FROM
 		}
 	}
 	option = { # No
 		name = "EVTOPTBLoR.211"
-		ai_chance = { factor = 80 }
+		ai_chance = { factor = 70 }
 	}
 }
 
-
+# The Great Schism Mended (Catholic)
 narrative_event = {
 	id=1000182069
 	title = "EVTNAME1000182069"
@@ -233,7 +302,26 @@ narrative_event = {
 	
 	option = {
 		name = EVTOPTALoR.200
-		set_parent_religion = { religion = orthodox parent = catholic }
+		if = {
+			limit = { religion = catholic }
+			set_parent_religion = { religion = orthodox parent = catholic }
+		}
+		if = {
+			limit = { religion = cathar }
+			set_parent_religion = { religion = orthodox parent = cathar }
+		}		
+		if = {
+			limit = { religion = fraticelli }
+			set_parent_religion = { religion = orthodox parent = fraticelli }
+		}
+		if = {
+			limit = { religion = waldensian }
+			set_parent_religion = { religion = orthodox parent = waldensian }
+		}
+		if = {
+			limit = { religion = lollard }
+			set_parent_religion = { religion = orthodox parent = lollard }
+		}
 		set_global_flag = schism_mended
 		give_nickname = nick_the_saint
 		hidden_tooltip = {
@@ -260,12 +348,12 @@ narrative_event = {
 	option = { # Yes
 		name = EVTOPTA1000182070
 		ai_chance = { factor = 75 }
-		religion = catholic
+		religion = FROM
 		any_courtier = {
-			religion = catholic
+			religion = FROM
 		}
 		capital_scope = {
-			religion = catholic
+			religion = FROM
 		}
 	}
 	option = { # No
@@ -283,7 +371,18 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Legacy of Rome"
-		religion = catholic
+		NOT = { has_global_flag = schism_mended }
+		AND = {
+			OR = {
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+			}
+			is_heretic = no
+		}
+
 		OR = {
 				has_landed_title = k_papal_state
 				num_of_emperor_titles = 1
@@ -307,11 +406,22 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }
 		religion = catholic
 		OR = {
 				has_landed_title = k_papal_state
 				num_of_emperor_titles = 1
 			}
+		AND = {
+			OR = {
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+			}
+			is_heretic = no
+		}			
 		NOT = { has_global_flag = pat_jerusalem_catholic }
 		completely_controls = c_jerusalem
 	}
@@ -331,11 +441,22 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		NOT = { has_global_flag = schism_mended }
 		religion = catholic
 		OR = {
 				has_landed_title = k_papal_state
 				num_of_emperor_titles = 1
 			}
+		AND = {
+			OR = {
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+			}
+			is_heretic = no
+		}			
 		NOT = { has_global_flag = pat_alexandria_catholic }
 		completely_controls = c_alexandria
 	}
@@ -347,26 +468,303 @@ character_event = {
 	}
 }
 
+# The Schism Mended (Miaphysite)
+narrative_event = {
+	id = 1000182638
+	title = EVTNAME1000182638
+	desc = EVTDESC1000182638
+	
+	picture = GFX_evt_icon
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTALoR.200
+
+		if = {
+			limit = { religion = miaphysite }
+			set_parent_religion = { religion = catholic parent = miaphysite }
+		}
+		if = {
+			limit = { religion = miaphysite }
+			set_parent_religion = { religion = orthodox parent = miaphysite }
+		}		
+		if = {
+			limit = { religion = monophysite }
+			set_parent_religion = { religion = catholic parent = monophysite }
+		}
+		if = {
+			limit = { religion = monophysite }
+			set_parent_religion = { religion = orthodox parent = monophysite }
+		}		
+
+		set_global_flag = schism_mended
+		give_nickname = nick_the_saint
+		hidden_tooltip = {
+			any_playable_ruler = {
+				if = {
+					limit = {
+						religion_group = christian
+						NOT = { 
+							religion = miaphysite 
+							religion = monophysite 
+						}
+						controls_religion = no
+					}
+					narrative_event = { id = 1000182639 }
+				}
+			}
+		}
+	}
+}
+
+# Convert or Not?
+narrative_event = {
+	id = 1000182639
+	title = "EVTNAME1000182638"
+	desc = "EVTDESC1000182638"
+
+	picture = "GFX_evt_icon"
+
+	is_triggered_only = yes
+
+	option = { # Yes
+		name = "EVTOPTALoR.211"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				culture_group = central_germanic
+			}
+			modifier = {
+				factor = 2
+				culture_group = west_germanic
+			}
+			modifier = {
+				factor = 4
+				culture = frankish
+			}
+			modifier = {
+				factor = 5
+				culture = norman
+			}
+			modifier = {
+				factor = 6
+				culture = italian
+			}
+			modifier = {
+				factor = 4
+				culture = occitan
+			}
+			modifier = {
+				factor = 7
+				culture = sicilian
+			}
+			modifier = {
+				factor = 3
+				culture_group = iberian
+			}
+			modifier = {
+				factor = 15
+				culture_group = byzantine
+			}
+			modifier = {
+				factor = 2
+				culture_group = celtic
+			}
+			modifier = {
+				factor = 10
+				culture_group = west_slavic
+			}
+			modifier = {
+				factor = 10
+				culture_group = south_slavic
+			}
+			modifier = {
+				factor = 10
+				culture_group = magyar
+			}
+			modifier = {
+				factor = 20
+				culture_group = east_african
+			}
+		}
+		religion = FROM
+		any_courtier = {
+			limit = {
+				is_ruler = no
+			}
+			religion = FROM
+		}
+		any_vassal = {
+			limit = {
+				tier = baron
+			}
+			religion = FROM
+		}
+		capital_scope = {
+			religion = FROM
+		}
+	}
+	option = { # No
+		name = "EVTOPTBLoR.211"
+		ai_chance = { factor = 70 }
+	}
+}
+
+# Patriarchate of Antioch
+character_event = {
+	id = 1000182640
+	desc = "EVTDESC1000182640"
+	picture = "GFX_evt_bishop_byzantine"
+
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		
+		NOT = { has_global_flag = schism_mended }
+		
+		num_of_emperor_titles = 1
+		
+		AND = {
+			OR = {
+				religion = miaphysite
+				religion = monophysite
+			}
+			is_heretic = no
+		}	
+		NOT = { has_global_flag = pat_antioch_miaphysite }
+		completely_controls = c_antiocheia
+	}
+
+	option = {
+		name = "EVTOPTALoR.200"
+		set_global_flag = pat_antioch_miaphysite
+		piety = 100
+	}
+}
+
+# Patriarchate of Jerusalem
+character_event = {
+	id = 1000182641
+	desc = "EVTDESC1000182641"
+	picture = "GFX_evt_bishop_byzantine"
+
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		
+		NOT = { has_global_flag = schism_mended }
+		
+		num_of_emperor_titles = 1
+		
+		AND = {
+			OR = {
+				religion = miaphysite
+				religion = monophysite
+			}
+			is_heretic = no
+		}	
+		NOT = { has_global_flag = pat_jerusalem_miaphysite }
+		completely_controls = c_jerusalem
+	}
+
+	option = {
+		name = "EVTOPTALoR.200"
+		set_global_flag = pat_jerusalem_miaphysite
+		piety = 100
+	}
+}
+
+# Patriarchate of Alexandria
+character_event = {
+	id = 1000182642
+	desc = "EVTDESC1000182642"
+	picture = "GFX_evt_bishop_byzantine"
+
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		
+		NOT = { has_global_flag = schism_mended }
+		
+		num_of_emperor_titles = 1
+		
+		AND = {
+			OR = {
+				religion = miaphysite
+				religion = monophysite
+			}
+			is_heretic = no
+		}		
+		NOT = { has_global_flag = pat_alexandria_miaphysite }
+		completely_controls = c_alexandria
+	}
+
+	option = {
+		name = "EVTOPTALoR.200"
+		set_global_flag = pat_alexandria_miaphysite
+		piety = 100
+	}
+}
+
 # Patriarchate of Constantinople
 character_event = {
-	id = 1000182074
-	desc = "EVTDESC1000182074"
+	id = 1000182643
+	desc = "EVTDESC1000182643"
 	picture = "GFX_evt_bishop_byzantine"
 	
 	trigger = {
 		has_dlc = "Legacy of Rome"
-		religion = catholic
-		OR = {
-				has_landed_title = k_papal_state
-				num_of_emperor_titles = 1
+		
+		NOT = { has_global_flag = schism_mended }
+		
+		num_of_emperor_titles = 1
+		
+		AND = {
+			OR = {
+				religion = miaphysite
+				religion = monophysite
 			}
-		NOT = { has_global_flag = pat_byzantion_catholic }
+			is_heretic = no
+		}			
+		NOT = { has_global_flag = pat_byzantion_miaphysite }
 		completely_controls = c_byzantion
 	}
 	
 	option = {
 		name = EVTOPTALoR.200
-		set_global_flag = pat_byzantion_catholic
+		set_global_flag = pat_byzantion_miaphysite
 		piety = 100
 	}
 }
+
+# Patriarchate of Rome
+character_event = {
+	id = 1000182644
+	desc = "EVTDESC1000182644"
+	picture = "GFX_evt_bishop_byzantine"
+
+	trigger = {
+		has_dlc = "Legacy of Rome"
+		
+		NOT = { has_global_flag = schism_mended }
+		
+		num_of_emperor_titles = 1
+		
+		AND = {
+			OR = {
+				religion = miaphysite
+				religion = monophysite
+			}
+			is_heretic = no
+		}		
+		NOT = { has_global_flag = pat_rome_miaphysite }
+		completely_controls = c_roma
+	}
+
+	option = {
+		name = "EVTOPTALoR.200"
+		set_global_flag = pat_rome_miaphysite
+		piety = 100
+	}
+}
+
+

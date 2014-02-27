@@ -46,6 +46,10 @@ narrative_event = {
 		completely_controls = d_oultrejourdain
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = syria_palaestina
@@ -77,10 +81,13 @@ narrative_event = {
 		completely_controls = d_alexandria
 		completely_controls = d_damietta
 		completely_controls = d_cairo
-		completely_controls = d_aswan
 		completely_controls = d_sinai
 		completely_controls = d_nubia
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -114,6 +121,10 @@ narrative_event = {
 		completely_controls = d_krete
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = cyrenaica
@@ -146,6 +157,10 @@ narrative_event = {
 		completely_controls = d_tunis
 		completely_controls = d_kabylia
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -184,6 +199,10 @@ narrative_event = {
 		completely_controls = d_dalmatia
 		completely_controls = d_carinthia
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -232,6 +251,10 @@ narrative_event = {
 		completely_controls = d_calabria
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = italia
@@ -263,6 +286,10 @@ narrative_event = {
 		completely_controls = d_sicily
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = sicilia
@@ -293,6 +320,10 @@ narrative_event = {
 		NOT = { has_global_flag = sardinia }
 		completely_controls = d_sardinia
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -331,6 +362,10 @@ narrative_event = {
 		completely_controls = d_dauphine
 		completely_controls = d_provence
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -464,7 +499,12 @@ narrative_event = {
 		completely_controls = d_gwynedd
 		completely_controls = d_deheubarth
 		completely_controls = d_cornwall
+		completely_controls = d_huntingdon
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -514,6 +554,10 @@ narrative_event = {
 		completely_controls = d_toledo
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = hispania
@@ -549,6 +593,10 @@ narrative_event = {
 		completely_controls = d_tlemcen
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = mauretania
@@ -583,6 +631,10 @@ narrative_event = {
 		completely_controls = d_jazira
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = EVTOPTALoR.1
 		set_global_flag = mesopotamia
@@ -616,7 +668,12 @@ narrative_event = {
 		completely_controls = d_lothian
 		completely_controls = d_albany
 		completely_controls = d_moray
+		completely_controls = d_highlands
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -652,6 +709,10 @@ narrative_event = {
 		completely_controls = d_leinster
 		completely_controls = d_munster
 	}
+
+	mean_time_to_happen = {
+		days = 1
+	}		
 	
 	option = {
 		name = EVTOPTALoR.1
@@ -671,6 +732,10 @@ narrative_event = {
 	picture = GFX_evt_rome_restored_byzantine
 	
 	is_triggered_only = yes
+	
+	immediate = {
+		set_character_flag = achievement_legacy_of_rome
+	}	
 	
 	option = {
 		name = EVTOPTALoR.20
@@ -1055,6 +1120,10 @@ narrative_event = {
 	
 	ai = no
 	
+	immediate = {
+		set_character_flag = achievement_spqr
+	}	
+	
 	trigger = {
 		has_dlc = "Legacy of Rome"
 		OR = {
@@ -1080,6 +1149,7 @@ narrative_event = {
 		completely_controls = d_gwynedd
 		completely_controls = d_deheubarth
 		completely_controls = d_cornwall
+		completely_controls = d_huntingdon
 		
 		# Provincia Italia
 		completely_controls = d_venice
@@ -1120,7 +1190,6 @@ narrative_event = {
 		completely_controls = d_alexandria
 		completely_controls = d_damietta
 		completely_controls = d_cairo
-		completely_controls = d_aswan
 		completely_controls = d_sinai
 		completely_controls = d_nubia
 		
@@ -1234,6 +1303,10 @@ narrative_event = {
 		completely_controls = d_mesopotamia
 	}
 	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
 	option = {
 		name = EVTOPTALoR.40
 		set_global_flag = roman_borders
@@ -1252,8 +1325,13 @@ character_event = {
 	trigger = {
 		has_dlc = "Legacy of Rome"
 		has_landed_title = e_roman_empire
+		has_global_flag = rome_restored
 		NOT = { trait = augustus }
 	}
+
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.45
@@ -1269,10 +1347,15 @@ character_event = {
 	
 	trigger = {
 		has_dlc = "Legacy of Rome"
+		has_global_flag = rome_restored
 		trait = augustus
 		NOT = { has_landed_title = e_roman_empire }
 		is_alive = yes
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 	
 	option = {
 		name = EVTOPTALoR.46

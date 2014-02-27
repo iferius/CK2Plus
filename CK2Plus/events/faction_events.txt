@@ -1,6 +1,6 @@
 # Faction leader convenes a meeting
 character_event = {
-	id = 1900500
+	id = 1000182465
 	picture = "GFX_evt_emissary"
 
 	desc = "EVTDESC1900500"
@@ -378,10 +378,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900502 }
+				character_event = { id = 1000182467 }
 			}
-			character_event = { id = 1900503 days = 7 } # regular meeting
-			character_event = { id = 1900504 days = 7 } # angry meeting
+			character_event = { id = 1000182468 days = 7 } # regular meeting
+			character_event = { id = 1000182469 days = 7 } # angry meeting
 		}
 	}
 	option = {
@@ -418,7 +418,7 @@ character_event = {
 			}
 			random = {
 				chance = 33
-				character_event = { id = 1900501 tooltip = CUSTOMTOOLTIP45 }
+				character_event = { id = 1000182466 tooltip = CUSTOMTOOLTIP45 }
 			}
 		}
 		if = {
@@ -428,7 +428,7 @@ character_event = {
 			}
 			random = {
 				chance = 50
-				character_event = { id = 1900501 tooltip = CUSTOMTOOLTIP45 }
+				character_event = { id = 1000182466 tooltip = CUSTOMTOOLTIP45 }
 			}
 		}
 		if = {
@@ -438,21 +438,21 @@ character_event = {
 			}
 			random = {
 				chance = 75
-				character_event = { id = 1900501 tooltip = CUSTOMTOOLTIP45 }
+				character_event = { id = 1000182466 tooltip = CUSTOMTOOLTIP45 }
 			}
 		}
 		if = {
 			limit = {
 				check_variable = { which = "faction_meeting_delay" value = 3.5 }
 			}
-			character_event = { id = 1900501 tooltip = CUSTOMTOOLTIP45 }
+			character_event = { id = 1000182466 tooltip = CUSTOMTOOLTIP45 }
 		}
 		change_variable = { which = "faction_meeting_delay" value = 1 }
 	}
 }
 
 character_event = {
-	id = 1900501
+	id = 1000182466
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -515,7 +515,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900518 } #notify
+				character_event = { id = 1000182483 } #notify
 			}
 		}
 		set_character_flag = former_faction_leader
@@ -546,7 +546,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900502
+	id = 1000182467
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -560,7 +560,7 @@ character_event = {
 
 # Regular meeting - setting the agenda
 character_event = {
-	id = 1900503
+	id = 1000182468
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -735,7 +735,7 @@ character_event = {
 				trait = charitable
 			}
 		}
-		character_event = { id = 1900600 tooltip = EVTTOOLTIP1900600 } #strengthen own position
+		character_event = { id = 1000182487 tooltip = EVTTOOLTIP1900600 } #strengthen own position
 	}
 	option = {
 		name = "EVTOPTB1900503"
@@ -794,7 +794,7 @@ character_event = {
 				NOT = { opinion = { who = liege value = -50 } }
 			}
 		}
-		character_event = { id = 1900601 tooltip = EVTTOOLTIP1900601 } #strengthen liege
+		character_event = { id = 1000182488 tooltip = EVTTOOLTIP1900601 } #strengthen liege
 	}
 	option = {
 		name = "EVTOPTC1900503"
@@ -853,7 +853,7 @@ character_event = {
 				NOT = { opinion = { who = liege value = -75 } }
 			}
 		}
-		character_event = { id = 1900602 tooltip = EVTTOOLTIP1900602 } #weaken liege
+		character_event = { id = 1000182489 tooltip = EVTTOOLTIP1900602 } #weaken liege
 	}
 	option = {
 		name = "EVTOPTD1900503"
@@ -875,7 +875,7 @@ character_event = {
 		random = {
 			chance = 33
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900516 } }
+			hidden_tooltip = { character_event = { id = 1000182481 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -887,7 +887,7 @@ character_event = {
 
 # Angry meeting - setting the agenda
 character_event = {
-	id = 1900504
+	id = 1000182469
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -1168,10 +1168,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900504"
@@ -1269,7 +1269,7 @@ character_event = {
 				trait = brave
 			}
 		}
-		character_event = { id = 1900604 tooltip = EVTTOOLTIP1900604 } #make a demand of liege
+		character_event = { id = 1000182490 tooltip = EVTTOOLTIP1900604 } #make a demand of liege
 	}
 	option = {
 		name = "EVTOPTC1900504"
@@ -1372,7 +1372,7 @@ character_event = {
 				NOT = { opinion = { who = liege value = -50 } }
 			}
 		}
-		character_event = { id = 1900601 tooltip = EVTTOOLTIP1900601 } #strengthen liege
+		character_event = { id = 1000182488 tooltip = EVTTOOLTIP1900601 } #strengthen liege
 	}
 	option = {
 		name = "EVTOPTD1900504"
@@ -1475,7 +1475,7 @@ character_event = {
 				NOT = { opinion = { who = liege value = -75 } }
 			}
 		}
-		character_event = { id = 1900602 tooltip = EVTTOOLTIP1900602 } #weaken liege
+		character_event = { id = 1000182489 tooltip = EVTTOOLTIP1900602 } #weaken liege
 	}
 	option = {
 		name = "EVTOPTE1900504"
@@ -1559,7 +1559,7 @@ character_event = {
 				chance = 25
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900516 } }
+					hidden_tooltip = { character_event = { id = 1000182481 } }
 				}
 			}
 		}
@@ -1572,7 +1572,7 @@ character_event = {
 				chance = 50
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900516 } }
+					hidden_tooltip = { character_event = { id = 1000182481 } }
 				}
 			}
 		}
@@ -1585,7 +1585,7 @@ character_event = {
 				chance = 75
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900516 } }
+					hidden_tooltip = { character_event = { id = 1000182481 } }
 				}
 			}
 		}
@@ -1595,7 +1595,7 @@ character_event = {
 			}
 			custom_tooltip = {
 				text = CUSTOMTOOLTIP45
-				hidden_tooltip = { character_event = { id = 1900516 } }
+				hidden_tooltip = { character_event = { id = 1000182481 } }
 			}
 		}
 		set_character_flag = faction_meeting
@@ -1669,7 +1669,7 @@ character_event = {
 
 # Faction leader is ousted after losing a regular vote
 character_event = {
-	id = 1900505
+	id = 1000182470
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -1732,7 +1732,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900519 } #notify
+				character_event = { id = 1000182484 } #notify
 			}
 		}
 		set_character_flag = former_faction_leader
@@ -1763,7 +1763,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900506
+	id = 1000182471
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -1872,10 +1872,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900506"
@@ -1930,7 +1930,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900507
+	id = 1000182472
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -1942,7 +1942,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900508
+	id = 1000182473
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2051,10 +2051,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900508"
@@ -2109,7 +2109,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900509
+	id = 1000182474
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2121,7 +2121,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900510
+	id = 1000182475
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2230,10 +2230,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900510"
@@ -2288,7 +2288,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900511
+	id = 1000182476
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2300,7 +2300,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900512
+	id = 1000182477
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2409,10 +2409,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900512"
@@ -2467,7 +2467,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900513
+	id = 1000182478
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2479,7 +2479,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900514
+	id = 1000182479
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2588,10 +2588,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900904 } #vote
+				character_event = { id = 1000182555 } #vote
 			}
 		}
-		character_event = { id = 1900737 days = 7 tooltip = EVTTOOLTIP1900737 }
+		character_event = { id = 1000182528 days = 7 tooltip = EVTTOOLTIP1900737 }
 	}
 	option = {
 		name = "EVTOPTB1900514"
@@ -2646,7 +2646,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900515
+	id = 1000182480
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2659,7 +2659,7 @@ character_event = {
 
 # Faction leader is ousted after wasting a meeting
 character_event = {
-	id = 1900516
+	id = 1000182481
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -2723,7 +2723,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900520 } #notify
+				character_event = { id = 1000182485 } #notify
 			}
 		}
 	}
@@ -2754,7 +2754,7 @@ character_event = {
 
 # Faction leader is ousted after showing cowardice
 character_event = {
-	id = 1900517
+	id = 1000182482
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -2817,7 +2817,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900521 } #notify
+				character_event = { id = 1000182486 } #notify
 			}
 		}
 		set_character_flag = former_faction_leader
@@ -2848,7 +2848,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900518
+	id = 1000182483
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2860,7 +2860,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900519
+	id = 1000182484
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2872,7 +2872,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900520
+	id = 1000182485
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2884,7 +2884,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900521
+	id = 1000182486
 	picture = "GFX_evt_council"
 	is_triggered_only = yes
 
@@ -2898,7 +2898,7 @@ character_event = {
 
 # Agenda - strengthen self
 character_event = {
-	id = 1900600
+	id = 1000182487
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -2925,11 +2925,11 @@ character_event = {
 			}
 		}
 		random_list = {
-			15 = { character_event = { id = 1900700 tooltip = EVTTOOLTIP1900700 } } # great speech
-			25 = { character_event = { id = 1900702 tooltip = EVTTOOLTIP1900702 } } # good speech
-			30 = { character_event = { id = 1900704 tooltip = EVTTOOLTIP1900704 } } # fair speech
-			20 = { character_event = { id = 1900706 tooltip = EVTTOOLTIP1900706 } } # bad speech
-			10 = { character_event = { id = 1900708 tooltip = EVTTOOLTIP1900708 } } # laughed out of the room
+			15 = { character_event = { id = 1000182491 tooltip = EVTTOOLTIP1900700 } } # great speech
+			25 = { character_event = { id = 1000182493 tooltip = EVTTOOLTIP1900702 } } # good speech
+			30 = { character_event = { id = 1000182495 tooltip = EVTTOOLTIP1900704 } } # fair speech
+			20 = { character_event = { id = 1000182497 tooltip = EVTTOOLTIP1900706 } } # bad speech
+			10 = { character_event = { id = 1000182499 tooltip = EVTTOOLTIP1900708 } } # laughed out of the room
 		}
 	}
 	option = {
@@ -2952,11 +2952,11 @@ character_event = {
 			}
 		}
 		random_list = {
-			5 = { character_event = { id = 1900700 tooltip = EVTTOOLTIP1900700 } } # great speech
-			10 = { character_event = { id = 1900702 tooltip = EVTTOOLTIP1900702 } } # good speech
-			20 = { character_event = { id = 1900704 tooltip = EVTTOOLTIP1900704 } } # fair speech
-			35 = { character_event = { id = 1900706 tooltip = EVTTOOLTIP1900706 } } # bad speech
-			20 = { character_event = { id = 1900708 tooltip = EVTTOOLTIP1900708 } } # laughed out of the room
+			5 = { character_event = { id = 1000182491 tooltip = EVTTOOLTIP1900700 } } # great speech
+			10 = { character_event = { id = 1000182493 tooltip = EVTTOOLTIP1900702 } } # good speech
+			20 = { character_event = { id = 1000182495 tooltip = EVTTOOLTIP1900704 } } # fair speech
+			35 = { character_event = { id = 1000182497 tooltip = EVTTOOLTIP1900706 } } # bad speech
+			20 = { character_event = { id = 1000182499 tooltip = EVTTOOLTIP1900708 } } # laughed out of the room
 		}
 	}
 	option = {
@@ -3026,25 +3026,25 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900901 } #vote
+				character_event = { id = 1000182552 } #vote
 			}
 		}
-		character_event = { id = 1900710 days = 7 tooltip = EVTTOOLTIP1900710 }
+		character_event = { id = 1000182501 days = 7 tooltip = EVTTOOLTIP1900710 }
 	}
 	option = {
 		name = "NEVERMIND"
 		ai_chance = { factor = 50 }
 		custom_tooltip = { text = CUSTOMTOOLTIP55 }
 		hidden_tooltip = {
-			character_event = { id = 1900503 } # regular meeting
-			character_event = { id = 1900504 } # angry meeting
+			character_event = { id = 1000182468 } # regular meeting
+			character_event = { id = 1000182469 } # angry meeting
 		}
 	}
 }
 
 # Agenda - strengthen liege
 character_event = {
-	id = 1900601
+	id = 1000182488
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -3071,9 +3071,9 @@ character_event = {
 			NOT = { trait = stutter }
 		}
 		random_list = {
-			30 = { character_event = { id = 1900713 tooltip = EVTTOOLTIP1900713 } } # faction opinion of liege increased
-			40 = { character_event = { id = 1900716 tooltip = EVTTOOLTIP1900716 } } # faction opinion of liege slightly increased
-			30 = { character_event = { id = 1900719 tooltip = EVTTOOLTIP1900719 } } # faction opinion of liege decreased
+			30 = { character_event = { id = 1000182504 tooltip = EVTTOOLTIP1900713 } } # faction opinion of liege increased
+			40 = { character_event = { id = 1000182507 tooltip = EVTTOOLTIP1900716 } } # faction opinion of liege slightly increased
+			30 = { character_event = { id = 1000182510 tooltip = EVTTOOLTIP1900719 } } # faction opinion of liege decreased
 		}
 	}
 	option = {
@@ -3096,9 +3096,9 @@ character_event = {
 			 }
 		}
 		random_list = {
-			20 = { character_event = { id = 1900713 tooltip = EVTTOOLTIP1900713 } } # faction opinion of liege increased
-			30 = { character_event = { id = 1900716 tooltip = EVTTOOLTIP1900716 } } # faction opinion of liege slightly increased
-			50 = { character_event = { id = 1900719 tooltip = EVTTOOLTIP1900719 } } # faction opinion of liege decreased
+			20 = { character_event = { id = 1000182504 tooltip = EVTTOOLTIP1900713 } } # faction opinion of liege increased
+			30 = { character_event = { id = 1000182507 tooltip = EVTTOOLTIP1900716 } } # faction opinion of liege slightly increased
+			50 = { character_event = { id = 1000182510 tooltip = EVTTOOLTIP1900719 } } # faction opinion of liege decreased
 		}
 	}
 	option = {
@@ -3168,10 +3168,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900902 } #vote
+				character_event = { id = 1000182553 } #vote
 			}
 		}
-		character_event = { id = 1900722 days = 7 tooltip = EVTTOOLTIP1900722 }
+		character_event = { id = 1000182513 days = 7 tooltip = EVTTOOLTIP1900722 }
 	}
 	option = {
 		name = "EVTOPTC1900601"	# request boon for liege
@@ -3240,25 +3240,25 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900903 } #vote
+				character_event = { id = 1000182554 } #vote
 			}
 		}
-		character_event = { id = 1900725 days = 7 tooltip = EVTTOOLTIP1900725 }
+		character_event = { id = 1000182516 days = 7 tooltip = EVTTOOLTIP1900725 }
 	}
 	option = {
 		name = "NEVERMIND"
 		ai_chance = { factor = 50 }
 		custom_tooltip = { text = CUSTOMTOOLTIP55 }
 		hidden_tooltip = {
-			character_event = { id = 1900503 } # regular meeting
-			character_event = { id = 1900504 } # angry meeting
+			character_event = { id = 1000182468 } # regular meeting
+			character_event = { id = 1000182469 } # angry meeting
 		}
 	}
 }
 
 # Agenda - weaken liege
 character_event = {
-	id = 1900602
+	id = 1000182489
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -3285,9 +3285,9 @@ character_event = {
 			NOT = { trait = stutter }
 		}
 		random_list = {
-			30 = { character_event = { id = 1900728 tooltip = EVTTOOLTIP1900728 } } # faction opinion of liege decreased
-			40 = { character_event = { id = 1900731 tooltip = EVTTOOLTIP1900731 } } # faction opinion of liege slightly decreased
-			30 = { character_event = { id = 1900734 tooltip = EVTTOOLTIP1900734 } } # faction opinion of liege increased
+			30 = { character_event = { id = 1000182519 tooltip = EVTTOOLTIP1900728 } } # faction opinion of liege decreased
+			40 = { character_event = { id = 1000182522 tooltip = EVTTOOLTIP1900731 } } # faction opinion of liege slightly decreased
+			30 = { character_event = { id = 1000182525 tooltip = EVTTOOLTIP1900734 } } # faction opinion of liege increased
 		}
 	}
 	option = {
@@ -3310,9 +3310,9 @@ character_event = {
 			 }
 		}
 		random_list = {
-			20 = { character_event = { id = 1900728 tooltip = EVTTOOLTIP1900728 } } # faction opinion of liege decreased
-			30 = { character_event = { id = 1900731 tooltip = EVTTOOLTIP1900731 } } # faction opinion of liege slightly decreased
-			50 = { character_event = { id = 1900734 tooltip = EVTTOOLTIP1900734 } } # faction opinion of liege increased
+			20 = { character_event = { id = 1000182519 tooltip = EVTTOOLTIP1900728 } } # faction opinion of liege decreased
+			30 = { character_event = { id = 1000182522 tooltip = EVTTOOLTIP1900731 } } # faction opinion of liege slightly decreased
+			50 = { character_event = { id = 1000182525 tooltip = EVTTOOLTIP1900734 } } # faction opinion of liege increased
 		}
 	}
 	option = {
@@ -3320,15 +3320,15 @@ character_event = {
 		ai_chance = { factor = 50 }
 		custom_tooltip = { text = CUSTOMTOOLTIP55 }
 		hidden_tooltip = {
-			character_event = { id = 1900503 } # regular meeting
-			character_event = { id = 1900504 } # angry meeting
+			character_event = { id = 1000182468 } # regular meeting
+			character_event = { id = 1000182469 } # angry meeting
 		}
 	}
 }
 
 # Agenda - make demand of liege
 character_event = {
-	id = 1900604
+	id = 1000182490
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -3524,10 +3524,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900905 } #vote
+				character_event = { id = 1000182556 } #vote
 			}
 		}
-		character_event = { id = 1900740 days = 7 tooltip = EVTTOOLTIP1900740 }
+		character_event = { id = 1000182531 days = 7 tooltip = EVTTOOLTIP1900740 }
 	}
 	option = {
 		name = "EVTOPTB1900604"	# demand tax law change
@@ -3591,42 +3591,44 @@ character_event = {
 			modifier = {
 				factor = 1.5
 				liege = {
-					AND = {
-						OR = {
-							leads_faction = faction_feudal_emperor
-							leads_faction = faction_feudal_king
-							leads_faction = faction_feudal_duke
-						}
-						liege = {
-							primary_title = {
-								OR = {
-									has_law = iqta_tax_2
-									has_law = feudal_tax_2
+					OR = {
+						AND = {
+							OR = {
+								leads_faction = faction_feudal_emperor
+								leads_faction = faction_feudal_king
+								leads_faction = faction_feudal_duke
+							}
+							liege = {
+								primary_title = {
+									OR = {
+										has_law = iqta_tax_2
+										has_law = feudal_tax_2
+									}
 								}
 							}
 						}
-					}
-					AND = {
-						OR = {
-							leads_faction = faction_religious_emperor
-							leads_faction = faction_religious_king
-							leads_faction = faction_religious_duke
-						}
-						liege = {
-							primary_title = {
-								has_law = temple_tax_2
+						AND = {
+							OR = {
+								leads_faction = faction_religious_emperor
+								leads_faction = faction_religious_king
+								leads_faction = faction_religious_duke
+							}
+							liege = {
+								primary_title = {
+									has_law = temple_tax_2
+								}
 							}
 						}
-					}
-					AND = {
-						OR = {
-							leads_faction = faction_republican_emperor
-							leads_faction = faction_republican_king
-							leads_faction = faction_republican_duke
-						}
-						liege = {
-							primary_title = {
-								has_law = city_tax_2
+						AND = {
+							OR = {
+								leads_faction = faction_republican_emperor
+								leads_faction = faction_republican_king
+								leads_faction = faction_republican_duke
+							}
+							liege = {
+								primary_title = {
+									has_law = city_tax_2
+								}
 							}
 						}
 					}
@@ -3748,10 +3750,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900906 } #vote
+				character_event = { id = 1000182557 } #vote
 			}
 		}
-		character_event = { id = 1900743 days = 7 tooltip = EVTTOOLTIP1900743 }
+		character_event = { id = 1000182534 days = 7 tooltip = EVTTOOLTIP1900743 }
 	}
 	option = {
 		name = "EVTOPTC1900604"	# demand tax privilege change
@@ -3909,10 +3911,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900907 } #vote
+				character_event = { id = 1000182558 } #vote
 			}
 		}
-		character_event = { id = 1900746 days = 7 tooltip = EVTTOOLTIP1900746 }
+		character_event = { id = 1000182537 days = 7 tooltip = EVTTOOLTIP1900746 }
 	}
 	option = {
 		name = "EVTOPTD1900604"	# demand levy privilege change
@@ -4063,10 +4065,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900908 } #vote
+				character_event = { id = 1000182559 } #vote
 			}
 		}
-		character_event = { id = 1900749 days = 7 tooltip = EVTTOOLTIP1900749 }
+		character_event = { id = 1000182540 days = 7 tooltip = EVTTOOLTIP1900749 }
 	}
 	option = {
 		name = "EVTOPTE1900604"	# demand council law change
@@ -4078,7 +4080,7 @@ character_event = {
 			}
 			liege = {
 				primary_title = {
-					has_law = council_privileges_1
+					has_law = council_privileges_0
 				}
 			}
 		}
@@ -4192,10 +4194,10 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900909 } #vote
+				character_event = { id = 1000182560 } #vote
 			}
 		}
-		character_event = { id = 1900752 days = 7 tooltip = EVTTOOLTIP1900752 }
+		character_event = { id = 1000182543 days = 7 tooltip = EVTTOOLTIP1900752 }
 	}
 	option = {
 		name = "NEVERMIND"
@@ -4203,8 +4205,8 @@ character_event = {
 		custom_tooltip = {
 			text = CUSTOMTOOLTIP55
 			hidden_tooltip = {
-				character_event = { id = 1900503 } # regular meeting
-				character_event = { id = 1900504 } # angry meeting
+				character_event = { id = 1000182468 } # regular meeting
+				character_event = { id = 1000182469 } # angry meeting
 			}
 		}
 	}
@@ -4212,7 +4214,7 @@ character_event = {
 
 # Great speech
 character_event = {
-	id = 1900700
+	id = 1000182491
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -4320,7 +4322,7 @@ character_event = {
 				modifier = great_speech
 				years = 10
 			}
-			hidden_tooltip = { character_event = { id = 1900701 } } #notify
+			hidden_tooltip = { character_event = { id = 1000182492 } } #notify
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -4331,7 +4333,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900701
+	id = 1000182492
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -4352,7 +4354,7 @@ character_event = {
 
 # Good speech
 character_event = {
-	id = 1900702
+	id = 1000182493
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -4460,7 +4462,7 @@ character_event = {
 				modifier = good_speech
 				years = 10
 			}
-			hidden_tooltip = { character_event = { id = 1900703 } } #notify
+			hidden_tooltip = { character_event = { id = 1000182494 } } #notify
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -4471,7 +4473,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900703
+	id = 1000182494
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -4492,7 +4494,7 @@ character_event = {
 
 # Fair speech
 character_event = {
-	id = 1900704
+	id = 1000182495
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -4582,7 +4584,7 @@ character_event = {
 				modifier = okay_speech
 				years = 10
 			}
-			hidden_tooltip = { character_event = { id = 1900705 } } #notify
+			hidden_tooltip = { character_event = { id = 1000182496 } } #notify
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -4593,7 +4595,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900705
+	id = 1000182496
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -4614,7 +4616,7 @@ character_event = {
 
 # Bad speech
 character_event = {
-	id = 1900706
+	id = 1000182497
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -4722,7 +4724,7 @@ character_event = {
 				modifier = bad_speech
 				years = 10
 			}
-			hidden_tooltip = { character_event = { id = 1900707 } } #notify
+			hidden_tooltip = { character_event = { id = 1000182498 } } #notify
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -4733,7 +4735,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900707
+	id = 1000182498
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -4754,7 +4756,7 @@ character_event = {
 
 # Awful speech
 character_event = {
-	id = 1900708
+	id = 1000182499
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -4869,13 +4871,13 @@ character_event = {
 				modifier = terrible_speech
 				years = 10
 			}
-			hidden_tooltip = { character_event = { id = 1900709 } } #notify
+			hidden_tooltip = { character_event = { id = 1000182500 } } #notify
 		}
 	}
 }
 
 character_event = {
-	id = 1900709
+	id = 1000182500
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -4896,7 +4898,7 @@ character_event = {
 
 # Faction leader wants money - result of the vote
 character_event = {
-	id = 1900710
+	id = 1000182501
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -5061,7 +5063,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900711 } #notify
+				character_event = { id = 1000182502 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -5150,13 +5152,13 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900712 } #notify
+				character_event = { id = 1000182503 } #notify
 			}
 		}
 		random = {
 			chance = 33
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+			hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -5168,7 +5170,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900711
+	id = 1000182502
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5207,7 +5209,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900712
+	id = 1000182503
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5247,7 +5249,7 @@ character_event = {
 
 # Increased faction opinion of liege
 character_event = {
-	id = 1900713
+	id = 1000182504
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -5311,7 +5313,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900714 } #notify
+				character_event = { id = 1000182505 } #notify
 			}
 		}
 		if = {
@@ -5326,8 +5328,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_feudal" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900715 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182506 } } #notify
 				}
 			}
 		}
@@ -5343,8 +5345,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_court" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900715 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182506 } } #notify
 				}
 			}
 		}
@@ -5360,8 +5362,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_republican" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900715 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182506 } } #notify
 				}
 			}
 		}
@@ -5377,8 +5379,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_religious" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900715 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182506 } } #notify
 				}
 			}
 		}
@@ -5391,7 +5393,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900714
+	id = 1000182505
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5456,7 +5458,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900715
+	id = 1000182506
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5514,7 +5516,7 @@ character_event = {
 
 # Slightly increased faction opinion of liege
 character_event = {
-	id = 1900716
+	id = 1000182507
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -5578,7 +5580,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900717 } #notify
+				character_event = { id = 1000182508 } #notify
 			}
 		}
 		if = {
@@ -5593,8 +5595,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_feudal" value = 1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900718 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182509 } } #notify
 				}
 			}
 		}
@@ -5610,8 +5612,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_court" value = 1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900718 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182509 } } #notify
 				}
 			}
 		}
@@ -5627,8 +5629,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_republican" value = 1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900718 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182509 } } #notify
 				}
 			}
 		}
@@ -5644,8 +5646,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_religious" value = 1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900718 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182509 } } #notify
 				}
 			}
 		}
@@ -5658,7 +5660,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900717
+	id = 1000182508
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5723,7 +5725,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900718
+	id = 1000182509
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -5781,7 +5783,7 @@ character_event = {
 
 # Decreased faction opinion of liege
 character_event = {
-	id = 1900719
+	id = 1000182510
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -5845,7 +5847,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900720 } #notify
+				character_event = { id = 1000182511 } #notify
 			}
 		}
 		if = {
@@ -5897,7 +5899,7 @@ character_event = {
 				chance = 75
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -5950,7 +5952,7 @@ character_event = {
 				chance = 50
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -6015,7 +6017,7 @@ character_event = {
 				chance = 20
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -6031,8 +6033,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_feudal" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900721 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182512 } } #notify
 				}
 			}
 		}
@@ -6048,8 +6050,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_court" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900721 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182512 } } #notify
 				}
 			}
 		}
@@ -6065,8 +6067,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_republican" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900721 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182512 } } #notify
 				}
 			}
 		}
@@ -6082,8 +6084,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_religious" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900721 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182512 } } #notify
 				}
 			}
 		}
@@ -6096,7 +6098,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900720
+	id = 1000182511
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -6161,7 +6163,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900721
+	id = 1000182512
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -6219,7 +6221,7 @@ character_event = {
 
 # Faction leader wants money for liege - result of the vote
 character_event = {
-	id = 1900722
+	id = 1000182513
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -6330,7 +6332,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900723 } #notify
+				character_event = { id = 1000182514 } #notify
 			}
 		}
 		if = {
@@ -6341,7 +6343,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901021 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182940 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6351,7 +6353,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902021 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182958 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6361,7 +6363,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903021 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182952 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6371,7 +6373,7 @@ character_event = {
 					leads_faction = faction_court_duke
 				}
 			}
-			liege = { letter_event = { id = 1904021 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182463 tooltip = EVTTOOLTIPGIFT } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -6459,7 +6461,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900724 } #notify
+				character_event = { id = 1000182515 } #notify
 			}
 		}
 		if = {
@@ -6511,7 +6513,7 @@ character_event = {
 				chance = 75
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -6564,7 +6566,7 @@ character_event = {
 				chance = 50
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -6629,7 +6631,7 @@ character_event = {
 				chance = 20
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -6643,7 +6645,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900723
+	id = 1000182514
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -6682,7 +6684,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900724
+	id = 1000182515
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -6722,7 +6724,7 @@ character_event = {
 
 # Faction leader wants show of support for liege - result of the vote
 character_event = {
-	id = 1900725
+	id = 1000182516
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -6830,7 +6832,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900726 } #notify
+				character_event = { id = 1000182517 } #notify
 			}
 		}
 		if = {
@@ -6841,7 +6843,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901011 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182939 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6851,7 +6853,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902011 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182957 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6861,7 +6863,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903011 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182951 tooltip = EVTTOOLTIPGIFT } }
 		}
 		if = {
 			limit = {
@@ -6871,7 +6873,7 @@ character_event = {
 					leads_faction = faction_court_duke
 				}
 			}
-			liege = { letter_event = { id = 1904011 tooltip = EVTTOOLTIPGIFT } }
+			liege = { letter_event = { id = 1000182462 tooltip = EVTTOOLTIPGIFT } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -6959,7 +6961,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900727 } #notify
+				character_event = { id = 1000182518 } #notify
 			}
 		}
 		if = {
@@ -7010,7 +7012,7 @@ character_event = {
 			random = {
 				chance = 75
 				custom_tooltip = { text = CUSTOMTOOLTIP45 }
-				hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+				hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 			}
 		}
 		if = {
@@ -7061,7 +7063,7 @@ character_event = {
 			random = {
 				chance = 50
 				custom_tooltip = { text = CUSTOMTOOLTIP45 }
-				hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+				hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 			}
 		}
 		if = {
@@ -7124,7 +7126,7 @@ character_event = {
 			random = {
 				chance = 20
 				custom_tooltip = { text = CUSTOMTOOLTIP45 }
-				hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+				hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 			}
 		}
 		set_character_flag = faction_meeting
@@ -7137,7 +7139,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900726
+	id = 1000182517
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7177,7 +7179,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900727
+	id = 1000182518
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7217,7 +7219,7 @@ character_event = {
 
 # Decreased faction opinion of liege
 character_event = {
-	id = 1900728
+	id = 1000182519
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -7281,7 +7283,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900729 } #notify
+				character_event = { id = 1000182520 } #notify
 			}
 		}
 		if = {
@@ -7296,8 +7298,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_feudal" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900730 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182521 } } #notify
 				}
 			}
 		}
@@ -7313,8 +7315,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_court" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900730 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182521 } } #notify
 				}
 			}
 		}
@@ -7330,8 +7332,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_republican" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900730 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182521 } } #notify
 				}
 			}
 		}
@@ -7347,8 +7349,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_religious" value = -3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900730 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182521 } } #notify
 				}
 			}
 		}
@@ -7361,7 +7363,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900729
+	id = 1000182520
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7426,7 +7428,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900730
+	id = 1000182521
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7484,7 +7486,7 @@ character_event = {
 
 # Slightly decreased faction opinion of liege
 character_event = {
-	id = 1900731
+	id = 1000182522
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -7548,7 +7550,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900732 } #notify
+				character_event = { id = 1000182523 } #notify
 			}
 		}
 		if = {
@@ -7563,8 +7565,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_feudal" value = -1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900733 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182524 } } #notify
 				}
 			}
 		}
@@ -7580,8 +7582,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_court" value = -1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900733 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182524 } } #notify
 				}
 			}
 		}
@@ -7597,8 +7599,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_republican" value = -1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900733 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182524 } } #notify
 				}
 			}
 		}
@@ -7614,8 +7616,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODMINUS
 					change_variable = { which = "faction_mood_religious" value = -1 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900733 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182524 } } #notify
 				}
 			}
 		}
@@ -7628,7 +7630,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900732
+	id = 1000182523
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7693,7 +7695,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900733
+	id = 1000182524
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -7751,7 +7753,7 @@ character_event = {
 
 # Increased faction opinion of liege
 character_event = {
-	id = 1900734
+	id = 1000182525
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -7815,7 +7817,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900735 } #notify
+				character_event = { id = 1000182526 } #notify
 			}
 		}
 		if = {
@@ -7867,7 +7869,7 @@ character_event = {
 				chance = 75
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -7920,7 +7922,7 @@ character_event = {
 				chance = 50
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -7985,7 +7987,7 @@ character_event = {
 				chance = 20
 				custom_tooltip = {
 					text = CUSTOMTOOLTIP45
-					hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+					hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 				}
 			}
 		}
@@ -8001,8 +8003,8 @@ character_event = {
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_feudal" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900736 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182527 } } #notify
 				}
 			}
 		}
@@ -8018,8 +8020,8 @@ character_event = {
 				custom_tooltip = {
 					text = COURTFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_court" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900736 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182527 } } #notify
 				}
 			}
 		}
@@ -8035,8 +8037,8 @@ character_event = {
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_republican" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900736 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182527 } } #notify
 				}
 			}
 		}
@@ -8052,8 +8054,8 @@ character_event = {
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODPLUS
 					change_variable = { which = "faction_mood_religious" value = 3 }
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
-					hidden_tooltip = { character_event = { id = 1900736 } } #notify
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
+					hidden_tooltip = { character_event = { id = 1000182527 } } #notify
 				}
 			}
 		}
@@ -8066,7 +8068,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900735
+	id = 1000182526
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -8131,7 +8133,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1900736
+	id = 1000182527
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -8189,7 +8191,7 @@ character_event = {
 
 # Faction leader wants to declare war - results of the vote
 character_event = {
-	id = 1900737
+	id = 1000182528
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -8297,7 +8299,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900738 } #notify
+				character_event = { id = 1000182529 } #notify
 			}
 		}
 		liege = {
@@ -8552,7 +8554,7 @@ character_event = {
 							leads_faction = faction_feudal_duke
 						}
 					}
-					character_event = { id = 2000000 }
+					character_event = { id = 1000182394 }
 				}
 				any_vassal = {
 					limit = {
@@ -8563,7 +8565,7 @@ character_event = {
 							leads_faction = faction_court_duke
 						}
 					}
-					character_event = { id = 2000010 }
+					character_event = { id = 1000182400 }
 				}
 				any_vassal = {
 					limit = {
@@ -8574,7 +8576,7 @@ character_event = {
 							leads_faction = faction_religious_duke
 						}
 					}
-					character_event = { id = 2000020 }
+					character_event = { id = 1000182406 }
 				}
 				any_vassal = {
 					limit = {
@@ -8585,13 +8587,13 @@ character_event = {
 							leads_faction = faction_republican_duke
 						}
 					}
-					character_event = { id = 2000030 }
+					character_event = { id = 1000182412 }
 				}
 				any_vassal = {
 					limit = {
 						NOT = { character = ROOT }
 					}
-					character_event = { id = 2000040 }
+					character_event = { id = 1000182418 }
 				}
 			}
 		}
@@ -8681,11 +8683,11 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900739 } #notify
+				character_event = { id = 1000182530 } #notify
 			}
 		}
 		custom_tooltip = { text = CUSTOMTOOLTIP45 }
-		hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+		hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
 		clr_character_flag = faction_meeting_begun
@@ -8696,7 +8698,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900738
+	id = 1000182529
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -8736,7 +8738,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900739
+	id = 1000182530
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -8776,7 +8778,7 @@ character_event = {
 
 # Faction leader wants to demand lower CA - results of the vote
 character_event = {
-	id = 1900740
+	id = 1000182531
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -8818,7 +8820,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901002 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182937 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -8828,7 +8830,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902002 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182956 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -8838,7 +8840,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903002 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182950 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		any_playable_ruler = {
 			limit = {
@@ -8914,7 +8916,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900741 } #notify
+				character_event = { id = 1000182532 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -9003,13 +9005,13 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900742 } #notify
+				character_event = { id = 1000182533 } #notify
 			}
 		}
 		random = {
 			chance = 50
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+			hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -9021,7 +9023,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900741
+	id = 1000182532
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9061,7 +9063,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900742
+	id = 1000182533
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9101,7 +9103,7 @@ character_event = {
 
 # Faction leader wants to demand reduction of taxes - results of the vote
 character_event = {
-	id = 1900743
+	id = 1000182534
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -9140,7 +9142,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901031 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182941 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9150,7 +9152,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902031 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182959 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9160,7 +9162,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903031 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182953 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		any_playable_ruler = {
 			limit = {
@@ -9236,7 +9238,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900744 } #notify
+				character_event = { id = 1000182535 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -9325,13 +9327,13 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900745 } #notify
+				character_event = { id = 1000182536 } #notify
 			}
 		}
 		random = {
 			chance = 50
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+			hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -9343,7 +9345,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900744
+	id = 1000182535
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9383,7 +9385,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900745
+	id = 1000182536
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9423,7 +9425,7 @@ character_event = {
 
 # Faction leader wants to demand a change in tax privilege - results of the vote
 character_event = {
-	id = 1900746
+	id = 1000182537
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -9465,7 +9467,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901051 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182943 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9475,7 +9477,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902051 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182961 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9485,7 +9487,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903051 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182955 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9495,7 +9497,7 @@ character_event = {
 					leads_faction = faction_court_duke
 				}
 			}
-			liege = { letter_event = { id = 1904051 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182562 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		any_playable_ruler = {
 			limit = {
@@ -9571,7 +9573,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900747 } #notify
+				character_event = { id = 1000182538 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -9660,14 +9662,14 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900748 } #notify
+				character_event = { id = 1000182539 } #notify
 			}
 		}
 		random = {
 			chance = 50
 			custom_tooltip = {
 				text = CUSTOMTOOLTIP45
-				hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+				hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 			}
 		}
 		set_character_flag = faction_meeting
@@ -9680,7 +9682,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900747
+	id = 1000182538
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9720,7 +9722,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900748
+	id = 1000182539
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -9760,7 +9762,7 @@ character_event = {
 
 # Faction leader wants to demand a change in levy privilege - results of the vote
 character_event = {
-	id = 1900749
+	id = 1000182540
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -9802,7 +9804,7 @@ character_event = {
 					leads_faction = faction_feudal_duke
 				}
 			}
-			liege = { letter_event = { id = 1901041 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182942 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9812,7 +9814,7 @@ character_event = {
 					leads_faction = faction_republican_duke
 				}
 			}
-			liege = { letter_event = { id = 1902041 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182960 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9822,7 +9824,7 @@ character_event = {
 					leads_faction = faction_religious_duke
 				}
 			}
-			liege = { letter_event = { id = 1903041 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182954 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		if = {
 			limit = {
@@ -9832,7 +9834,7 @@ character_event = {
 					leads_faction = faction_court_duke
 				}
 			}
-			liege = { letter_event = { id = 1904061 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182561 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		any_playable_ruler = {
 			limit = {
@@ -9908,7 +9910,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900750 } #notify
+				character_event = { id = 1000182541 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -9997,13 +9999,13 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900751 } #notify
+				character_event = { id = 1000182542 } #notify
 			}
 		}
 		random = {
 			chance = 50
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+			hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -10015,7 +10017,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900750
+	id = 1000182541
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10055,7 +10057,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900751
+	id = 1000182542
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10095,7 +10097,7 @@ character_event = {
 
 # Faction leader wants to demand a change in council law - results of the vote
 character_event = {
-	id = 1900752
+	id = 1000182543
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -10128,7 +10130,7 @@ character_event = {
 					leads_faction = faction_court_duke
 				}
 			}
-			liege = { letter_event = { id = 1904041 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
+			liege = { letter_event = { id = 1000182464 tooltip = EVTTOOLTIPULTIMATUM days = 3 } }
 		}
 		any_playable_ruler = {
 			limit = {
@@ -10204,7 +10206,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900753 } #notify
+				character_event = { id = 1000182544 } #notify
 			}
 		}
 		set_character_flag = faction_meeting
@@ -10293,13 +10295,13 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900754 } #notify
+				character_event = { id = 1000182545 } #notify
 			}
 		}
 		random = {
 			chance = 50
 			custom_tooltip = { text = CUSTOMTOOLTIP45 }
-			hidden_tooltip = { character_event = { id = 1900505 days = 3 } }
+			hidden_tooltip = { character_event = { id = 1000182470 days = 3 } }
 		}
 		set_character_flag = faction_meeting
 		clr_character_flag = faction_meeting_called
@@ -10311,7 +10313,7 @@ character_event = {
 
 # Yes vote - notify
 character_event = {
-	id = 1900753
+	id = 1000182544
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10351,7 +10353,7 @@ character_event = {
 
 # No vote - notify
 character_event = {
-	id = 1900754
+	id = 1000182545
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10391,7 +10393,7 @@ character_event = {
 
 # Oust faction leader
 character_event = {
-	id = 1900800
+	id = 1000182546
 
 	picture = "GFX_evt_council"
 
@@ -10610,9 +10612,9 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900900 } #vote
+				character_event = { id = 1000182551 } #vote
 			}
-			character_event = { id = 1900801 days = 7 }
+			character_event = { id = 1000182547 days = 7 }
 		}
 	}
 	option = {
@@ -10709,7 +10711,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900802 } #notify
+				character_event = { id = 1000182548 } #notify
 			}
 		}
 		set_character_flag = former_faction_leader
@@ -10719,7 +10721,7 @@ character_event = {
 
 # Results of the vote
 character_event = {
-	id = 1900801
+	id = 1000182547
 	is_triggered_only = yes
 	hide_from = yes
 
@@ -10848,7 +10850,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900803 } #notify
+				character_event = { id = 1000182549 } #notify
 			}
 		}
 	}
@@ -10935,7 +10937,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 1900804 } #notify
+				character_event = { id = 1000182550 } #notify
 			}
 		}
 	}
@@ -10943,7 +10945,7 @@ character_event = {
 
 # Faction leader stepped down - notify members
 character_event = {
-	id = 1900802
+	id = 1000182548
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10961,7 +10963,7 @@ character_event = {
 
 # Faction leader stepped down after vote - notify members
 character_event = {
-	id = 1900803
+	id = 1000182549
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10979,7 +10981,7 @@ character_event = {
 
 # Faction leader defeated vote of no confidence - notify members
 character_event = {
-	id = 1900804
+	id = 1000182550
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -10997,7 +10999,7 @@ character_event = {
 
 # Faction member votes on whether to oust leader
 character_event = {
-	id = 1900900
+	id = 1000182551
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -11185,7 +11187,7 @@ character_event = {
 
 # Faction member votes on whether to give money to leader
 character_event = {
-	id = 1900901
+	id = 1000182552
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -11365,7 +11367,7 @@ character_event = {
 
 # Faction member votes on whether to give money to liege
 character_event = {
-	id = 1900902
+	id = 1000182553
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -11845,7 +11847,7 @@ character_event = {
 
 # Faction member votes on whether to show support for liege
 character_event = {
-	id = 1900903
+	id = 1000182554
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -12333,7 +12335,7 @@ character_event = {
 
 # Faction member votes on whether to declare war
 character_event = {
-	id = 1900904
+	id = 1000182555
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -12745,7 +12747,7 @@ character_event = {
 
 # Faction member votes on whether to demand reduced CA
 character_event = {
-	id = 1900905
+	id = 1000182556
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -13204,7 +13206,7 @@ character_event = {
 
 # Faction member votes on whether to demand reduced taxes
 character_event = {
-	id = 1900906
+	id = 1000182557
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -13655,7 +13657,7 @@ character_event = {
 
 # Faction member votes on whether to demand a change in tax privilege
 character_event = {
-	id = 1900907
+	id = 1000182558
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -14090,7 +14092,7 @@ character_event = {
 
 # Faction member votes on whether to demand change in levy privileges
 character_event = {
-	id = 1900908
+	id = 1000182559
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"
@@ -14533,7 +14535,7 @@ character_event = {
 
 # Faction member votes on whether to demand change in council law
 character_event = {
-	id = 1900909
+	id = 1000182560
 	is_triggered_only = yes
 
 	picture = "GFX_evt_council"

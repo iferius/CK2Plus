@@ -1,14 +1,14 @@
 #feudal faction leader declares for one side or the other...
 character_event = {
-	id = 2000000
+	id = 1000182394
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000000"
+	desc = "EVTDESC1000182394"
 
 	option = {
-		name = "EVTOPTA2000000"
+		name = "EVTOPTA1000182394"
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -70,7 +70,7 @@ character_event = {
 		hidden_tooltip = { liege = { set_character_flag = faction_feudal_war } }
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000001 }
+				character_event = { id = 1000182395 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -79,7 +79,7 @@ character_event = {
 							in_faction = faction_feudal_duke
 						}
 					}
-					character_event = { id = 2000003 }
+					character_event = { id = 1000182397 }
 				}
 			}
 		}
@@ -117,7 +117,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTB2000000"
+		name = "EVTOPTB1000182394"
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -169,7 +169,7 @@ character_event = {
 		add_trait = loyalist
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000002 }
+				character_event = { id = 1000182396 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -178,14 +178,14 @@ character_event = {
 							in_faction = faction_feudal_duke
 						}
 					}
-					character_event = { id = 2000004 }
+					character_event = { id = 1000182398 }
 				}
 			}
 		}
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTC2000000"
+		name = "EVTOPTC1000182394"
 		ai_chance = {
 			factor = 100
 		}
@@ -199,7 +199,7 @@ character_event = {
 							in_faction = faction_feudal_duke
 						}
 					}
-					character_event = { id = 2000005 }
+					character_event = { id = 1000182399 }
 				}
 			}
 		}
@@ -209,40 +209,40 @@ character_event = {
 
 # Notify liege of faction joining rebellion
 character_event = {
-	id = 2000001
+	id = 1000182395
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000001"
+	desc = "EVTDESC1000182395"
 
 	option = {
-		name = "EVTOPTA2000001"
+		name = "EVTOPTA1000182395"
 	}
 }
 
 # Notify liege of faction joining loyalists
 character_event = {
-	id = 2000002
+	id = 1000182396
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000002"
+	desc = "EVTDESC1000182396"
 
 	option = {
-		name = "EVTOPTA2000002"
+		name = "EVTOPTA1000182396"
 	}
 }
 
 # Faction member is called into the rebellion
 character_event = {
-	id = 2000003
+	id = 1000182397
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000001"
+	desc = "EVTDESC1000182395"
 
 	option = {
 		name = "TOARMS"
@@ -282,12 +282,12 @@ character_event = {
 
 # Faction member becomes a loyalist
 character_event = {
-	id = 2000004
+	id = 1000182398
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000002"
+	desc = "EVTDESC1000182396"
 
 	option = {
 		name = "TOARMS"
@@ -297,7 +297,7 @@ character_event = {
 
 # If faction is neutral, player can pick sides
 character_event = {
-	id = 2000005
+	id = 1000182399
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
@@ -306,10 +306,10 @@ character_event = {
 		ai = no
 	}
 
-	desc = "EVTDESC2000005"
+	desc = "EVTDESC1000182399"
 
 	option = {
-		name = "EVTOPTA2000005"
+		name = "EVTOPTA1000182399"
 		add_trait = rebel
 		hidden_tooltip = { opinion = { who = liege modifier = revolting_against years = 100 } }
 		hidden_tooltip = {
@@ -343,25 +343,25 @@ character_event = {
 		join_attacker_wars = FROMFROM
 	}
 	option = {
-		name = "EVTOPTB2000005"
+		name = "EVTOPTB1000182399"
 		add_trait = loyalist
 	}
 	option = {
-		name = "EVTOPTC2000005"
+		name = "EVTOPTC1000182399"
 	}
 }
 
 #court faction leader declares for one side or the other...
 character_event = {
-	id = 2000010
+	id = 1000182400
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000010"
+	desc = "EVTDESC1000182400"
 
 	option = {
-		name = "EVTOPTA2000010"
+		name = "EVTOPTA1000182400"
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -423,7 +423,7 @@ character_event = {
 		hidden_tooltip = { liege = { set_character_flag = faction_court_war } }
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000011 }
+				character_event = { id = 1000182401 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -432,7 +432,7 @@ character_event = {
 							in_faction = faction_court_duke
 						}
 					}
-					character_event = { id = 2000013 }
+					character_event = { id = 1000182403 }
 				}
 			}
 		}
@@ -470,7 +470,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTB2000010"
+		name = "EVTOPTB1000182400"
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -522,7 +522,7 @@ character_event = {
 		add_trait = loyalist
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000012 }
+				character_event = { id = 1000182402 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -531,14 +531,14 @@ character_event = {
 							in_faction = faction_court_duke
 						}
 					}
-					character_event = { id = 2000014 }
+					character_event = { id = 1000182404 }
 				}
 			}
 		}
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTC2000010"
+		name = "EVTOPTC1000182400"
 		ai_chance = {
 			factor = 100
 		}
@@ -552,7 +552,7 @@ character_event = {
 							in_faction = faction_court_duke
 						}
 					}
-					character_event = { id = 2000015 }
+					character_event = { id = 1000182405 }
 				}
 			}
 		}
@@ -562,40 +562,40 @@ character_event = {
 
 # Notify liege of faction joining rebellion
 character_event = {
-	id = 2000011
+	id = 1000182401
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000011"
+	desc = "EVTDESC1000182401"
 
 	option = {
-		name = "EVTOPTA2000011"
+		name = "EVTOPTA1000182401"
 	}
 }
 
 # Notify liege of faction joining loyalists
 character_event = {
-	id = 2000012
+	id = 1000182402
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000012"
+	desc = "EVTDESC1000182402"
 
 	option = {
-		name = "EVTOPTA2000012"
+		name = "EVTOPTA1000182402"
 	}
 }
 
 # Faction member is called into the rebellion
 character_event = {
-	id = 2000013
+	id = 1000182403
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000011"
+	desc = "EVTDESC1000182401"
 
 	option = {
 		name = "TOARMS"
@@ -635,12 +635,12 @@ character_event = {
 
 # Faction member becomes a loyalist
 character_event = {
-	id = 2000014
+	id = 1000182404
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000012"
+	desc = "EVTDESC1000182402"
 
 	option = {
 		name = "TOARMS"
@@ -650,7 +650,7 @@ character_event = {
 
 # If faction is neutral, player can pick sides
 character_event = {
-	id = 2000015
+	id = 1000182405
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
@@ -659,10 +659,10 @@ character_event = {
 		ai = no
 	}
 
-	desc = "EVTDESC2000015"
+	desc = "EVTDESC1000182405"
 
 	option = {
-		name = "EVTOPTA2000015"
+		name = "EVTOPTA1000182405"
 		add_trait = rebel
 		hidden_tooltip = { opinion = { who = liege modifier = revolting_against years = 100 } }
 		hidden_tooltip = {
@@ -696,25 +696,25 @@ character_event = {
 		join_attacker_wars = FROMFROM
 	}
 	option = {
-		name = "EVTOPTB2000015"
+		name = "EVTOPTB1000182405"
 		add_trait = loyalist
 	}
 	option = {
-		name = "EVTOPTC2000015"
+		name = "EVTOPTC1000182405"
 	}
 }
 
 #religious faction leader declares for one side or the other...
 character_event = {
-	id = 2000020
+	id = 1000182406
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000020"
+	desc = "EVTDESC1000182406"
 
 	option = {
-		name = "EVTOPTA2000020"
+		name = "EVTOPTA1000182406"
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -776,7 +776,7 @@ character_event = {
 		hidden_tooltip = { liege = { set_character_flag = faction_religious_war } }
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000021 }
+				character_event = { id = 1000182407 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -785,7 +785,7 @@ character_event = {
 							in_faction = faction_religious_duke
 						}
 					}
-					character_event = { id = 2000023 }
+					character_event = { id = 1000182409 }
 				}
 			}
 		}
@@ -823,7 +823,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTB2000020"
+		name = "EVTOPTB1000182406"
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -875,7 +875,7 @@ character_event = {
 		add_trait = loyalist
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000022 }
+				character_event = { id = 1000182408 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -884,14 +884,14 @@ character_event = {
 							in_faction = faction_religious_duke
 						}
 					}
-					character_event = { id = 2000024 }
+					character_event = { id = 1000182410 }
 				}
 			}
 		}
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTC2000020"
+		name = "EVTOPTC1000182406"
 		ai_chance = {
 			factor = 100
 		}
@@ -905,7 +905,7 @@ character_event = {
 							in_faction = faction_religious_duke
 						}
 					}
-					character_event = { id = 2000025 }
+					character_event = { id = 1000182411 }
 				}
 			}
 		}
@@ -915,40 +915,40 @@ character_event = {
 
 # Notify liege of faction joining rebellion
 character_event = {
-	id = 2000021
+	id = 1000182407
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000021"
+	desc = "EVTDESC1000182407"
 
 	option = {
-		name = "EVTOPTA2000021"
+		name = "EVTOPTA1000182407"
 	}
 }
 
 # Notify liege of faction joining loyalists
 character_event = {
-	id = 2000022
+	id = 1000182408
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000022"
+	desc = "EVTDESC1000182408"
 
 	option = {
-		name = "EVTOPTA2000022"
+		name = "EVTOPTA1000182408"
 	}
 }
 
 # Faction member is called into the rebellion
 character_event = {
-	id = 2000023
+	id = 1000182409
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000021"
+	desc = "EVTDESC1000182407"
 
 	option = {
 		name = "TOARMS"
@@ -988,12 +988,12 @@ character_event = {
 
 # Faction member becomes a loyalist
 character_event = {
-	id = 2000024
+	id = 1000182410
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000022"
+	desc = "EVTDESC1000182408"
 
 	option = {
 		name = "TOARMS"
@@ -1003,7 +1003,7 @@ character_event = {
 
 # If faction is neutral, player can pick sides
 character_event = {
-	id = 2000025
+	id = 1000182411
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
@@ -1012,10 +1012,10 @@ character_event = {
 		ai = no
 	}
 
-	desc = "EVTDESC2000025"
+	desc = "EVTDESC1000182411"
 
 	option = {
-		name = "EVTOPTA2000025"
+		name = "EVTOPTA1000182411"
 		add_trait = rebel
 		hidden_tooltip = { opinion = { who = liege modifier = revolting_against years = 100 } }
 		hidden_tooltip = {
@@ -1049,26 +1049,26 @@ character_event = {
 		join_attacker_wars = FROMFROM
 	}
 	option = {
-		name = "EVTOPTB2000025"
+		name = "EVTOPTB1000182411"
 		add_trait = loyalist
 	}
 	option = {
-		name = "EVTOPTC2000025"
+		name = "EVTOPTC1000182411"
 		prestige = -50
 	}
 }
 
 #republican faction leader declares for one side or the other...
 character_event = {
-	id = 2000030
+	id = 1000182412
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000030"
+	desc = "EVTDESC1000182412"
 
 	option = {
-		name = "EVTOPTA2000030"
+		name = "EVTOPTA1000182412"
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -1130,7 +1130,7 @@ character_event = {
 		hidden_tooltip = { liege = { set_character_flag = faction_republican_war } }
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000031 }
+				character_event = { id = 1000182413 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -1139,7 +1139,7 @@ character_event = {
 							in_faction = faction_republican_duke
 						}
 					}
-					character_event = { id = 2000033 }
+					character_event = { id = 1000182415 }
 				}
 			}
 		}
@@ -1177,7 +1177,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTB2000030"
+		name = "EVTOPTB1000182412"
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -1229,7 +1229,7 @@ character_event = {
 		add_trait = loyalist
 		hidden_tooltip = {
 			liege = {
-				character_event = { id = 2000032 }
+				character_event = { id = 1000182414 }
 				any_vassal = {
 					limit = {
 						OR = {
@@ -1238,14 +1238,14 @@ character_event = {
 							in_faction = faction_republican_duke
 						}
 					}
-					character_event = { id = 2000034 }
+					character_event = { id = 1000182416 }
 				}
 			}
 		}
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTC2000030"
+		name = "EVTOPTC1000182412"
 		ai_chance = {
 			factor = 100
 		}
@@ -1259,7 +1259,7 @@ character_event = {
 							in_faction = faction_republican_duke
 						}
 					}
-					character_event = { id = 2000035 }
+					character_event = { id = 1000182417 }
 				}
 			}
 		}
@@ -1269,40 +1269,40 @@ character_event = {
 
 # Notify liege of faction joining rebellion
 character_event = {
-	id = 2000031
+	id = 1000182413
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000031"
+	desc = "EVTDESC1000182413"
 
 	option = {
-		name = "EVTOPTA2000031"
+		name = "EVTOPTA1000182413"
 	}
 }
 
 # Notify liege of faction joining loyalists
 character_event = {
-	id = 2000032
+	id = 1000182414
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000032"
+	desc = "EVTDESC1000182414"
 
 	option = {
-		name = "EVTOPTA2000032"
+		name = "EVTOPTA1000182414"
 	}
 }
 
 # Faction member is called into the rebellion
 character_event = {
-	id = 2000033
+	id = 1000182415
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000031"
+	desc = "EVTDESC1000182413"
 
 	option = {
 		name = "TOARMS"
@@ -1342,12 +1342,12 @@ character_event = {
 
 # Faction member becomes a loyalist
 character_event = {
-	id = 2000034
+	id = 1000182416
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
 
-	desc = "EVTDESC2000032"
+	desc = "EVTDESC1000182414"
 
 	option = {
 		name = "TOARMS"
@@ -1357,7 +1357,7 @@ character_event = {
 
 # If faction is neutral, player can pick sides
 character_event = {
-	id = 2000035
+	id = 1000182417
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
@@ -1366,10 +1366,10 @@ character_event = {
 		ai = no
 	}
 
-	desc = "EVTDESC2000035"
+	desc = "EVTDESC1000182417"
 
 	option = {
-		name = "EVTOPTA2000035"
+		name = "EVTOPTA1000182417"
 		add_trait = rebel
 		hidden_tooltip = { opinion = { who = liege modifier = revolting_against years = 100 } }
 		hidden_tooltip = {
@@ -1403,18 +1403,18 @@ character_event = {
 		join_attacker_wars = FROMFROM
 	}
 	option = {
-		name = "EVTOPTB2000035"
+		name = "EVTOPTB1000182417"
 		add_trait = loyalist
 	}
 	option = {
-		name = "EVTOPTC2000035"
+		name = "EVTOPTC1000182417"
 		prestige = -50
 	}
 }
 
 #non-faction aligned characters pick a side
 character_event = {
-	id = 2000040
+	id = 1000182418
 	is_triggered_only = yes
 	picture = "GFX_evt_battle"
 	border = "GFX_event_normal_frame_war"
@@ -1426,7 +1426,7 @@ character_event = {
 		OR = {
 			AND = {
 				NOT = { trait = incapable }
-				age = 16
+				is_adult = yes
 			}
 			ai = no
 		}
@@ -1458,10 +1458,10 @@ character_event = {
 		}
 	}
 
-	desc = "EVTDESC2000040"
+	desc = "EVTDESC1000182394"
 
 	option = {
-		name = "EVTOPTA2000000"
+		name = "EVTOPTA1000182394"
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -1550,7 +1550,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTB2000040"
+		name = "EVTOPTB1000182394"
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -1599,7 +1599,7 @@ character_event = {
 		clr_character_flag = do_not_join_civil_war
 	}
 	option = {
-		name = "EVTOPTC2000040"
+		name = "EVTOPTC1000182394"
 		ai_chance = {
 			factor = 100
 		}
@@ -1609,12 +1609,12 @@ character_event = {
 
 #End of civil war
 character_event = {
-	id = 2010030
+	id = 1000182419
 	picture = GFX_evt_council
 	is_triggered_only = yes
 	hide_from = yes
 
-	desc = "EVTDESC2010030" #How do I reward my supporters?
+	desc = "EVTDESC1000182419" #How do I reward my supporters?
 
 	trigger = {
 		any_vassal = {
@@ -1640,7 +1640,7 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA2010030" #Tax Privileges
+		name = "EVTOPTA1000182419" #Tax Privileges
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -1680,11 +1680,11 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 2010031 } #notify
+				character_event = { id = 1000182420 } #notify
 				any_vassal = {
-					character_event = { id = 2010031 } #notify
+					character_event = { id = 1000182420 } #notify
 					any_vassal = {
-						character_event = { id = 2010031 } #notify
+						character_event = { id = 1000182420 } #notify
 					}
 				}
 			}
@@ -1713,11 +1713,11 @@ character_event = {
 						modifier = opinion_pleased
 						months = 120
 					}
-					character_event = { id = 2010032 } #notify
+					character_event = { id = 1000182421 } #notify
 					any_vassal = {
-						character_event = { id = 2010032 } #notify
+						character_event = { id = 1000182421 } #notify
 						any_vassal = {
-							character_event = { id = 2010032 } #notify
+							character_event = { id = 1000182421 } #notify
 						}
 					}
 				}
@@ -1725,7 +1725,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = "EVTOPTB2010030" #Glory and Honor
+		name = "EVTOPTB1000182419" #Glory and Honor
 		ai_chance = {
 			factor = 100
 			modifier = {
@@ -1797,7 +1797,7 @@ character_event = {
 						}
 					}
 				}
-				character_event = { id = 2010033 } #notify
+				character_event = { id = 1000182422 } #notify
 			}
 		}
 		any_vassal = {
@@ -1824,13 +1824,13 @@ character_event = {
 						modifier = opinion_pleased
 						months = 120
 					}
-					character_event = { id = 2010034 } #notify
+					character_event = { id = 1000182423 } #notify
 				}
 			}
 		}
 	}
 	option = {
-		name = "EVTOPTC2010030" #Nothing
+		name = "EVTOPTC1000182419" #Nothing
 		ai_chance = {
 			factor = 10
 			modifier = {
@@ -1888,7 +1888,7 @@ character_event = {
 						months = 120
 						multiplier = 2
 					}
-					character_event = { id = 2010035 } #notify
+					character_event = { id = 1000182424 } #notify
 				}
 			}
 		}
@@ -1897,11 +1897,11 @@ character_event = {
 
 #Notify player of tax reduction
 character_event = {
-	id = 2010031
+	id = 1000182420
 	picture = GFX_evt_council
 	is_triggered_only = yes
 
-	desc = "EVTDESC2010031"
+	desc = "EVTDESC1000182420"
 
 	trigger = {
 		independent = no
@@ -1920,7 +1920,7 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA2010031"
+		name = "EVTOPTA1000182420"
 		any_demesne_title = {
 			limit = {
 				tier = count
@@ -1937,11 +1937,11 @@ character_event = {
 
 #Notify of tax increase
 character_event = {
-	id = 2010032
+	id = 1000182421
 	picture = GFX_evt_council
 	is_triggered_only = yes
 
-	desc = "EVTDESC2010032"
+	desc = "EVTDESC1000182421"
 
 	trigger = {
 		independent = no
@@ -1960,7 +1960,7 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA2010032"
+		name = "EVTOPTA1000182421"
 		any_demesne_title = {
 			limit = {
 				tier = count
@@ -1977,18 +1977,18 @@ character_event = {
 
 #Notify of prestige reduction
 character_event = {
-	id = 2010033
+	id = 1000182422
 	picture = GFX_evt_council
 	is_triggered_only = yes
 
-	desc = "EVTDESC2010033"
+	desc = "EVTDESC1000182422"
 
 	trigger = {
 		independent = no
 	}
 
 	option = {
-		name = "EVTOPTA2010033"
+		name = "EVTOPTA1000182422"
 		if = {
 			limit = {
 				tier = count
@@ -2012,18 +2012,18 @@ character_event = {
 
 #Notify of prestige increase
 character_event = {
-	id = 2010034
+	id = 1000182423
 	picture = GFX_evt_council
 	is_triggered_only = yes
 
-	desc = "EVTDESC2010034"
+	desc = "EVTDESC1000182423"
 
 	trigger = {
 		independent = no
 	}
 
 	option = {
-		name = "EVTOPTA2010034"
+		name = "EVTOPTA1000182423"
 		if = {
 			limit = {
 				tier = count
@@ -2047,18 +2047,18 @@ character_event = {
 
 #Notify of no reward
 character_event = {
-	id = 2010035
+	id = 1000182424
 	picture = GFX_evt_council
 	is_triggered_only = yes
 
-	desc = "EVTDESC2010035"
+	desc = "EVTDESC1000182424"
 
 	trigger = {
 		independent = no
 	}
 
 	option = {
-		name = "EVTOPTA2010035"
+		name = "EVTOPTA1000182424"
 		tooltip = {
 			opinion = {
 				who = FROM
@@ -2079,7 +2079,7 @@ character_event = {
 				change_variable = { which = "faction_mood_feudal" value = -4 }
 				custom_tooltip = {
 					text = FEUDALFACTIONMOODMINUS
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 				}
 			}
 		}
@@ -2095,7 +2095,7 @@ character_event = {
 				change_variable = { which = "faction_mood_republican" value = -4 }
 				custom_tooltip = {
 					text = REPUBLICANFACTIONMOODMINUS
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 				}
 			}
 		}
@@ -2111,7 +2111,7 @@ character_event = {
 				change_variable = { which = "faction_mood_religious" value = -4 }
 				custom_tooltip = {
 					text = RELIGIOUSFACTIONMOODMINUS
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 				}
 			}
 		}
@@ -2127,7 +2127,7 @@ character_event = {
 				change_variable = { which = "faction_mood_court" value = -4 }
 				custom_tooltip = {
 					text = COURTFACTIONMOODMINUS
-					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+					hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 				}
 			}
 		}

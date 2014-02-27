@@ -17,12 +17,11 @@ nick_the_exile = {}
 nick_the_unlucky = {}
 nick_the_lucky = {}
 nick_the_restorer = {}
-nick_the_ill_tempered = {}
-nick_the_affable = {}
-nick_the_heathen = {}
 nick_the_liberator = {}
 nick_haardraade = {}
 nick_the_jackal = {}
+nick_the_ill_tempered = {}
+nick_the_affable = {}
 nick_lodbrok = {}
 nick_the_boneless = {}
 nick_bluetooth = {}
@@ -37,12 +36,15 @@ nick_the_saoshyant = {}
 nick_the_quiverfull = {}
 nick_hardeknud = {}
 nick_the_moneybag = {}
+nick_the_maid = {}
+nick_darc = {}
+nick_the_master_of_hungary = {}
 
 # GIVEN BY TRAITS
 #################
 nick_the_lisp_and_lame = {
 	allow = {
-		age = 16
+		is_adult = yes
 		trait = lisp
 		trait = clubfooted
 	}
@@ -569,6 +571,10 @@ nick_the_cruel = {
 		}
 		modifier = {
 			factor = 2.0
+			trait = cruel
+		}
+		modifier = {
+			factor = 2.0
 			trait = wroth
 		}
 		modifier = {
@@ -605,6 +611,8 @@ nick_the_wise = {
 			trait = just
 			trait = patient
 			trait = scholar
+			trait = faqih
+			trait = hafiz
 		}
 	}
 	chance = {
@@ -628,6 +636,14 @@ nick_the_wise = {
 		modifier = {
 			factor = 2.0
 			trait = scholar
+		}
+		modifier = {
+			factor = 2.0
+			trait = faqih
+		}
+		modifier = {
+			factor = 2.0
+			trait = hafiz
 		}
 		modifier = {
 			factor = 5 #OBJGETNICK
@@ -1393,6 +1409,7 @@ nick_the_old = {
 
 nick_the_great = {
 	allow = {
+		age = 25
 		ruled_years = 10
 		prestige = 1000
 	}
@@ -3629,6 +3646,37 @@ allow={
 		modifier = {
 			factor = 5 #OBJGETNICK
 			has_ambition = obj_get_nick
+		}
+	}
+}
+nick_the_heathen = {
+	allow = {
+		is_ruler = yes
+		religion_group = pagan_group
+		primary_title = { higher_tier_than = COUNT }
+		NOT = { has_landed_title = d_norse_pagan_reformed }
+		is_adult = yes
+	}
+	
+	chance = {
+		factor = 2
+		modifier = {
+			factor = 5
+			has_ambition = obj_get_nick
+		}
+		modifier = {
+			factor = 0.5
+			religion = norse_pagan
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.5
+			liege = { NOT = {religion_group = pagan_group } }
+			liege =  { trait = zealous }
+		}
+		modifier = {
+			factor = 0.1
+			liege = { NOT = { religion_group = pagan_group } }
 		}
 	}
 }

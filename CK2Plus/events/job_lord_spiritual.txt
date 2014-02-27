@@ -536,7 +536,7 @@ letter_event = {
 		custom_tooltip = {
 			text = RELIGIOUSFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_religious" value = 1 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		if = {
 			limit = {
@@ -1981,6 +1981,8 @@ character_event = {
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
 
+	min_age = 16
+	capable_only = yes	
 	prisoner = no
 
 	trigger = {
@@ -1997,6 +1999,10 @@ character_event = {
 			}
 		}
 	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}	
 
 	option = {
 		name = EVTOPTA39650
@@ -2016,7 +2022,9 @@ character_event = {
 	desc = EVTDESC39651
 	picture = GFX_evt_bishop
 	border = GFX_event_normal_frame_religion
-
+	
+	min_age = 16
+	capable_only = yes
 	prisoner = no
 
 	trigger = {
@@ -2068,38 +2076,7 @@ character_event = {
 				}
 			}
 		}
-		modifier = {
-			factor = 0
-			NOT = { opinion = { who = liege value = -100 } }
-		}
-		modifier = {
-			factor = 2
-			NOT = { opinion = { who = liege value = -75 } }
-		}
-		modifier = {
-			factor = 1.5
-			NOT = { opinion = { who = liege value = -50 } }
-		}
-		modifier = {
-			factor = 1.25
-			NOT = { opinion = { who = liege value = -25 } }
-		}
-		modifier = {
-			factor = 0.95
-			opinion = { who = liege value = 25 }
-		}
-		modifier = {
-			factor = 0.90
-			opinion = { who = liege value = 50 }
-		}
-		modifier = {
-			factor = 0.85
-			opinion = { who = liege value = 75 }
-		}
-		modifier = {
-			factor = 0.80
-			opinion = { who = liege value = 100 }
-		}
+		
 		modifier = {
 			factor = 1.25
 			NOT = { realm_learning = 15 }
@@ -2198,27 +2175,59 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.2
-			religion_authority = 0.6
+			NOT = { religion_authority = 0.6 }
 		}
 		modifier = {
 			factor = 1.1
-			religion_authority = 0.7
-		}
-		modifier = {
-			factor = 1
-			religion_authority = 0.8
+			NOT = { religion_authority = 0.7 }
 		}
 		modifier = {
 			factor = 0.9
-			religion_authority = 0.9
+			religion_authority = 0.8
 		}
 		modifier = {
 			factor = 0.8
+			religion_authority = 0.9
+		}
+		modifier = {
+			factor = 0.7
 			religion_authority = 1.0
 		}
 		modifier = {
-			factor = 0
+			factor = 100
 			NOT = { religion_authority = 0.5 }
+		}
+		modifier = {
+			factor = 0.95
+			opinion = { who = liege value = 25 }
+		}
+		modifier = {
+			factor = 0.90
+			opinion = { who = liege value = 50 }
+		}
+		modifier = {
+			factor = 0.85
+			opinion = { who = liege value = 75 }
+		}
+		modifier = {
+			factor = 0.80
+			opinion = { who = liege value = 100 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { opinion = { who = liege value = -100 } }
+		}
+		modifier = {
+			factor = 2
+			NOT = { opinion = { who = liege value = -75 } }
+		}
+		modifier = {
+			factor = 1.5
+			NOT = { opinion = { who = liege value = -50 } }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { opinion = { who = liege value = -25 } }
 		}
 	}
 
@@ -2661,6 +2670,30 @@ character_event = {
 	}
 }
 
+# Clear preacher_arrives flag
+character_event = {
+	id = 39654
+	hide_window = yes
+	
+	min_age = 16
+	
+	trigger = {
+		has_character_flag = preacher_arrives
+		NOT = { has_job_action = action_inquisition }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		clr_character_flag = preacher_arrives
+	}
+	
+	option = {
+		name = OK
+	}
+}
 
 ##############################
 # LORD SPIRITUAL
@@ -2900,7 +2933,7 @@ character_event = {
 	id = 907
 	title = "EVTNAME907"
 	desc = "EVTDESC907"
-	picture = GFX_evt_spymaster
+	picture = GFX_evt_pope_feast
 
 	capable_only = yes
 	prisoner = no
@@ -3286,9 +3319,7 @@ letter_event = {
 	option = {
 		name = "EVTOPTA20260"
 		scaled_wealth = -0.5
-		FROM = {
-			location = { change_random_civ_tech = 1 }
-		}
+		culture_techpoints = 50
 	}
 	option = {
 		name = "EVTOPTB20260"
@@ -3313,7 +3344,7 @@ character_event = {
 			religion_group = christian
 			religion_group = muslim
 			religion_group = zoroastrian_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			is_reformed_religion = yes
 		}
 		has_job_action = action_advance_cul_tech

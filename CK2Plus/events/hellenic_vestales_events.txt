@@ -24,7 +24,7 @@ character_event = {
 			any_courtier = {
 				has_minor_title = title_vestalis
 				age = 6
-				NOT = { age = 16 }
+				is_adult = no
 				NOT = { guardian = { character = ROOT } }
 			}
 		}
@@ -36,7 +36,7 @@ character_event = {
 				limit = {
 					has_minor_title = title_vestalis
 					age = 6
-					NOT = { age = 16 }
+					is_adult = no
 					NOT = { guardian = { character = ROOT } }
 				}
 				set_guardian = ROOT
@@ -150,10 +150,7 @@ character_event = {
 			factor = 60
 			modifier = {
 				factor = 0
-				OR = {
-					is_primary_heir = ROOT
-					is_pretender = ROOT
-				}
+				ROOT = { OR = { is_primary_heir = yes is_pretender = yes } }
 			}
 			modifier = {
 				factor = 1.5

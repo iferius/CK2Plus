@@ -54,7 +54,7 @@ character_event = {
 		}
 		NOT = {
 			any_child = {
-				age = 16
+				is_adult = yes
 				is_female = no
 				prisoner = no
 				NOT = { trait = on_hajj }
@@ -341,7 +341,7 @@ character_event = {
 		has_character_flag = preparing_hajj
 		NOT = { has_character_flag = hajj_company }
 		any_child = {
-			age = 16
+			is_adult = yes
 			is_female = no
 			prisoner = no
 			NOT = { trait = on_hajj }
@@ -366,7 +366,7 @@ character_event = {
 		scaled_wealth = -0.1
 		random_child = {
 			limit = {
-				age = 16
+				is_adult = yes
 				is_female = no
 				NOT = { trait = on_hajj }
 				NOT = { trait = hajjaj }
@@ -1801,12 +1801,20 @@ character_event = {
 	immediate = {
 		clr_character_flag = on_home_from_hajj
 		clr_character_flag = hajj_company
+		clr_character_flag = do_not_disturb
+		if = {
+			limit = { 
+				ai = no
+				NOT = { has_character_flag = achievement_to_mecca }
+			}
+			set_character_flag = achievement_to_mecca
+		}		
 	}
 	option = {
 		name = "EVTOPTA86800"
 		custom_tooltip = {
 			text = RELIGIOUSFACTIONMOODPLUS
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		change_variable = { which = "faction_mood_religious" value = 2 }
 		remove_trait = on_hajj
@@ -1831,6 +1839,7 @@ character_event = {
 	trigger = {
 		is_ruler = yes
 		religion_group = muslim
+		war = no
 		NOT = { trait = hajjaj }
 		NOT = { trait = mujahid}
 		NOT = { trait = on_hajj }
@@ -1843,7 +1852,6 @@ character_event = {
 			age = 30
 			trait = hajjaj
 		}
-		NOT = { any_war = { religion_group = christian } }
 	}
 
 	mean_time_to_happen = {

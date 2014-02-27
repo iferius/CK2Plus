@@ -812,6 +812,12 @@ letter_event = {
 	}
 	option = {
 		name = "EVTOPTA20131" #Press the Claim
+		trigger = {	
+			NOT = {
+				primary_title = { lower_tier_than = DUKE }
+				is_patrician = yes
+			}
+		}
 		ai_chance = {
 			factor = 90
 			modifier = {
@@ -826,13 +832,13 @@ letter_event = {
 				}
 			}
 		}
-		if = {
-			limit = {
-				primary_title = { lower_tier_than = DUKE }
-			}
-			treasury = -100
-			prestige = -100
-		}
+		# if = {
+			# limit = {
+				# primary_title = { lower_tier_than = DUKE }
+			# }
+			# treasury = -100
+			# prestige = -100
+		# }
 		if = {
 			limit = {
 				primary_title = { tier = DUKE }
@@ -847,6 +853,50 @@ letter_event = {
 			treasury = -200
 			prestige = -200
 		}
+		FROM = {
+			FROM = {
+				location = {
+					county = {
+						add_claim = ROOT
+					}
+				}
+			}
+		}
+		FROM = {
+			opinion = {
+				modifier = opinion_furious
+				who = ROOT
+				years = 10
+			}
+			hidden_tooltip = {
+				character_event = { id = 20132 days = 7 }
+			}
+		}
+	}
+	option = {	# Count or Patrician
+		name = "EVTOPTA20131" #Press the Claim
+		trigger = {
+			OR = {
+				primary_title = { lower_tier_than = DUKE }
+				is_patrician = yes
+			}
+		}
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				NOT = { scaled_wealth = 1.25 }
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					spouse = { character = FROM }
+					current_heir = { character = FROM }
+				}
+			}
+		}
+		scaled_wealth = -1.0
+		prestige = -50
 		FROM = {
 			FROM = {
 				location = {

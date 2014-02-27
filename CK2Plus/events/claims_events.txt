@@ -1,6 +1,6 @@
 # Generate a random claim on neighbour
 character_event = {
-	id = 1500050
+	id = 1000182425
 	picture = GFX_evt_emissary
 	only_rulers = yes
 	is_triggered_only = yes
@@ -8,14 +8,55 @@ character_event = {
 	trigger = {
 		is_feudal = yes
 		primary_title = { higher_tier_than = BARON }
+		has_regent = no
 		any_playable_ruler = {
-			OR = {
-				is_feudal = yes
-			}
+			is_feudal = yes
 			any_demesne_title = {
 				location = {
-					duchy = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
-					county = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
+					duchy = { 
+						OR = { 
+							has_holder = no 
+							holder_scope = { 
+								religion_group = ROOT 
+								OR = { 
+									ROOT = { independent = yes } 
+									same_realm = ROOT 
+								} 
+							} 
+						} 
+						NOT = { 
+							holder_scope = { 
+								OR = { 
+									character = ROOT 
+									is_liege_or_above = ROOT 
+									is_vassal_or_below = ROOT 
+								} 
+							} 
+							ROOT = { has_claim = PREV } 
+						} 
+					}
+					county = { 
+						OR = { 
+							has_holder = no 
+							holder_scope = { 
+								religion_group = ROOT 
+								OR = { 
+									ROOT = { independent = yes }
+									same_realm = ROOT 
+								} 
+							} 
+						} 
+						NOT = { 
+							holder_scope = { 
+								OR = { 
+									character = ROOT 
+									is_liege_or_above = ROOT 
+									is_vassal_or_below = ROOT 
+								} 
+							} 
+							ROOT = { has_claim = PREV } 
+						} 
+					}
 					any_neighbor_province = {
 						owner = { OR = { character = ROOT is_liege_or_above = ROOT } }
 						has_province_flag = contingent_territory
@@ -33,16 +74,76 @@ character_event = {
 		set_character_flag = claim_by_event
 	}
 
-	desc = "EVTDESC1500000"
+	desc = "EVTDESC1000182425"
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 		modifier = {
 			factor = 0.5
 			ai = no
+		}		
+		modifier = {
+			factor = 0.25
+			AND = {
+				religion_group = pagan_group # Unreformed Pagans have the conquest CB
+				is_reformed_religion = no
+			}
+			NOT = { has_ambition = obj_become_king }
+		}
+		modifier = { # Picking the become king ambition speeds it up
+			factor = 1.1
+			ai = no
+			has_ambition = obj_become_king
 		}
 		modifier = {
-			factor = 0.5
+			factor = 1.2 # Picking the become king ambition speeds it up
+			ai = yes
+			has_ambition = obj_become_king
+		}		
+		modifier = {
+			factor = 2.5 # AI don't fabricate claims effectively
+			ai = yes
+		}
+		modifier = {
+			factor = 3.0 # Encourage AI independent counts and dukes to form Kingdoms
+			ai = yes
+			independent = yes
+			OR = {
+				tier = count
+				tier = duke
+			}
+			NOT = { 
+				num_of_duke_titles = 3 
+			}
+		}
+		modifier = {
+			factor = 1.1 # Ambitious characters are more likely to get it
+
+			independent = yes
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.9 # Content characters are less likely to get it
+
+			independent = yes
+			trait = content
+		}			
+		modifier = {
+			factor = 0.5 # Discourage free claims for bigger AI
+			ai = yes
+			independent = yes
+			tier = king
+			realm_size = 35
+		}
+		modifier = {
+			factor = 0.25 # Discourage free claims for bigger AI
+			ai = yes
+			independent = yes
+			tier = emperor
+			realm_size = 120
+		}		
+		modifier = {
+			factor = 0.25
 			independent = no
 		}
 		modifier = {
@@ -67,11 +168,53 @@ character_event = {
 		name = "OK"
 		random_playable_ruler = {
 			limit = {
-					is_feudal = yes
+				is_feudal = yes
 				any_demesne_title = {
 					location = {
-						duchy = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
-						county = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
+						duchy = { 
+							OR = { 
+								has_holder = no 
+								holder_scope = {
+									religion_group = ROOT 
+									OR = { 
+										ROOT = { independent = yes } 
+										same_realm = ROOT 
+									} 
+								} 
+							} 
+							NOT = { 
+								holder_scope = { 
+									OR = { 
+										character = ROOT 
+										is_liege_or_above = ROOT 
+										is_vassal_or_below = ROOT 
+									} 
+								} 
+								ROOT = { has_claim = PREV } 
+							} 
+						}
+						county = { 
+							OR = { 
+								has_holder = no 
+								holder_scope = { 
+									religion_group = ROOT 
+									OR = { 
+										ROOT = { independent = yes } 
+										same_realm = ROOT 
+									} 
+								} 
+							} 
+							NOT = { 
+								holder_scope = { 
+									OR = { 
+										character = ROOT 
+										is_liege_or_above = ROOT 
+										is_vassal_or_below = ROOT 
+									} 
+								} 
+							ROOT = { has_claim = PREV } 
+							} 
+						}
 						any_neighbor_province = {
 							owner = { OR = { character = ROOT is_liege_or_above = ROOT } }
 							has_province_flag = contingent_territory
@@ -82,8 +225,50 @@ character_event = {
 			random_demesne_title = {
 				limit = {
 					location = {
-						duchy = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
-						county = { OR = { has_holder = no holder_scope = { religion_group = ROOT OR = { ROOT = { independent = yes } same_realm = ROOT } } } NOT = { holder_scope = { OR = { character = ROOT is_liege_or_above = ROOT is_vassal_or_below = ROOT } } ROOT = { has_claim = PREV } } }
+						duchy = { 
+							OR = { 
+								has_holder = no 
+								holder_scope = { 
+									religion_group = ROOT 
+									OR = { 
+										ROOT = { independent = yes } 
+										same_realm = ROOT 
+									} 
+								} 
+							} 
+							NOT = { 
+								holder_scope = { 
+									OR = { 
+										character = ROOT 
+										is_liege_or_above = ROOT 
+										is_vassal_or_below = ROOT 
+									} 
+								} 
+								ROOT = { has_claim = PREV } 
+							} 
+						}
+						county = { 
+							OR = { 
+								has_holder = no 
+								holder_scope = { 
+									religion_group = ROOT 
+									OR = { 
+										ROOT = { independent = yes } 
+										same_realm = ROOT 
+									} 
+								} 
+							} 
+							NOT = { 
+								holder_scope = { 
+									OR = { 
+										character = ROOT 
+										is_liege_or_above = ROOT 
+										is_vassal_or_below = ROOT 
+									} 
+								} 
+								ROOT = { has_claim = PREV } 
+							} 
+						}
 						any_neighbor_province = {
 							owner = { OR = { character = ROOT is_liege_or_above = ROOT } }
 							has_province_flag = contingent_territory
@@ -98,14 +283,14 @@ character_event = {
 								duchy = { has_holder = no }
 							}
 						}
-						county = { add_claim = ROOT hidden_tooltip = { holder_scope = { character_event = { id = 1500051 } } } }
+						county = { add_claim = ROOT hidden_tooltip = { holder_scope = { character_event = { id = 1000182426 } } } }
 					}
 					if = {
 						limit = {
 							ROOT = { has_character_flag = duchy_claim }
 							duchy = { has_holder = yes }
 						}
-						duchy = { add_claim = ROOT hidden_tooltip = { holder_scope = { character_event = { id = 1500051 } } } }
+						duchy = { add_claim = ROOT hidden_tooltip = { holder_scope = { character_event = { id = 1000182426 } } } }
 					}
 				}
 			}
@@ -115,7 +300,7 @@ character_event = {
 }
 
 character_event = {
-	id = 1500051
+	id = 1000182426
 	picture = GFX_evt_emissary
 
 	trigger = {
@@ -124,9 +309,9 @@ character_event = {
 
 	is_triggered_only = yes
 
-	desc = "EVTDESC1500051"
+	desc = "EVTDESC1000182426"
 
 	option = {
-		name = "EVTOPTA1500051"
+		name = "EVTOPTA1000182426"
 	}
 }

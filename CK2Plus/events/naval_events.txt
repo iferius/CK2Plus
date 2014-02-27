@@ -1,7 +1,7 @@
 #Storm!
 character_event = {
-	id = 1600000
-	desc = "EVTDESC1600000"
+	id = 1000182683
+	desc = "EVTDESC1000182683"
 	picture = "GFX_evt_kraken"
 
 	trigger = {
@@ -152,7 +152,7 @@ character_event = {
 	}
 
 	option = {
-		name = "EVTOPTA1600000"
+		name = "EVTOPTA1000182683"
 		any_realm_character = {
 			limit = {
 				has_character_flag = storm_victim

@@ -1,6 +1,6 @@
 # Republican faction - demand reduction in CA
 letter_event = {
-	id = 1902002
+	id = 1000182956
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902002"
@@ -101,7 +101,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_republican" value = -3 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -115,7 +115,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900506 }
+				character_event = { id = 1000182471 }
 			}
 		}
 	}
@@ -180,7 +180,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_republican" value = 6 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -194,7 +194,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900507 }
+				character_event = { id = 1000182472 }
 			}
 		}
 	}
@@ -202,7 +202,7 @@ letter_event = {
 
 # Republican faction - grant liege extra city taxes for 5 years
 letter_event = {
-	id = 1902011
+	id = 1000182957
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902011"
@@ -480,7 +480,7 @@ letter_event = {
 
 # Republican faction - financial contribution to liege
 letter_event = {
-	id = 1902021
+	id = 1000182958
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902021"
@@ -507,7 +507,7 @@ letter_event = {
 
 # Republican faction - demand reduction in city taxes
 letter_event = {
-	id = 1902031
+	id = 1000182959
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902031"
@@ -558,7 +558,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_republican" value = 6 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -572,7 +572,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900509 }
+				character_event = { id = 1000182474 }
 			}
 		}
 	}
@@ -672,7 +672,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODMINUS
 			change_variable = { which = "faction_mood_republican" value = -3 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -686,7 +686,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900508 }
+				character_event = { id = 1000182473 }
 			}
 		}
 	}
@@ -694,7 +694,7 @@ letter_event = {
 
 # Republican faction - demand reduction in republican levies
 letter_event = {
-	id = 1902041
+	id = 1000182960
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902041"
@@ -738,7 +738,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_republican" value = 6 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -752,7 +752,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900513 }
+				character_event = { id = 1000182478 }
 			}
 		}
 	}
@@ -852,7 +852,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODMINUS
 			change_variable = { which = "faction_mood_republican" value = -3 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -866,7 +866,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900512 }
+				character_event = { id = 1000182477 }
 			}
 		}
 	}
@@ -874,7 +874,7 @@ letter_event = {
 
 # Republican faction - demand change in tax privileges
 letter_event = {
-	id = 1902051
+	id = 1000182961
 	is_triggered_only = yes
 
 	desc = "EVTDESC1902051"
@@ -925,7 +925,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_republican" value = 6 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -939,7 +939,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900511 }
+				character_event = { id = 1000182476 }
 			}
 		}
 	}
@@ -1039,7 +1039,7 @@ letter_event = {
 		custom_tooltip = {
 			text = REPUBLICANFACTIONMOODMINUS
 			change_variable = { which = "faction_mood_republican" value = -3 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 		hidden_tooltip = {
 			any_vassal = {
@@ -1053,7 +1053,7 @@ letter_event = {
 						in_faction = faction_republican_duke
 					}
 				}
-				character_event = { id = 1900510 }
+				character_event = { id = 1000182475 }
 			}
 		}
 	}

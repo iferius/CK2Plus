@@ -1,0 +1,106 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or cultures, make sure they are unique.
+
+west_germanic = {
+	graphical_culture = westerngfx
+
+	english = {
+		graphical_culture = englishgfx
+
+		color = { 0.8 0.2 0.2 }
+
+		# Does not exist in 1066 - is the result of cultural amalgamation between Saxon and Norman through events
+		male_names = {
+			Adam_Adam Alan_Alan Albert_Albert Alexander_Alexander Alfred Andrew_Andrew Anselm Arnold_Arnold Arthur_Arthur Aubrey Christopher_Christopher David_David Edmund_Edmund Edward_Edward Eric_Erik Eustace_Eustace Fulk_Folke Geoffrey George_George Gerald_Gerald Gilbert_Gilbert
+			Godfrey_Godfrey Gregory_Gregory Guy_Guy Henry_Henry Hugh_Hugh Humphrey Jocelyn John_John Jordan_Jordan Laurence_Laurence Lionel Mark_Marcus Martin_Martin Matthew_Matthew Maurice Michael_Michael Nicholas_Nicholas Paul_Paul Peter_Peter Philip_Philip
+			Ralph_Ralph Randolph_Ralph Reginald Richard_Richard Robert_Robert Roger_Roger Simon_Simon Stephen_Stephen Theobald_Theobald Thomas_Thomas Waleran Walter_Walter William_William
+		}
+		female_names = {
+			Adela_Adela Adelaide_Adelaide Alice_Alice Amice Anne_Anna Aveline_Avelina Beatrice_Beatrice Blanche_Blanche Catherine_Catherine Cecilia_Cecilia Constance_Constance Edith_Edith Ela Eleanor_Eleanor Elizabeth_Elisabeth Emma_Emma Hawise Isabel_Elisabeth
+			Isabella_Elisabeth Joan_Joan Joanna_Joan Juliana_Juliana Mahaut_Mahaut Margaret_Margaret Mary_Maria Matilda_Matilda Maud_Matilda Philippa_Philippa Sybilla_Sibylla
+		}
+		from_dynasty_prefix = "of "
+		bastard_dynasty_prefix = "Fitz"
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 25
+
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+	saxon = {
+		graphical_culture = saxongfx
+
+		color = { 0.8 0.3 0.3 }
+
+		male_names = {
+		Ælaf_Olaf Ælle Æsc Æscwine Æthelbeald Æthelberht_Albert Æthelfrith Æthelhere Æthelmær Æthelræd Æthelric Æthelstan Æthelweard Æthelwine Æthelweald Æthelwealh
+		Æthelwulf Ealdræd Ealdwine Ealdwulf Ælfgar Ælfheah Ælfraed_Alfred Ælfweald Ælfweard Ælfwine Baldræd Berhtwulf Berhtric Beowulf Beorn_Beorn Beornræd Beornwulf Burghræd Centwine Ceolræd Ceolweald Ceolwulf Coenræd Coenric Coenwulf Cuthberht Cuthræd Cwichelm Cynebeald Cynefrith Cyneheard Cynemær Cyneric Cyneweald Cynewulf Deorwine Eadbeald Eadberht Eadfrith Eadgar_Edgar Eadmund_Edmund Eadraed Eadric Eadwulf 
+		Eadweald Eadweard_Edward Eadwig Eadwine Ealhmund Ealdfrith Ealdmund Ealdwine_Alwin Eanberht Eanfrith Eanhere Eardwulf Earnweald_Arnold Earled Ecgberht_Egbert Ecgfrith Ecgric
+		Ecgtheow Eorcenberht Eoric Eormenric Eormenræd Eorpweald Eowa Eastmund Eoforwine Frearic Freamund Freawulf Frithuwald Glædwine Godric Godwine Heaberht Hereweard Hereweald_Harold Hrothgar_Roger Hlothere_Lothair Hygelac Leofdæg Leofric Leofwine Maldræd Morcær_Marcus Nothelm Offa Osbeorn_Osbern Osberht_Osbert Osgar Oslac Osmund Oshere Osræd Osric Osulf
+		Osweald Oswine Oswig Pæga Hrodberht_Robert Rædwald Ricberht Ricsige Sæbert Sælræd Sæweald Seaxbald Seaxweard Seaxræd Sigeberht_Siegbert Sigefrith_Siegfried Sigehelm Sigeræd Sigeric Sighere Sigemund_Siegmund Sigeweard_Sigurd
+		Stigand Swæfberht Swæfheard Swæfræd Swithelm Swithun Swithræd Theodhere Theodræd Theodric Theodwulf Thoræd Uhtræd Wulf_Ulf Wealtheof Wealdhere_Walter Wigberht Wigeheard Wigmund Wiglaf Wigstan Wihtræd Wilfrith Wilheard Wilmær Winefrith Wine Wulfhere Wulfric Wulfnoth Wulfstan
+		}
+		female_names = {
+		Æbbe Æffe Ælfgifu Ælfhild Ælflæd Ælfswith Ælfthryth Ælfwynn Æthelflæd Æthelgifu Æthelgyth Æthelhild Æthelswith Æthelthryth Æthelwynn Æscwynn Ætte Berhtgifu Berhtwynn Beornflæd Beorngyth Beornthryth Beornwynn Burghild Ceolburh Ceolflæd Ceolthryth Ceolwynn Cuthswith Cwen Cwenburh Cwengyth Cwenthryth Cyneburh Cynegyth Cyneleofu Cyneswith Cynethryth Cynewynn Dunne Eadburh Eadflæd Eadgifu Eadgyth_Edith Eadhild 
+		Eadleofu Eadwynn Ealdgyth Ecgwynn Ealhburh Ealhflæd Ealhgyth Ealhswith Ealhthryth Ealhwynn Eanburh Eanflæd Eanswith Eormenburh Eormenhild Eoforhild Folcburh Frithugyth Frithuswith Gænburh Gode Godgifu Godwif Gunhilda_Gunhild Gytha Heahburh Heregyth Hereswith Hild Leofcwen Leofe Leofflæd Leofgifu Leofrun Leofwynn Merwyn Mildburh Mildgyth Mildthryth Nothgyth Osthryth Sæflæd Sæthryth Seaxburh 
+		Seleburh Selethryth Sigeburh Sigeflæd Sunngifu Theodhild Tole Walenburh Wærburh Wærthryth Wealhthryth Wigburh Wihtburh Wihtflæd Wilburh Wilflæd Winflæd Wulfgifu Wulfgyth Wulfhild Wulfrun Wulfswith Wulfthryth Wulfwynn
+		}
+
+		dukes_called_kings = yes
+
+		from_dynasty_prefix = "fram "
+
+		male_patronym = "essunu"
+		female_patronym = "esdohter"
+		prefix = no # The patronym is added as a suffix
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 30
+		mat_grf_name_chance = 10
+		father_name_chance = 5
+
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 20
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+
+		modifier = default_culture_modifier
+	}
+	english_norse = {
+		graphical_culture = norsegfx
+
+		color = { 0.8 0.3 0.1 }
+
+		male_names = {
+			Albert_Albert Aldred Alf Alfred Anders_Andrew Arthur_Arthur Beorn_Beorn Beornwulf Christian_Christian Conrad_Conrad Cuthbert
+			Edgar_Edgar Edmund_Edmund Edward_Edward Edwin_Edwin Eric_Erik Frederick_Frederick Gunnar John_John Hakon_Hakon Harold_Harold
+			Ivar Magnus_Magnus Marcus_Marcus Mats_Matthew Niclas_Nicholas Nils_Nils Ogmund Olaf_Olaf Osric Oswald Oswin Paul_Paul Peter_Peter
+			Ragnar Robert_Robert Sterbeorn_Styrbjörn Sven_Sven Torbeorn_Torbjörn Wulf_Ulf Valdemar
+		}
+		female_names = {
+			Agatha_Agatha Astrid_Astrid Cecilia_Cecilia Christina_Christina Dorothy_Dorothy Edith_Edith Eldrid Elisabeth_Elisabeth Ellinor_Eleanor Emily_Emily Erica_Erika
+			Gertrude_Gertrude Gunhild_Gunhild Helena_Helen Ingrid_Ingrid Karen_Catherine Katarina_Catherine Kirsten Margaret_Margaret Maria_Maria Martha_Martha Sarah_Sarah Sigrid_Sigrid Sofia_Sophia Thora_Thora
+		}
+		from_dynasty_prefix = "of "
+
+		male_patronym = "son"
+		female_patronym = "sdaughter"
+
+		modifier = default_culture_modifier
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 80
+		mat_grf_name_chance = 0
+		father_name_chance = 0
+
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 50
+		mother_name_chance = 0
+	}
+}

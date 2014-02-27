@@ -1,7 +1,7 @@
 From;To;Type;Through;-1;-1;-1;-1;Comment
 5;45;sea;1124;-1;-1;-1;-1;Ulaid-Argyll
 5;50;sea;1124;-1;-1;-1;-1;Ulaid-Galloway
-35;984;sea;1044;-1;-1;-1;-1;Western Isles-Inverness
+35;984;sea;1329;-1;-1;-1;-1;Western Isles-Inverness
 36;37;sea;1111;-1;-1;-1;-1;Orkney-Caithness
 50;54;sea;1071;-1;-1;-1;-1;Galloway-Isle of Man
 72;73;sea;1113;-1;-1;-1;-1;Essex-Kent
@@ -14,15 +14,14 @@ From;To;Type;Through;-1;-1;-1;-1;Comment
 166;841;sea;1184;-1;-1;-1;-1;Algeciras-Tangiers
 264;265;sea;1104;-1;-1;-1;-1;Slesvig-Fyn
 265;266;sea;1104;-1;-1;-1;-1;Fyn-Sjaelland
-265;1031;sea;1029;-1;-1;-1;-1;Fyn-Lolland
-266;1031;sea;1029;-1;-1;-1;-1;Sjaelland-Lolland
+265;1031;sea;1104;-1;-1;-1;-1;Fyn-Lolland
+266;1031;sea;1051;-1;-1;-1;-1;Sjaelland-Lolland
 266;303;sea;1051;-1;-1;-1;-1;Sjaelland-Skåne
 290;292;sea;1189;-1;-1;-1;-1;Uppland-Södermanland
 293;297;sea;1192;-1;-1;-1;-1;Östergötland-Västergötland
-298;300;sea;1099;-1;-1;-1;-1;Småland-Öland
+931;300;sea;1099;-1;-1;-1;-1;Möre-Öland
 303;305;sea;1055;-1;-1;-1;-1;Skåne-Bornholm
 304;308;sea;1101;-1;-1;-1;-1;Rügen-Wolgast
-324;992;sea;1076;-1;-1;-1;-1;Corsica-Gallura
 338;339;sea;1088;-1;-1;-1;-1;Reggio-Messina
 356;357;sea;1092;-1;-1;-1;-1;Venezia-Treviso
 373;376;sea;1098;-1;-1;-1;-1;Kurzeme-Saaremaa
@@ -35,6 +34,7 @@ From;To;Type;Through;-1;-1;-1;-1;Comment
 486;746;sea;1093;-1;-1;-1;-1;Samos-Ephesos
 487;744;sea;1093;-1;-1;-1;-1;Lesbos-Abydos
 495;744;sea;1177;-1;-1;-1;-1;Kaliopolis-Abydos
+496;741;sea;1177;-1;-1;-1;-1;Byzantion-Nikomedia
 562;598;sea;1202;-1;-1;-1;-1;Korchev-Tmutarakan
 826;827;sea;1074;-1;-1;-1;-1;Menorca-Mallorca
 998;827;sea;1074;-1;-1;-1;-1;Ibiza-Mallorca
@@ -43,20 +43,12 @@ From;To;Type;Through;-1;-1;-1;-1;Comment
 854;870;sea;1166;-1;-1;-1;-1;Jask-Dhu Zabi
 651;653;sea;1167;-1;-1;-1;-1;Damman-Bahrein
 652;653;sea;1167;-1;-1;-1;-1;Al Hasa-Bahrein
-100;1010;sea;1062;-1;-1;-1;-1;Jersey-Avranches
-143;1011;sea;1130;-1;-1;-1;-1;Oléron - Saintonge
-1017;468;sea;1200;-1;-1;-1;-1;Korcula-Raguse
-1017;1016;sea;1200;-1;-1;-1;-1;Korcula-Hvar
-1016;467;sea;1200;-1;-1;-1;-1;Hvar-Split
-1015;465;sea;1199;-1;-1;-1;-1;Pag-Zadar
-1015;464;sea;1199;-1;-1;-1;-1;Pag-Senj
 1018;472;sea;1151;-1;-1;-1;-1;Corfou-Epire
 789;788;sea;1169;-1;-1;-1;-1;Pélusia-Farama
 485;488;sea;1172;-1;-1;-1;-1;Eubée-Demetria
 99;98;major_river;1217;-1;-1;-1;-1;Evreux-Vexin
 944;98;major_river;1217;-1;-1;-1;-1;Dreux-Vexin
 92;82;major_river;1285;-1;-1;-1;-1;Breda-Stitch
-90;88;major_river;1219;-1;-1;-1;-1;Julich-Munster
 90;119;major_river;1219;-1;-1;-1;-1;Julich-Koln
 90;119;major_river;1220;-1;-1;-1;-1;Julich-Koln
 124;125;major_river;1289;-1;-1;-1;-1;Pfalz-Baden
@@ -67,6 +59,9 @@ From;To;Type;Through;-1;-1;-1;-1;Comment
 258;262;major_river;1221;-1;-1;-1;-1;Luneburg-Lubeck
 258;260;major_river;1221;-1;-1;-1;-1;Luneburg-Mecklemburg
 258;365;major_river;1222;-1;-1;-1;-1;Luneburg-Brandeburg
+261;258;sea;1052;-1;-1;-1;-1;Hamburg-Luneburg
+261;848;sea;1052;-1;-1;-1;-1;Hamburg-Bremen
+263;848;sea;1052;-1;-1;-1;-1;Holstein-Bremen
 309;365;major_river;1222;-1;-1;-1;-1;Altmarck-Brandeburg
 368;370;major_river;1226;-1;-1;-1;-1;Dantzig-Marienburg
 368;427;major_river;1226;-1;-1;-1;-1;Dantzig-Galindia
@@ -135,6 +130,7 @@ From;To;Type;Through;-1;-1;-1;-1;Comment
 795;800;major_river;1313;-1;-1;-1;-1;Gizeh-Asyut
 793;794;major_river;1313;-1;-1;-1;-1;Makuria-Aswan
 793;792;major_river;1314;-1;-1;-1;-1;Makuria-Sudan
+437;439;major_river;1225;-1;-1;-1;-1;Praha-Plz
 800;794;major_river;1313;-1;-1;-1;-1;Gizeh-Aswan
 1250;1295;portage;576;-1;-1;-1;-1;Desna-Don
 1257;1252;portage;417;-1;-1;-1;-1;Dwina-Dnypro

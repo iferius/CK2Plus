@@ -16,8 +16,9 @@ b_begarawiyah = temple
 #b_meruwah = city
 
 # Misc
-culture = ethiopian
+culture = nubian
 religion = miaphysite
+terrain = plains
 
 # History
 

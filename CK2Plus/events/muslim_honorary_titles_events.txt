@@ -57,7 +57,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 200
+		years = 16
 
 		modifier = {
 			factor = 5
@@ -330,7 +330,7 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	only_women = yes
-	age = 16
+	is_adult = yes
 
 	trigger = {
 		is_pregnant = no
@@ -541,7 +541,7 @@ character_event = {
 			}
 			OR = {
 				any_vassal = {
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -564,7 +564,7 @@ character_event = {
 					}
 				}
 				any_courtier = {
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -600,7 +600,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 21
 
 		modifier = {
 			factor = 0.5
@@ -638,7 +638,7 @@ character_event = {
 		trigger = {
 			liege = {
 				any_courtier = {
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -662,7 +662,7 @@ character_event = {
 		liege = {
 			random_courtier = {
 				limit = {
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -724,7 +724,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -751,7 +751,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -1146,7 +1146,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -1179,7 +1179,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -1241,7 +1241,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 350
+		years = 29
 
 		modifier = {
 			factor = 0.5
@@ -1282,7 +1282,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -1316,7 +1316,7 @@ character_event = {
 		liege = {
 			random_courtier = {
 				limit = {
-					age = 16
+					is_adult = yes
 					religion_group = muslim
 					is_female = no
 					prisoner = no
@@ -1391,7 +1391,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -1431,7 +1431,7 @@ character_event = {
 					NOT = {
 						has_minor_title = title_chief_qadi
 					}
-					age = 16
+					is_adult = yes
 					is_female = no
 					religion_group = muslim
 					prisoner = no
@@ -1864,7 +1864,7 @@ character_event = {
 				war = no
 				in_command = no
 				religion_group = muslim
-				age = 16
+				is_adult = yes
 				trait = drunkard
 				prisoner = no
 				NOT = {
@@ -1875,7 +1875,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 200
+		years = 17
 
 		modifier = {
 			factor = 5
@@ -1924,7 +1924,7 @@ character_event = {
 					war = no
 					in_command = no
 					religion_group = muslim
-					age = 16
+					is_adult = yes
 					trait = drunkard
 					prisoner = no
 					NOT = {
@@ -1980,7 +1980,7 @@ character_event = {
 					war = no
 					in_command = no
 					religion_group = muslim
-					age = 16
+					is_adult = yes
 					trait = drunkard
 					prisoner = no
 					NOT = {
@@ -2196,7 +2196,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 300
+		years = 25
 
 		modifier = {
 			factor = 2
@@ -2240,7 +2240,7 @@ character_event = {
 			random_courtier = {
 				limit = {
 					has_minor_title = title_chief_qadi
-					age = 16
+					is_adult = yes
 					is_female = no
 				}
 				character_event = {
@@ -2657,7 +2657,7 @@ character_event = {
 			random_courtier = {
 				limit = {
 					has_minor_title = title_chief_qadi
-					age = 16
+					is_adult = yes
 					is_female = no
 				}
 				set_character_flag = asked_qadi_zina
@@ -2686,7 +2686,7 @@ character_event = {
 			random_courtier = {
 				limit = {
 					has_minor_title = title_chief_qadi
-					age = 16
+					is_adult = yes
 					is_female = no
 				}
 				set_character_flag = asked_qadi_zina
@@ -2729,7 +2729,7 @@ character_event = {
 			random_courtier = {
 				limit = {
 					has_minor_title = title_chief_qadi
-					age = 16
+					is_adult = yes
 					is_female = no
 				}
 				character_event = {
@@ -3253,7 +3253,7 @@ character_event = {
 				in_command = no
 				has_minor_title = title_court_calligrapher
 				religion_group = muslim
-				age = 16
+				is_adult = yes
 				NOT = {
 					has_character_modifier= mosque_calligrapher_timer
 				}
@@ -3268,7 +3268,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 21
 
 		modifier = {
 			factor = 2
@@ -3311,7 +3311,7 @@ character_event = {
 					in_command = no
 					has_minor_title = title_court_calligrapher
 					religion_group = muslim
-					age = 16
+					is_adult = yes
 					NOT = {
 						has_character_modifier= mosque_calligrapher_timer
 					}
@@ -3749,7 +3749,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 500
+		years = 41
 
 		modifier = {
 			factor = 0.5
@@ -3904,7 +3904,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 500
+		years = 41
 
 		modifier = {
 			factor = 0.5
@@ -4201,10 +4201,6 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
-
 	option = {
 		name = "EVTOPTA105068" #Imprison CC
 		FROM = {
@@ -4334,7 +4330,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 20
 	}
 
 	immediate = {
@@ -4604,7 +4600,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 20
 	}
 
 	immediate = {
@@ -4884,7 +4880,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 20
 
 		modifier = {
 			factor = 0.5
@@ -5263,7 +5259,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 20
 
 		modifier = {
 			factor = 0.5
@@ -5448,10 +5444,6 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
-
 	option = {
 		name = "EVTOPTA105203" #Imprison CA
 		FROM = {
@@ -5575,7 +5567,7 @@ character_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 250
+		years = 20
 
 		modifier = {
 			factor = 0.5

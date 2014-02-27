@@ -16,22 +16,6 @@
 #1000182008 - Remove Favored Son
 #1000182009 - Province Culture Conversion
 
-#AO Fabricate Evidence of Betrayal Chain
-#1000182010 - Any Plot Backer sees chance to fabricate
-#1000182011 - Letter Event
-#1000182012 - Succeeds
-#1000182013 - Fails, not discovered
-#1000182014 - Fails, discovered
-#1000182015 - Sucess, notification
-#1000182016 - Fail but not discovered notification
-#1000182017 - Fail and discovered notification
-#1000182018 - Letter sent
-#1000182019 - Letter to Liege, recieval
-#1000182020 - Warn Realm about Liege fabricating
-#1000182021 - Warn Fellow Vassals about fabrication
-#1000182022 - Letter to liege from plot target
-#1000182023 - Band together against plotter
-
 #AO Kidnap Events
 #1000182024 - Any Plot Backer sees chance to nab target in transit 
 #1000182025 - Letter Event
@@ -412,3 +396,815 @@
 
 #HRE Rename Event
 #1000182333
+
+#Friend Events
+#1000182334 - Check Friends
+#1000182335 - 1000182350 - friendship ambition events
+
+#Regent Events
+#1000182351 - Events for Become Regent Ambition
+
+#Events for nickname ambition - BY JGCrusader
+#1000182352 - names for good and skilled characters
+#1000182353 - names for good but less skilled characters
+#1000182354 - names for evil and skilled characters
+#1000182355 - names for evil and less skilled characters
+#1000182356 - bastard nickname
+#1000182357 - old nickname
+#1000182358 - silent nickname
+#1000182359 - fat/drunkard nicknames
+#1000182360 - effeminate nickname
+#1000182361 - attractive nicknames
+#1000182362 - proud nickname
+#1000182363 - names for soldier characters
+#1000182364 - names for pious characters
+#1000182365 - names for maimed characters
+#1000182366 - noble nickname
+#1000182367 - kind nickname
+#1000182368 - hunter/folwer nickname
+#1000182369 - mad nickname
+#1000182370 - heathen nickname
+#1000182371 - monk nickname
+#1000182372 - religious soldier nicknames
+
+# Events for friends of liege asking for help - by JGCrusader
+#1000182373 - friend asks for help with getting married (AI only)
+#1000182374 - liege responds to request for help with getting married
+#1000182375 - friend asks for help with being priest (AI only)
+#1000182376 - liege responds to help request for being priest
+#1000182377 - friend asks to mentor liege's child
+#1000182378 - liege responds to mentor liege's child request
+#1000182379 - liege says OK to wardship request
+#1000182380 - liege says no to wardship request
+#1000182381 - friend asks for help with amassing wealth
+#1000182382 - liege responds to help request for amassing wealth
+#1000182383 - he gave me nothing
+#1000182384 - He gave some money
+#1000182385 - He talked me out of my ambition
+#1000182386 - friend asks liege to stop war against him
+#1000182387 - liege responds to request to stop inter-realm war
+#1000182388 - friend gets response - peace
+#1000182389 - aggressor is forced to make peace and isn't happy
+#1000182390 - friend gets response - no help
+
+#Dishonorable Events
+#1000182391 - Assassin is excommunicated
+#1000182392 - Assassin goes nuts
+#1000182393 - Murder a Courtier?
+
+#Civil War Events
+#1000182394-1000182424
+
+#Claims Events
+#1000182425-1000182426
+
+#Coronation Events
+#1000182427-1000182436
+
+#Character Decision Events
+#1000182437-1000182440
+
+#Trait Events
+#1000182441 - 1000182461
+
+#Faction court events
+#1000182462 - court faction - give prestige to liege
+#1000182463 - court faction - financial contribution to liege
+#1000182464 - demand lifetime appointments
+#1000182561 - Court faction - demand reduction in levies
+#1000182562 - Court faction - demand change in tax privileges
+
+
+#Faction events
+#1000182465 - Faction leader convenes a meeting
+#1000182466
+#1000182467
+#1000182468 - Regular meeting - setting the agenda
+#1000182469 - Angry meeting - setting the agenda
+#1000182470 Faction leader is ousted after losing a regular vote
+#1000182471
+#1000182472
+#1000182473
+#1000182474
+#1000182475
+#1000182476
+#1000182477
+#1000182478
+#1000182479
+#1000182480
+#1000182481 - Faction leader is ousted after wasting a meeting
+#1000182482 - Faction leader is ousted after showing cowardice
+#1000182483
+#1000182484
+#1000182485
+#1000182486
+#1000182487 - Agenda - strengthen self
+#1000182488 - Agenda - strengthen liege
+#1000182489 - Agenda - weaken liege
+#1000182490 - Agenda - make demand of liege
+#1000182491 - Great Speech
+#1000182492
+#1000182493 - Good speech
+#1000182494
+#1000182495 - Fair speech
+#1000182496
+#1000182497 - Bad speech
+#1000182498
+#1000182499 - Awful speech
+#1000182500
+#1000182501 - Faction leader wants money - result of the vote
+#1000182502 - Yes vote - notify
+#1000182503 - No vote - notify
+#1000182504 - Increased faction opinion of liege
+#1000182505
+#1000182506
+#1000182507- Slightly increased opinion of liege
+#1000182508
+#1000182509
+#1000182510 - Decreased faction opinion of liege
+#1000182511
+#1000182512
+#1000182513 - Faction leader wants money for liege - result of the vote
+#1000182514 - Yes vote - notify
+#1000182515 - No vote - notify
+#1000182516 - Faction leader wants show of support for liege - result of the vote
+#1000182517 - Yes vote - notify
+#1000182518 - No vote - notify
+#1000182519 - Decreased faction opinion of liege
+#1000182520
+#1000182521
+#1000182522 - Slightly decreased faction opinion of liege
+#1000182523
+#1000182524
+#1000182525 - Increased faction opinion of liege
+#1000182526
+#1000182527
+#1000182528 - Faction leader wants to declare war - results of the vote
+#1000182529 - Yes vote - notify
+#1000182530 - No vote - notify
+#1000182531 - Faction leader wants to demand lower CA - results of the vote
+#1000182532 - Yes vote - notify
+#1000182533 - No vote - notify
+#1000182534 - Faction leader wants to demand reduction of taxes - results of the vote
+#1000182535 - Yes vote - notify
+#1000182536 - No vote - notify
+#1000182537 - Faction leader wants to demand a change in tax privilege - results of the vote
+#1000182538 - Yes vote - notify
+#1000182539 - No vote - notify
+#1000182540 - Faction leader wants to demand a change in levy privilege - results of the vote
+#1000182541 - Yes vote - notify
+#1000182542 - No vote - notify
+#1000182543 - Faction leader wants to demand a change in council law - results of the vote
+#1000182544 - Yes vote - notify
+#1000182545 - No vote - notify
+#1000182546 - Oust faction leader
+#1000182547 - Results of the vote
+#1000182548 - Faction leader stepped down - notify members
+#1000182549 - Faction leader stepped down after vote - notify members
+#1000182550 - Faction leader defeated vote of no confidence - notify members
+#1000182551 - Faction member votes on whether to oust leader
+#1000182552 - Faction member votes on whether to give money to leader
+#1000182553 - Faction member votes on whether to give money to liege
+#1000182554 - Faction member votes on whether to show support for liege
+#1000182555 - Faction member votes on whether to declare war
+#1000182556 - Faction member votes on whether to demand reduced CA
+#1000182557 - Faction member votes on whether to demand reduced taxes
+#1000182558 - Faction member votes on whether to demand a change in tax privilege
+#1000182559 - Faction member votes on whether to demand change in levy privileges
+#1000182560 - Faction member votes on whether to demand change in council law
+
+#Neustria Rename (Normandy)
+#1000182563 - Renamed!
+
+#English Anarchy Special Events
+#1000182564 Claim distribution
+
+#Hellenic Holy Order Events
+#1000182565 Herculeans Founded
+#1000182566 Herculeans Notification
+#1000182567 Sacred Band Founded
+#1000182568 Sacred Band Notification
+#1000182573 Herculeans ask for land 
+#1000182574 Olympus Mons built
+
+#Norse Holy Order Events
+#1000182569 Bræðralag Founded
+#1000182570 Bræðralag Notification
+#1000182571 Úlfheðnar Founded
+#1000182572 Úlfheðnar Notification
+
+#Female Heir Events
+#1000182575 The Heir is Female
+#1000182576 Cleanup after 1000182575
+#1000182577 No sons, should we change our laws?
+#1000182578 Weirdness-proofing and notification for 1000182577
+#1000182579 make my vassals pledge allegiance to my daughter
+#1000182580 vassal is asked for his oath to the heiress
+#1000182581 Notify Acceptance
+#1000182582	Notify Refusal
+
+#Female Tournament Events
+#1000182583 Lady invited
+#1000182584 Champion ordered to represent his lady
+#1000182585 Champion killed
+#1000182586 Champion maimed
+#1000182587 Champion wounded
+#1000182588 Champion victorious
+#1000182589 Champion runner-up
+#1000182590 Champion third place
+#1000182591 Lady becomes proud
+#1000182592 Lady becomes humble
+#1000182593 Lady becomes gregarious
+#1000182594 Lady becomes shy
+#1000182595 Lady becomes honest
+#1000182596 Lady becomes deceitful
+#1000182597 Lady becomes lustful
+#1000182598 Lady becomes chaste
+#1000182599 Lady participant hears disparaging comments
+#1000182600 Lady is beauty queen
+#1000182601 Lady second place
+#1000182602 Lady third place
+#1000182603 Lady is jealous of one of the winners
+#1000182604 Notify winner
+#1000182605 Notify second place
+#1000182606 Notify third place
+#1000182607 Hidden event — male catches a lady's eye
+#1000182608 A knight catches your eye
+#1000182609 A lady shows you interest
+#1000182610 Cleanup event
+#1000182611 Start the Romance
+#1000182612 Rejected!
+#1000182613 Jousting with the lady's favour
+#1000182614 Dancing 
+#1000182615 Archery
+#1000182616 Knight humiliated
+#1000182617 Successful "date"
+#1000182618 Failed "date"
+#1000182619 Lady breaks things off
+#1000182620 A trip to her bedroom?
+#1000182621 Keep it up
+#1000182622 Knight breaks things off
+#1000182623 Nocturnal Gymnastics
+#1000182624 Romance continues
+#1000182625 Just friends
+#1000182626 Tournament ends
+
+#jordarkelf micromods
+#1000182627 Norman Conquest Cleanup
+#1000182628 Norman Conquest Cleanup 2
+#1000182629 War of Two Eriks Cleanup
+#1000182630 War of Two Eriks Cleanup 2
+
+#Female Tournament Events
+#1000182631 Tournament cancelled (for any reason)
+
+#Jewish maintenance
+#1000182632 - Yehudi trait check
+
+#Russian Melting Pot
+#1000182633 - The Russian Melting Pot
+#1000182634 - It's Spreading
+#1000182635 - Make my court speak Russian
+#1000182636 - Make my vassal speak Russian
+#1000182637 - Convert to Russian
+
+#The Schism Mended (Miaphysite)
+#1000182638 - The Great Schism Mended (Miaphysite resolution)
+#1000182639 - Mass Conversion Event
+#1000182640 - Antioch Restored to Miaphysite
+#1000182641 - Jerusalem Restored to Miaphysite
+#1000182642 - Alexandria Restored to Miaphysite
+#1000182643 - Constantinople Restored to Miaphysite
+#1000182644 - Rome Restored to Miaphysite
+
+#Jewish Money Lenders
+#1000182645 - Jewish Loan Reminder
+
+#Jewish Passover Planning Events
+#1000182646 - Notification for Planning
+#1000182647 - Plan set in motion
+
+#1000182651	- Wiz's Faction Events
+#	|
+#	V
+#1000182682
+
+#Naval Event Wiz
+#1000182683	- Storm!
+
+#Independence Events Wiz
+#1000182684	- Enclaved character declares independence
+#1000182685 - 
+
+#Magyar Conquest Chain
+#1000182686 - Post War clean-up
+
+#Italian Reconquest
+#1000182648 - Sicily falls to Heathens!
+#1000182649 - The pope has found his champions
+#1000182650 - The champions head out
+#1000182687 - The pope helps on the offensive!
+#1000182688 - The pope helps on the defensive!
+#1000182689 - The Champions head out, Italian (Narrative event)
+#1000182690 - The King of Sicily is Crowned Narrative event)
+#1000182691 - The Champions head out, Norse (Narrative event)
+#1000182692 - The Champions head out, Norman (Narrative event)
+#1000182693 - The Champions head out, Croatian (Narrative event)
+#1000182694 - The Champions head out, Serbian (Narrative event)
+#1000182695 - The Champions head out, Greek (Narrative event)
+#1000182696 - The King of Sicily is Crowned (Recipient)
+#1000182697 - The Invasion fails
+#1000182698 - Maintenance Check for Failed Invasion (landless or vassal invaders)
+#1000182699 - Maintenance Check, Start the invasion
+
+#Planning Ramadan
+#1000182700 - Plan Ramadan
+#1000182701 - Planned Ramadan Begins
+
+#Maintenance Event, Republic CA
+#1000182702 - Republic Crown Laws fix
+
+#Come out of hiding Maintenance Event
+#1000182703 - Family comes out of hiding
+
+#1000182704 - Grant Knighthood (Sir) - Not viable at the moment
+
+# Jewish Priesthood Event
+#1000182705 - The Priesthood Restored (Samaritan)
+
+# Grand Banquet Events
+#1000182706 - Word arrives of a Grand Banquet (Neighbours)
+#1000182707 - Word arrives of a Grand Banquet (Vassals)
+#1000182708 - The planning begins
+#1000182709 - Word arrives of a Grand Banquet (Current Heir)
+#1000182710 - Word arrives of a Grand Banquet (Lover)
+#1000182711 - Word arrives of a Grand Banquet (Friend)
+#1000182712 - Word arrives of a Grand Banquet (Neighbour's Spouse(s))
+#1000182713 - Word arrives of a Grand Banquet (Root's Siblings)
+#1000182714 - Word arrives of a Grand Banquet (Children's Spouses)
+
+#VIET Immersion Finnish Pagan Events 
+#1000182715 - Karsikko Markings
+#1000182716 - Bear Hunt start
+#1000182717 - The Journey
+#1000182718 - The Den
+#1000182719 - Convincing the Bear
+#1000182720 - Bear Arrives
+#1000182721 - Karhunpeijaiset
+#1000182722 - Bear Bones
+#1000182723 - End of Feast
+#1000182724 - Haltija
+#1000182725 - Remove Haltija
+#1000182726 - Haltija improve
+#1000182727 - Haltija get worse
+#1000182728 - Haltija need offering
+#1000182729 - Haltija offering
+#1000182730 - Haltija satisfied
+#1000182731 - Haltija neutral
+#1000182732 - Haltija not happy
+#1000182735 - Dead Unsatisfied
+#1000182736 - Display Bear Skull
+#1000182737 - Sex with the orphan?
+#1000182738 - Seducing the orphan
+#1000182739 - Holy Orphan
+#1000182740 - Warrior Orphan
+#1000182741 - Insult the orphan
+#1000182742 - Finding the orphan
+#1000182743 - Sympathy for the orphan
+#1000182744 - Befriending the orphan
+#1000182745 - Gift to orphan
+#1000182746 - Finding the orphan
+#1000182747 - Visiting the orphan
+#1000182748 - More orphan
+#1000182749 - Adopting the orphan
+
+#VIET Immersion Tengri/Finnic Shaman Events
+#1000182750 - namespaces shaman 1 - I need to consult the ancestors
+#1000182751 - shaman 2 - Consulting the Shaman
+#1000182752 - shaman 3 - Shamanic trance
+#1000182753 - shaman 4 - The Shaman's Journey
+#1000182754 - shaman 5 - The Shaman Returns
+#1000182755 - shaman 6 - Good Marriage
+#1000182756 - shaman 7 - Bad Marriage
+#1000182757 - shaman 8
+#1000182758 - shaman 9
+#1000182759 - shaman 10
+#1000182760 - shaman 11
+#1000182761 - shaman 12
+#1000182762 - shaman 13
+#1000182763 - shaman 14
+#1000182764 - shaman 15
+#1000182765 - shaman 16
+#1000182766 - shaman 17
+#1000182767 - shaman 18
+#1000182768 - shaman 19
+#1000182769 - shaman 20
+#1000182770 - shaman 21
+#1000182771 - shaman 22 -
+#1000182772 - shaman 23
+#1000182773 - shaman 24
+#1000182774 - shaman 25
+#1000182775 - shaman 26
+#1000182776 - shaman 27
+#1000182777 - shaman 28
+#1000182778 - shaman 29
+#1000182779 - shaman 30
+#1000182780 - shaman 31
+#1000182781 - shaman 32 - Shaman Finally Finished
+#1000182782 - shaman 33
+#1000182783 - shaman 34 - Shaman joins court
+#1000182784 - shaman 35 - You have no Shaman
+#1000182785 - shaman 36
+
+#Miscellaneous VIET Immersion
+#1000182786 - 4 Try to convert Jewish spouse (non-Jewish ruler/heir)
+#1000182787 - 5
+#1000182788 - 6
+#1000182789 - 7
+#1000182790 - 8
+#1000182791 - 9
+
+#VIET Immersion West Africa/Sahelian
+#1000182792 - 1 - Meeting the Griot
+#1000182793 - 2 - Griot needs wife
+#1000182794 - 3 - Griot finds wife
+#1000182795 - 4 - Needing a Griot
+#1000182796 - 5 - The Power of Nyama
+#1000182797 - 6 - An Iron Woman
+#1000182798 - 7 - Power
+#1000182799 - 8 - Wisdom
+#1000182800 - 9 - Community
+#1000182801 - 10 - I need Iron!
+#1000182802 - 11 - Descendant of Bilal
+#1000182803 - 12 - Muslim Realm
+#1000182804 - 13 - Descended from Great Men
+#1000182805 - 14 - Mysterious Great Man
+#1000182806 - 15
+#1000182807 - 16 - Great Performance
+#1000182808 - 17
+#1000182809 - 18
+#1000182810 - 19 - The Wicked Merchant
+#1000182811 - 20
+#1000182812 - 21
+#1000182813 - 22 - Fate
+#1000182814 - 23
+#1000182815 - 24 - Ouati and Kadi
+#1000182816 - 25 - 
+#1000182817 - 26 - The Evil that is Abu
+#1000182818 - 27
+#1000182819 - 28
+#1000182820 - 29 - Children's Stories
+#1000182821 - 30
+#1000182822 - 31
+#1000182823 - 32
+#1000182824 - 33 - Encore!
+#1000182825 - 34
+#1000182826 - 35 - Ali Ali
+#1000182827 - 36
+#1000182828 - 37 - The Griot's Power
+#1000182829 - 38
+#1000182830 - 39 - Great Performance
+#1000182831 - 40 - Knowing Everything
+#1000182832 - 41 - The Trickster
+#1000182833 - 42 - From Where?
+#1000182834 - 43 - And You
+#1000182835 - 44 - Whose Ancestor?
+#1000182836 - 45 - The Show Begins
+#1000182837 - 46 - Lion King
+#1000182838 - 47 - 
+#1000182839 - 48
+#1000182840 - 49
+#1000182841 - 50
+#1000182842 - 51
+#1000182843 - 52
+#1000182844 - 53
+#1000182845 - 54
+#1000182846 - 55
+#1000182847 - 56
+#1000182848 - 57
+#1000182849 - 58
+
+#1000182850 - Finnic ruler death
+#1000182851 - Third Temple fix
+
+#Maintenance Events
+#1000182852 - AI Mercenaries
+#1000182853 - Empire Crown Laws
+#1000182854 - AI Plot Check
+#1000182855 - Cancel AI plot if too few helpers and has taken too long
+#1000182856 - Allow AI plotting
+#1000182857 - Fix Laws if CA differs from max law level for the CA
+#1000182858 - Remove Tyrant Trait on non-rulers
+#1000182859 - Shatter Empire if too small
+#1000182860 - Remove Crowned by Pope if not the Kaiser
+#1000182861 - Inherit Half of Dishonourable and Tyrant
+#1000182862 - AI Spouse finder
+#1000182863 - Remove Claims
+#1000182864 - AI employs debutante
+#1000182865 - Remove just
+#1000182866 - Remove Loyalist
+#1000182867 - Remove Rebel and set opinion modifiers
+#1000182868 - Byzantium is reclaimed by an Orthodox ruler
+#1000182869 - Convert Latin Empire to Byzantine Empire if the holder is no longer Catholic
+#1000182870 - contingent territory flags
+#1000182871 - Contingent Territory Check Part 2
+#1000182872 - Independent Opinion Modifiers
+#1000182873 - Byzantium Auto-Destroy Mechanic
+#1000182874 - Non-Holy Order gain title
+#1000182875 - Vassalize the Knights Templar and Knights Hospitaler to the Kingdom of Jerusalem if held by a non-heretic Catholic
+	
+#Province Prosperity Events
+#1000182876 - Inadequate soil preparation
+#1000182877 - Poor seed selection hurts farming
+#1000182878 - Lack of manure hurts farming
+#1000182879 - Lower mean temperature hurts farming
+#1000182880 - Arable land deserted
+#1000182881 - Draining of marshes and fens
+#1000182882 - Resettlement on newly claimed land
+#1000182883 - Increased land productivity
+#1000182884 - Building sacked during siege
+#1000182885 - Destroy Random Building
+
+#Wiz Plot Events
+#1000182886 - Abduct Liege
+#1000182887 - SUCCESS - VICTIM IS NOTIFIED
+#1000182888 - FAILURE - VICTIM IS NOTIFIED
+#1000182889 - DISCREDIT COUNCILLOR
+#1000182890 - Success - notify victim
+#1000182891 - Success - notify plotter
+#1000182892 - Success - notify liege
+#1000182893 - Failure (not discovered) - notify victim
+#1000182894 - Failure (not discovered) - notify plotter
+#1000182895 - Failure (not discovered) - notify liege
+#1000182896 - Failure (discovered) - notify victim
+#1000182897 - Failure (discovered) - notify plotter
+#1000182898 - Failure (discovered) - notify liege
+#1000182899 - Embezzle
+#1000182901 - Success - notify victim
+#1000182902 - Success - notify plotter
+#1000182903 - Success - notify plot backers
+#1000182904 - Failure (discovered) - notify victim
+#1000182905 - Failure (discovered) - notify plotter
+#1000182906 - Instigate Revolt
+#1000182907 - Success - notify victim
+#1000182908 - Success - notify plotter
+#1000182909 - Success - notify liege
+#1000182910 - Failure (discovered) - notify victim
+#1000182911 - Failure (discovered) - notify plotter
+#1000182912 - Failure (discovered) - notify liege
+#1000182913 - Fabricate Evidence of Treason
+#1000182914 - Success - notify victim
+#1000182915 - Success - notify plotter
+#1000182916 - Success - notify liege
+#1000182917 - Failure (not discovered) - notify victim
+#1000182918 - Failure (not discovered) - notify plotter
+#1000182919 - Failure (not discovered) - notify liege
+#1000182920 - Failure (discovered) - notify victim
+#1000182921 - Failure (discovered) - notify plotter
+#1000182922 - Failure (discovered) - notify liege
+#1000182923 - Fabricate Evidence of Heresy
+#1000182924 - Success - notify victim
+#1000182925 - Success - notify plotter
+#1000182926 - Failure (not discovered) - notify victim
+#1000182927 - Failure (not discovered) - notify plotter
+#1000182928 - Failure (discovered) - notify victim
+#1000182929 - Failure (discovered) - notify plotter
+#1000182930 - Fabricate Evidence of Treason
+#1000182931 - Success - notify victim
+#1000182932 - Success - notify plotter
+#1000182933 - Failure (not discovered) - notify victim
+#1000182934 - Failure (not discovered) - notify plotter
+#1000182935 - Failure (discovered) - notify victim
+#1000182936 - Failure (discovered) - notify plotter
+
+#Faction Feudal Events
+#1000182937 - Princely faction - demand reduction in CA
+#1000182938 - Liege refuses to lower crown authority
+#1000182939 - Princely faction - grant liege extra levies for 5 years
+#1000182940 - Princely faction - financial contribution to liege
+#1000182941 - Princely faction - demand reduction in feudal taxes
+#1000182942 - Princely faction - demand reduction in feudal levies
+#1000182943 - Princely faction - demand change in tax privileges
+
+#Join/leave faction events
+#1000182944 - 
+#1000182945 - 
+#1000182946 - 
+#1000182947 - 
+#1000182948 - 
+
+#1000182949 - Pretender faction goes to war
+
+#Religious Faction Events
+#1000182950 - religious faction - demand reduction in CA
+#1000182951 - religious faction - give piety to liege
+#1000182952 - religious faction - financial contribution to liege
+#1000182953 - religious faction - demand reduction in temple taxes
+#1000182954 - Religious faction - demand reduction in levies
+#1000182955 - Religious faction - demand change in tax privileges
+
+#Republican Faction Events
+#1000182956 - Republican faction - demand reduction in CA
+#1000182957 - Republican faction - grant liege extra city taxes for 5 years
+#1000182958 - Republican faction - financial contribution to liege
+#1000182959 - Republican faction - demand reduction in city taxes
+#1000182960 - Republican faction - demand reduction in republican levies
+#1000182961 - Republican faction - demand change in tax privileges
+
+
+#1000182962 - Separatist faction goes to war
+
+#Lifestyle Events
+#1000182963 - Hunter
+#1000182964 - Falconer
+#1000182965 - Scholar
+#1000182966 - Mystic
+#1000182967 - Impaler
+#1000182968 - Gardener
+#1000182969 - Poet
+#1000182970 - Celibate
+#1000182971 - Hedonist
+#1000182972 - Duelist
+#1000182973 - Faqih
+
+#Genetics Events
+#1000182974 - newborn characters
+#1000182975 - Reduce fertility / change stats for older characters
+#1000182976 - 
+#1000182977 - 
+#1000182978 - 
+#1000182979 - 
+#1000182980 - 
+#1000182981 - 
+#1000182982 - 
+#1000182983 - 
+
+#CK2+ Jewish Events
+#1000182984 - Jewish community grows
+#1000182985 - 
+#1000182986 - 
+#1000182987 - 
+#1000182988 - 
+#1000182989 - 
+
+#1000182990 - Vanilla Aztecs
+
+#1000182991 - Start up events
+
+#1000182992 - Better Armies mode
+
+#1000182993 - Hardcore Mode
+
+#1000182994 - Hardcore Mode
+
+#1000182995 - I am your father, Muhammad
+
+#Succession Law Events
+#1000182996 - Liege calls vassals to succession law vote
+#1000182997 - Approve or disapprove Gavelkind
+#1000182998 - Approve or disapprove Primogeniture
+#1000182999 - Approve or disapprove Seniority
+#1000183000 - The law passes or is defeated
+#1000183001 - Notification - success
+#1000183002 - Notification - failure
+
+#Faction Maintenance Events
+#1000183003 - Faction Maintenance on Character Death
+#1000183004 - recalculate moods
+
+#1000183005 - Remove Papal Claims on children that have them, as well as those under the Papacy
+
+#Battle Ambition, Seduction Plot, Plot Reveal and Nickname Immersion stuff
+#1000183006 - 09019 0
+#1000183007 - 09044 1
+#1000183008 - 2
+#1000183009 - 3
+#1000183010 - 4
+#1000183011 - 5
+#1000183012 - 6
+#1000183013 - 7
+#1000183014 - 8
+#1000183015 - 9
+#1000183016 - 10
+#1000183017 - 11
+#1000183018 - 12
+#1000183019 - 13
+#1000183020 - 14
+#1000183021 - 0
+#1000183022 - 1
+#1000183023 - 2
+#1000183024 - 3
+#1000183025 - 4
+#1000183026 - 5
+#1000183027 - 6
+#1000183028 - 7
+#1000183029 - 8
+#1000183030 - 9
+#1000183031 - 10
+#1000183032 - 11
+#1000183033 - 12
+#1000183034 - 13
+#1000183035 - 0
+#1000183036 - 1
+#1000183037 - 2
+#1000183038 - 3
+#1000183039 - 4
+#1000183040 - 0
+#1000183041 - 1
+#1000183042 - 2
+#1000183043 - 3
+#1000183044 - 4
+#1000183045 - 5
+#1000183046 - 6
+#1000183047 - 7
+#1000183048 - 8
+#1000183049 - 9
+#1000183050 - 10
+#1000183051 - 11
+#1000183052 - 12
+#1000183053 - 13
+#1000183054 - 14
+#1000183055 - 15
+#1000183056 - 16
+#1000183057 - 17
+#1000183058 - 18
+#1000183059 - 19
+#1000183060 - 20
+
+#Jordarkelf's Events
+#1000183061 - unused
+#1000183062 - 2
+#1000183063 - 3
+#1000183064 - 4
+#1000183065 - 5
+
+#Narrative Immersion
+#1000183066 - 0
+#1000183067 - 1
+
+#Immersion Love
+#1000183068 - 1
+#1000183069 - 2
+#1000183070 - 3
+#1000183071 - 4
+#1000183072 - 5
+#1000183073 - 6
+#1000183074 - 7
+#1000183075 - 8
+#1000183076 - 9
+#1000183077 - 10
+#1000183078 - 11
+#1000183079 - 12
+
+#Assigning Crusader state titles
+#1000183080 - 204
+#1000183081 - 207
+
+#1000183082 - VIET INTRO
+
+#Jewish Events
+#1000183083 - 1
+#1000183084 - 2
+#1000183085 - 3
+#1000183086 - 4
+#1000183087 - 5
+#1000183088 - 6
+#1000183089 - 7
+#1000183090 - 8
+#1000183091 - 9
+#1000183092 - 10
+#1000183093 - 11
+#1000183094 - 12
+#1000183095 - 13
+#1000183096 - 14
+#1000183097 - 15
+#1000183098 - 16
+#1000183099 - 17
+#1000183100 - 18
+
+#Female Traits, etc
+#1000183101 - 1000183114
+
+#Passover
+#1000183115 - 0
+#1000183116 - 1
+#1000183117 - 2
+#1000183118 - 3
+#1000183119 - 4
+#1000183120 - 5
+#1000183121 - 6
+#1000183122 - 7
+#1000183123 - 8
+#1000183124 - 9
+#1000183125 - 10
+#1000183126 - 11
+#1000183127 - 12
+
+#Exilarch
+#1000183128 - 0
+#1000183129 - 1
+#1000183130 - 2
+#1000183131 - 4
+#1000183132 - 5
+#1000183133 - 6
+

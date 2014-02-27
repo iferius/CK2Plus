@@ -23,6 +23,7 @@ character_event = {
 		name = "EVTOPTA70000"
 		prestige = 50
 		set_character_flag = attending_tournament
+		set_character_flag = do_not_disturb
 	}
 	option = {
 		name = "EVTOPTB70000"
@@ -45,7 +46,48 @@ character_event = {
 		}
 		hidden_tooltip = {
 			set_character_flag = tournament_begins
-			set_character_flag = attending_tournament
+			IF = {
+				limit = {
+					OR = {
+						is_female = no
+						AND = {
+							martial = 15
+							trait = brave
+							OR = {
+								trait = misguided_warrior
+								trait = tough_soldier
+								trait = skilled_tactician
+								trait = brilliant_strategist
+								trait = shield_maiden
+								trait = martial_lady
+								trait = martial_lady_tengri
+							}
+						}
+					}
+				}
+				set_character_flag = attending_tournament
+			}
+			IF = {
+				limit = {
+					NOT = {
+						is_female = no
+						AND = {
+							martial = 15
+							trait = brave
+							OR = {
+								trait = misguided_warrior
+								trait = tough_soldier
+								trait = skilled_tactician
+								trait = brilliant_strategist
+								trait = shield_maiden
+								trait = martial_lady
+								trait = martial_lady_tengri
+							}
+						}
+					}
+				}
+				character_event = { id = 1000182583 }
+			}
 			location = {
 				set_province_flag = tournament_60_days
 			}
@@ -65,8 +107,15 @@ character_event = {
 				}
 				character_event = { id = 70037 }
 			}
+			any_realm_character = {
+				limit = {
+					has_character_flag = spectating_tournament
+				}
+				character_event = { id = 1000182631 }
+			}
 		}
 		clr_character_flag = epic_tournament
+		clr_character_flag = do_not_disturb
 		remove_character_modifier = holding_epic_tournament
 	}
 }
@@ -84,6 +133,7 @@ character_event = {
 		name = "EVTOPTA70037"
 		prestige = -50
 		clr_character_flag = attending_tournament
+		clr_character_flag = do_not_disturb
 	}
 }
 
@@ -187,6 +237,9 @@ province_event = {
 				has_character_flag = winner
 				has_character_flag = second_place
 				has_character_flag = third_place
+				has_character_flag = beauty_winner
+				has_character_flag = beauty_second
+				has_character_flag = beauty_third
 			}
 		}
 	}
@@ -207,7 +260,7 @@ province_event = {
 				text = COURTFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_court" value = 2 }
 			}
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			remove_character_modifier = holding_epic_tournament
 			clr_character_flag = tournament_begins
 			clr_character_flag = winner
@@ -215,9 +268,13 @@ province_event = {
 			clr_character_flag = third_place
 			clr_character_flag = attending_tournament
 			clr_character_flag = attending_tournament_event
+			clr_character_flag = do_not_disturb
 			clr_character_flag = tournament_third_place
 			clr_character_flag = tournament_second_place
 			clr_character_flag = tournament_winner
+			clr_character_flag = beauty_winner
+			clr_character_flag = beauty_second
+			clr_character_flag = beauty_third
 			set_character_flag = tournament_has_ended
 			any_realm_character = {
 				limit = {
@@ -239,6 +296,7 @@ province_event = {
 				}
 				clr_character_flag = attending_tournament
 				clr_character_flag = attending_tournament_event
+				clr_character_flag = do_not_disturb
 			}
 			any_realm_character = {
 				limit = {
@@ -286,6 +344,16 @@ province_event = {
 				set_character_flag = tournament_has_ended
 				clr_character_flag = attending_tournament
 				clr_character_flag = attending_tournament_event
+				clr_character_flag = do_not_disturb
+			}
+			any_realm_character = {
+				limit = {
+					has_character_flag = spectating_tournament
+					NOT = {
+						character = PREV
+					}
+				}
+				character_event = { id = 1000182626 }
 			}
 		}
 	}
@@ -389,7 +457,7 @@ character_event = {
 	picture = "GFX_evt_death"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -504,6 +572,7 @@ character_event = {
 
 	immediate = {
 		clr_character_flag = attending_tournament
+		clr_character_flag = championing_liege_lady
 	}
 
 	option = {
@@ -523,6 +592,12 @@ character_event = {
 				top_liege = { character_event = { id = 70038 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182585 } }
+			}
+		}
 	}
 }
 
@@ -534,7 +609,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -652,6 +727,8 @@ character_event = {
 
 	immediate = {
 		clr_character_flag = attending_tournament
+		clr_character_flag = do_not_disturb
+		clr_character_flag = championing_liege_lady
 	}
 
 	option = {
@@ -669,6 +746,12 @@ character_event = {
 				top_liege = { character_event = { id = 70039 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182586 } }
+			}
+		}
 	}
 }
 
@@ -680,7 +763,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -815,6 +898,13 @@ character_event = {
 				top_liege = { character_event = { id = 70040 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182587 } }
+				clr_character_flag = championing_liege_lady
+			}
+		}
 	}
 }
 
@@ -826,7 +916,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -949,7 +1039,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1072,7 +1162,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1114,7 +1204,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1156,7 +1246,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1198,7 +1288,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1240,7 +1330,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1282,7 +1372,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1324,7 +1414,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1482,6 +1572,13 @@ character_event = {
 				top_liege = { character_event = { id = 70034 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182588 } }
+				clr_character_flag = championing_liege_lady
+			}
+		}
 	}
 }
 
@@ -1512,7 +1609,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1670,6 +1767,13 @@ character_event = {
 				top_liege = { character_event = { id = 70035 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182589 } }
+				clr_character_flag = championing_liege_lady
+			}
+		}
 	}
 }
 
@@ -1700,7 +1804,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1859,6 +1963,13 @@ character_event = {
 				top_liege = { character_event = { id = 70036 } }
 			}
 		}
+		hidden_tooltip = {
+			if = {
+				limit = { has_character_flag = championing_liege_lady }
+				liege = { character_event = { id = 1000182590 } }
+				clr_character_flag = championing_liege_lady
+			}
+		}
 	}
 }
 
@@ -1889,7 +2000,7 @@ character_event = {
 	picture = "GFX_evt_shadowy_cabal"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1944,7 +2055,7 @@ character_event = {
 	}
 }
 
-# Character becomes syphilitic
+# Character becomes gonorrhea
 character_event = {
 	id = 70024
 	title = "TOURNAMENTTITLE"
@@ -1952,7 +2063,7 @@ character_event = {
 	picture = "GFX_evt_lovers"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1963,7 +2074,7 @@ character_event = {
 		}
 		NOT = { has_character_flag = attending_tournament_event }
 		NOT = {
-			trait = syphilitic
+			trait = gonorrhea
 			trait = celibate
 		}
 		NOT = { trait = eunuch }
@@ -2003,7 +2114,7 @@ character_event = {
 
 	option = {
 		name = "EVTOPTA70024"
-		add_trait = syphilitic
+		add_trait = gonorrhea
 	}
 }
 
@@ -2015,7 +2126,7 @@ character_event = {
 	picture = "GFX_evt_drunk"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2068,7 +2179,7 @@ character_event = {
 	picture = "GFX_evt_melee"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2138,7 +2249,7 @@ character_event = {
 	picture = "GFX_evt_whispers"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2217,7 +2328,7 @@ character_event = {
 	picture = "GFX_evt_whispers"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2296,7 +2407,7 @@ character_event = {
 	picture = "GFX_evt_market"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2375,7 +2486,7 @@ character_event = {
 	picture = "GFX_evt_market"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2454,7 +2565,7 @@ character_event = {
 	picture = "GFX_evt_council"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2533,7 +2644,7 @@ character_event = {
 	picture = "GFX_evt_council"
 
 	min_age = 16
-	only_men = yes
+	#only_men = yes
 	capable_only = yes
 	prisoner = no
 
@@ -2637,11 +2748,13 @@ character_event = {
 		clr_character_flag = winner
 		clr_character_flag = second_place
 		clr_character_flag = third_place
+		clr_character_flag = spectating_tournament
 		clr_character_flag = attending_tournament
 		clr_character_flag = attending_tournament_event
 		clr_character_flag = tournament_third_place
 		clr_character_flag = tournament_second_place
 		clr_character_flag = tournament_winner
+		clr_character_flag = do_not_disturb
 		any_vassal = {
 			limit = {
 				has_character_flag = attending_tournament
@@ -2661,6 +2774,7 @@ character_event = {
 			set_character_flag = tournament_has_ended
 			clr_character_flag = attending_tournament
 			clr_character_flag = attending_tournament_event
+			clr_character_flag = do_not_disturb
 			letter_event = {
 				id = 70042
 				days = 2
@@ -2689,6 +2803,13 @@ character_event = {
 			clr_character_flag = tournament_winner
 			clr_character_flag = attending_tournament
 			clr_character_flag = attending_tournament_event
+			clr_character_flag = do_not_disturb
+		}
+		any_vassal = {
+			limit = {
+				has_character_flag = spectating_tournament
+			}
+			character_event = { id = 1000182631 }
 		}
 	}
 }

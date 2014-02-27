@@ -10,7 +10,7 @@
 # and Chris King
 # and Henrik Eklund
 
-#Syphilitic
+#gonorrhea
 character_event = {
 	id = 6000
 	desc = EVTDESC6000
@@ -22,7 +22,7 @@ character_event = {
 	trigger = {
 		NOT = { trait = immortal }
 		NOT = {
-			trait = syphilitic
+			trait = gonorrhea
 		}
 		NOT = {
 			trait = celibate
@@ -35,7 +35,7 @@ character_event = {
 			spouse = {
 				is_alive = yes
 				is_abroad = no
-				trait = syphilitic
+				trait = gonorrhea
 			}
 		}
 		OR = {
@@ -47,7 +47,7 @@ character_event = {
 			spouse = {
 				is_alive = yes
 				is_abroad = no
-				trait = syphilitic
+				trait = gonorrhea
 			}
 		}
 	}
@@ -60,7 +60,7 @@ character_event = {
 			spouse = {
 				is_alive = yes
 				is_abroad = no
-				trait = syphilitic
+				trait = gonorrhea
 			}
 		}
 		modifier = {
@@ -68,7 +68,7 @@ character_event = {
 			lover = {
 				is_alive = yes
 				is_abroad = no
-				trait = syphilitic
+				trait = gonorrhea
 			}
 		}
 		modifier = {
@@ -107,11 +107,11 @@ character_event = {
 
 	option = {
 		name = EVTOPTA6000
-		add_trait = syphilitic
+		add_trait = gonorrhea
 	}
 }
 
-#Remove Syphilitic
+#Remove gonorrhea
 character_event = {
 	id = 6001
 	desc = EVTDESC6001
@@ -119,7 +119,7 @@ character_event = {
 
 	trigger = {
 		health = 6
-		trait = syphilitic
+		trait = gonorrhea
 	}
 
 	mean_time_to_happen = {
@@ -137,7 +137,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA6001
-		remove_trait = syphilitic
+		remove_trait = gonorrhea
 	}
 }
 
@@ -292,7 +292,7 @@ character_event = {
 	trigger = {
 		health = 4
 		trait = lunatic
-		NOT = { trait = syphilitic }
+		NOT = { trait = gonorrhea }
 		religion_group = muslim
 	}
 
@@ -455,7 +455,7 @@ character_event = {
 character_event = {
 	id = 6040
 	desc = EVTDESC6040
-	picture = GFX_evt_lunatic
+	picture = GFX_evt_bad_news
 
 	min_age = 16
 
@@ -564,7 +564,7 @@ character_event = {
 character_event = {
 	id = 6050
 	desc = EVTDESC6050
-	picture = GFX_evt_lunatic
+	picture = GFX_evt_bad_news
 
 	min_age = 10
 
@@ -814,43 +814,41 @@ character_event = {
 	}
 }
 
-#Ill, commanding troops not in battle
-#character_event = {
-#	id = 6062
-#	desc = EVTDESC6062
-#	picture = GFX_evt_illness
-#
-#	prisoner = no
-#	capable_only = yes
-#
-#	is_triggered_only = yes
-#
-#	trigger = {
-#		is_ill = yes
-#		in_command = yes
-#	}
-#
-#	mean_time_to_happen = {
-#		days = 1
-#
-#		modifier = {
-#			factor = 0.3
-#			trait = brave
-#		}
-#		modifier = {
-#			factor = 3
-#			trait = craven
-#		}
-#	}
-#
-#	option = {
-#		name = EVTOPTA6062
-#		morale = -0.1
-#	}
-#	option = {
-#		name = EVTOPTB6062
-#	}
-#}
+#Remove Sickly
+character_event = {
+	id = 6062
+	desc = EVTDESC6062
+	picture = GFX_evt_child_play
+	
+	max_age = 7
+	
+	trigger = {
+		trait = sickly
+		age = 2
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+		
+		modifier = {
+			factor = 0.5
+			age = 3
+		}
+		modifier = {
+			factor = 0.5
+			age = 4
+		}
+		modifier = {
+			factor = 0.01
+			age = 5
+		}
+	}
+	
+	option = {
+		name = EVTOPTA6062
+		remove_trait = sickly
+	}
+}
 
 #Pneumonic
 character_event = {
@@ -1074,7 +1072,14 @@ character_event = {
 			random = 33
 		}
 		remove_trait = wounded
-		add_trait = scarred
+		IF = {
+			limit = { is_female = no }
+			add_trait = scarred
+		}
+		IF = {
+			limit = { is_female = yes }
+			add_trait = scarred_female
+		}
 	}
 	option = {
 		name = EVTOPTA6081
@@ -1145,7 +1150,14 @@ character_event = {
 	option = {
 		name = EVTOPTA20033
 		remove_trait = maimed
-		add_trait = scarred
+		IF = {
+			limit = { is_female = no }
+			add_trait = scarred
+		}
+		IF = {
+			limit = { is_female = yes }
+			add_trait = scarred_female
+		}
 	}
 }
 
@@ -1867,7 +1879,7 @@ character_event = {
 character_event = {
 	id = 6201
 	desc = EVTDESC6201
-	picture = GFX_evt_carriage
+	picture = GFX_evt_stone_church
 
 	min_age = 16
 
@@ -2044,7 +2056,7 @@ character_event = {
 character_event = {
 	id = 6208
 	desc = EVTDESC6208
-	picture = GFX_evt_drunk
+	picture = GFX_evt_garden
 	min_age = 16
 
 	trigger = {
@@ -2205,7 +2217,7 @@ character_event = {
 character_event = {
 	id = 6215
 	desc = EVTDESC6215
-	picture = GFX_evt_illness
+	picture = GFX_evt_garden
 	min_age = 16
 
 	trigger = {
@@ -2230,7 +2242,7 @@ character_event = {
 character_event = {
 	id = 6216
 	desc = EVTDESC6216
-	picture = GFX_evt_illness
+	picture = GFX_evt_garden
 	min_age = 16
 
 	trigger = {
@@ -2252,7 +2264,7 @@ character_event = {
 character_event = {
 	id = 6217
 	desc = EVTDESC6217
-	picture = GFX_evt_illness
+	picture = GFX_evt_garden
 	min_age = 16
 
 	trigger = {

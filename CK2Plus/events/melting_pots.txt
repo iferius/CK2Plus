@@ -2136,7 +2136,7 @@ character_event = {
 	picture = GFX_evt_throne_room
 
 	trigger = {
-		year = 1100
+		has_global_flag = christian_crusades_unlocked
 		NOT = { culture = outremer }
 		NOT = { culture_group = arabic }
 		OR = {
@@ -2151,13 +2151,16 @@ character_event = {
 			}
 		}
 		OR = {
-			religion = catholic
-			is_heresy_of = catholic
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 120
+		months = 500
 		modifier = {
 			factor = 0.01
 			independent = no
@@ -2281,7 +2284,7 @@ character_event = {
 	picture = GFX_evt_throne_room
 
 	trigger = {
-		year = 1100
+		has_global_flag = christian_crusades_unlocked
 		OR = {
 			independent = yes
 			top_liege = { culture = outremer }
@@ -2295,7 +2298,10 @@ character_event = {
 		}
 		OR = {
 			religion = catholic
-			is_heresy_of = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
 		}
 		any_courtier = {
 			NOT = { culture = outremer }
@@ -2304,7 +2310,10 @@ character_event = {
 			prisoner = no
 			OR = {
 				religion = catholic
-				is_heresy_of = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
 			}
 			location = {
 				OR = {
@@ -2338,7 +2347,10 @@ character_event = {
 				prisoner = no
 				OR = {
 					religion = catholic
-					is_heresy_of = catholic
+					religion = cathar
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
 				}
 				location = {
 					OR = {
@@ -2376,7 +2388,7 @@ character_event = {
 	picture = GFX_evt_throne_room
 
 	trigger = {
-		year = 1100
+		has_global_flag = christian_crusades_unlocked
 		NOT = { culture = latin }
 		NOT = { culture_group = byzantine }
 		OR = {
@@ -2389,23 +2401,18 @@ character_event = {
 		}
 		OR = {
 			religion = catholic
-			is_heresy_of = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
 		}
 	}
 
 	mean_time_to_happen = {
-		months = 120
+		months = 500
 		modifier = {
 			factor = 0.01
 			independent = no
-		}
-		modifier = {
-			factor = 0.5
-			year = 1150
-		}
-		modifier = {
-			factor = 0.5
-			year = 1200
 		}
 		modifier = {
 			factor = 1.05
@@ -2518,7 +2525,7 @@ character_event = {
 	picture = GFX_evt_throne_room
 
 	trigger = {
-		year = 1100
+		has_global_flag = christian_crusades_unlocked
 		OR = {
 			independent = yes
 			top_liege = { culture = latin }
@@ -2529,7 +2536,10 @@ character_event = {
 		}
 		OR = {
 			religion = catholic
-			is_heresy_of = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
 		}
 		any_courtier = {
 			NOT = { culture = latin }
@@ -2538,7 +2548,10 @@ character_event = {
 			prisoner = no
 			OR = {
 				religion = catholic
-				is_heresy_of = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
 			}
 			location = {
 				culture = greek
@@ -2569,7 +2582,10 @@ character_event = {
 				prisoner = no
 				OR = {
 					religion = catholic
-					is_heresy_of = catholic
+					religion = cathar
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
 				}
 				location = {
 					culture = greek
@@ -2958,5 +2974,539 @@ character_event = {
 	option = {
 		name = "OK"
 		culture = gallawa
+	}
+}
+
+# The Russian Melting Pot
+character_event = {
+	id = 1000182633
+	desc = "EVTDESC1000182633"
+	picture = GFX_evt_throne_room
+
+	trigger = {
+		NOT = { has_global_flag = russian_melting_pot } # No need to check on dates after historic Russian rise
+		OR = {
+			independent = yes
+			top_liege = { culture = russian }
+		}
+		AND = {
+			culture_group = east_slavic
+			NOT = { culture = russian }
+		}
+		OR = {
+			capital_scope = {
+				kingdom = { title = k_rus }
+			} 
+			capital_scope = {
+				kingdom = { title = k_novgorod }
+			}  
+			capital_scope = {
+				kingdom = { title = k_muscovy }
+			}
+			capital_scope = {
+				empire = { title = e_russia }
+			}
+		}
+		OR = {
+			any_demesne_province = {
+				kingdom = {
+					title = k_rus
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			}
+			any_demesne_province = {
+				kingdom = {
+					title = k_novgorod
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			} 
+			any_demesne_province = {
+				kingdom = {
+					title = k_muscovy
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			}
+			any_demesne_province = {
+				empire = {
+					title = e_russia
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.01
+			independent = no
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	option = {
+		name = "EVTOPTA1000182633"
+		culture = russian
+		random_demesne_province = {
+			limit = {
+				OR = {
+					kingdom = {
+						title = k_rus
+					}  
+					kingdom = {
+						title = k_novgorod
+					} 
+					kingdom = {
+						title = k_muscovy
+					}
+					empire = {
+						title = e_russia
+					}
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			}
+			culture = russian
+			set_province_flag = melting_pot
+		}
+	}
+}
+
+# It's spreading
+character_event = {
+	id = 1000182634
+	desc = "EVTDESC1000182634"
+	picture = GFX_evt_throne_room
+
+	trigger = {
+		NOT = { has_global_flag = russian_melting_pot }
+		any_demesne_province = {
+			OR = {
+				kingdom = {
+					title = k_rus
+				} 
+				kingdom = {
+					title = k_novgorod
+				}
+				kingdom = {
+					title = k_muscovy
+				}
+				empire = {
+					title = e_russia
+				}
+			}
+			OR = {
+				AND = {
+					culture_group = east_slavic
+					NOT = { culture = russian }
+				}
+				culture = norse
+			}
+			OR = {
+				AND = {
+					any_neighbor_province = { has_owner = yes culture = russian }
+					ROOT = { top_liege = { culture = russian } }
+				}
+				ROOT = {
+					culture = russian
+					OR = {
+						independent = yes
+						top_liege = { culture = russian }
+					}
+					OR = {
+						capital_scope = {
+							kingdom = { title = k_rus }
+						}
+						capital_scope = {
+							kingdom = { title = k_novgorod }
+						}
+						capital_scope = {
+							kingdom = { title = k_muscovy }
+						}
+						capital_scope = {
+							empire = { title = e_russia }
+						}
+					}
+				}
+			}
+			NOT = { has_province_flag = melting_pot }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 140
+	}
+
+	option = {
+		name = "EVTOPTA1000182634"
+		random_demesne_province = {
+			limit = {
+				OR = {
+					kingdom = {
+						title = k_rus
+					}
+					kingdom = {
+						title = k_novgorod
+					}
+					kingdom = {
+						title = k_muscovy
+					}
+					empire = {
+						title = e_russia
+					}
+				}
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+				OR = {
+					AND = {
+						any_neighbor_province = { has_owner = yes  culture = russian }
+						ROOT = { top_liege = { culture = russian } }
+					}
+					ROOT = {
+						culture = russian
+						OR = {
+							independent = yes
+							top_liege = { culture = russian }
+						}
+						OR = {
+							capital_scope = {
+								kingdom = { title = k_rus }
+							} 
+							capital_scope = {
+								kingdom = { title = k_novgorod }
+							}
+							capital_scope = {
+								kingdom = { title = k_muscovy }
+							}
+							capital_scope = {
+								empire = { title = e_russia }
+							}
+						}
+					}
+				}
+				NOT = { has_province_flag = melting_pot }
+			}
+			culture = russian
+			set_province_flag = melting_pot
+			hidden_tooltip = {
+				ROOT = {
+					set_character_flag = civilized_province
+				}
+			}
+		}
+	}
+}
+
+#Make my court speak Russian
+character_event = {
+	id = 1000182635
+	desc = "EVTDESC1000182635"
+	picture = GFX_evt_throne_room
+
+	trigger = {
+		NOT = { has_global_flag = russian_melting_pot }
+		culture = russian
+		OR = {
+			independent = yes
+			top_liege = { culture = russian }
+		}
+		OR = {
+			capital_scope = {
+				kingdom = { title = k_rus }
+			}
+			capital_scope = {
+				kingdom = { title = k_novgorod }
+			} 
+			capital_scope = {
+				kingdom = { title = k_muscovy }
+			}
+			capital_scope = {
+				empire = { title = e_russia }
+			}
+		}
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				AND = {
+					culture_group = east_slavic
+					NOT = { culture = russian }
+				}
+				culture = norse
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 80
+	}
+
+	option = {
+		name = "EVTOPTA1000182635"
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+			}
+			culture = russian
+			hidden_tooltip = {
+				character_event = { id = 1000182637 days = 3 }
+			}
+		}
+	}
+}
+
+#Make my vassal speak Russian
+character_event = {
+	id = 1000182636
+	desc = "EVTDESC1000182636"
+	picture = GFX_evt_throne_room
+
+	trigger = {
+		NOT = { has_global_flag = russian_melting_pot }
+
+		OR = {
+			independent = yes
+			top_liege = { culture = russian }
+		}
+		OR = {
+			capital_scope = {
+				kingdom = { title = k_rus }
+			}
+			capital_scope = {
+				kingdom = { title = k_novgorod }
+			}
+			capital_scope = {
+				kingdom = { title = k_muscovy }
+			}
+			capital_scope = {
+				empire = { title = e_russia }
+			}
+		}
+		any_vassal = {
+			OR = {
+				AND = {
+					culture_group = east_slavic
+					NOT = { culture = russian }
+				}
+				culture = norse
+			}
+			OR = {
+				any_demesne_province = {
+					kingdom = {
+						title = k_rus
+					}
+				}
+				any_demesne_province = {
+					kingdom = {
+						title = k_novgorod
+					}
+				}
+				any_demesne_province = {
+					kingdom = {
+						title = k_muscovy
+					}
+				}
+				any_demesne_province = {
+					empire = {
+						title = e_russia
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 140
+	}
+
+	option = {
+		name = "EVTOPTA1000182636"
+		random_vassal = {
+			limit = {
+				OR = {
+					AND = {
+						culture_group = east_slavic
+						NOT = { culture = russian }
+					}
+					culture = norse
+				}
+				OR = {
+					any_demesne_province = {
+						kingdom = {
+							title = k_rus
+						}
+					}
+					any_demesne_province = {
+						kingdom = {
+							title = k_novgorod
+						}
+					}
+					any_demesne_province = {
+						kingdom = {
+							title = k_muscovy
+						}
+					}
+					any_demesne_province = {
+						empire = {
+							title = e_russia
+						}
+					}
+				}
+			}
+			culture = russian
+			hidden_tooltip = {
+				character_event = { id = 1000182637 days = 3 }
+			}
+		}
+	}
+}
+# Convert to Russian
+character_event = {
+	id = 1000182637
+	desc = "EVTDESC1000182637"
+	picture = GFX_evt_throne_room
+
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA1000182637"
+		culture = russian
 	}
 }

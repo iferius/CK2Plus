@@ -426,7 +426,6 @@ character_event = {
 			is_abroad = no
 			prisoner = no
 			NOT = { trait = incapable }
-			prisoner = no
 		}
 		war = no
 		in_command = no
@@ -853,7 +852,7 @@ character_event = { # Wife is insecure about husband's attention to concubines
 	trigger = {
 		NOT = { trait = homosexual }
 		spouse = {
-			has_lover = NO
+			has_lover = no
 		}	
 		OR = {
 			AND = {
@@ -1029,7 +1028,7 @@ character_event = { # Man falls out of love with concubine, and into love with s
 			character_event = { id = 64200 days = 4 }
 			if = {
 				limit = {
-					has_lover = YES
+					has_lover = yes
 				}
 				character_event = {
 					id = 64045
@@ -1193,7 +1192,7 @@ character_event = { # Wife unhappy that primary heir is the child of a concubine
 	prisoner = no
 	is_female = yes
 	num_of_children = 1
-	age = 16
+	is_adult = yes
 	is_married = yes
 	
 	trigger = {
@@ -1913,16 +1912,15 @@ character_event = { #Courtier 'helps out'  liege's spiteful wife
 	desc = "EVTDESC1000150034"
 	picture = GFX_evt_lovers
 	
-	is_female = NO
-	is_ruler = NO
-	has_lover = NO
+	only_men = yes
+	has_lover = no
 	
 	trigger = {
 		NOT = { trait = homosexual }
 		NOT = { trait = infirm }
 		NOT = { trait = incapable }
 		NOT = { trait = celibate }
-		is_female = NO
+		is_female = no
 		liege = {
 			is_married = yes
 			opinion = { who = ROOT value = -25 }
@@ -1940,7 +1938,7 @@ character_event = { #Courtier 'helps out'  liege's spiteful wife
 				NOT = { opinion = { who = PREV value = -25 } }
 			}
 			any_consort = {
-				is_alive = YES
+				is_alive = yes
 			}
 			religion_group = pagan_group
 		}
@@ -2079,14 +2077,6 @@ character_event = { #Courtier 'helps out'  liege's spiteful wife
 		modifier = {
 			factor = 2.0
 			trait = chaste
-		}
-		modifier = {
-			factor = 2.0
-			liege = {
-				spouse = {
-					trait = chaste
-				}
-			}
 		}
 		modifier = {
 			factor = 2.0

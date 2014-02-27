@@ -44,7 +44,7 @@ d_sunni_cuman_company = {
 		OR = {
 			religion_group = muslim
 			religion_group = zoroastrian_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -191,7 +191,7 @@ d_shiite_cuman_company = {
 		OR = {
 			religion_group = muslim
 			religion_group = zoroastrian_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -662,8 +662,11 @@ d_victual_brothers = {
 		#ai = no
 		OR = {
 			religion = norse_pagan
+			religion = norse_pagan_reformed
 			religion = baltic_pagan
+			religion = baltic_pagan_reformed
 			religion = finnish_pagan
+			religion = finnish_pagan_reformed
 			religion_group = christian
 		}
 	}
@@ -695,6 +698,8 @@ d_victual_brothers = {
 d_varangian_guard = {
 	color={ 180 180 180 }
 	color2={ 255 255 255 }
+	
+	graphical_culture = orthodoxholygfx
 
 	capital = 290 # Uppland
 
@@ -735,7 +740,7 @@ d_cuman_company = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -775,7 +780,7 @@ d_rus_company = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -817,7 +822,7 @@ d_pecheneg_company = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -856,7 +861,7 @@ d_bulgarian_company = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -895,7 +900,7 @@ d_turkic_company = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1114,7 +1119,7 @@ d_cuman_band = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1151,7 +1156,7 @@ d_rus_band = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1193,7 +1198,7 @@ d_pecheneg_band = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1233,7 +1238,7 @@ d_bulgarian_band = {
 			religion_group = christian
 			religion_group = pagan_group
 
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1273,7 +1278,7 @@ d_turkic_band = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1301,6 +1306,8 @@ d_turkic_band = {
 d_mamluks = {
 	color={ 80 160 80 }
 	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
 
 	capital = 796 # Cairo
 
@@ -1334,6 +1341,8 @@ d_mamluks = {
 d_ghilman = {
 	color={ 60 165 80 }
 	color2={ 255 255 255 }
+	
+	graphical_culture = bektashigfx
 
 	capital = 627 # Kara-Kum
 
@@ -1551,7 +1560,7 @@ d_brotherhood_of_the_shield = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1665,7 +1674,7 @@ d_lost_company = {
 			religion_group = pagan_group
 			religion = orthodox
 			religion_group = muslim
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1704,7 +1713,7 @@ d_foresters = {
 		#ai = no
 		OR = {
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1745,7 +1754,7 @@ d_genovese_crossbow_contingent = {
 			religion_group = christian
 			religion_group = pagan_group
 			religion = orthodox
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1786,7 +1795,7 @@ d_ventura_company = {
 			religion_group = christian
 			religion_group = pagan_group
 			religion = orthodox
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -1825,7 +1834,7 @@ d_band_of_the_broken_arrow = {
 		#ai = no
 		OR = {
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion_group = muslim
 			religion_group = zoroastrian_group
 			religion = orthodox
@@ -2055,7 +2064,7 @@ d_guilded_daggers = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 			religion = zoroastrian
@@ -2098,7 +2107,7 @@ d_roaming_regiment = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2139,7 +2148,7 @@ d_honorable_exiles = {
 		#ai = no
 		OR = {
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 		}
 	}
@@ -2291,7 +2300,7 @@ d_venetian_transport_fleet = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2333,7 +2342,7 @@ d_venetian_transport_convoy = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2375,7 +2384,7 @@ d_genovese_transport_fleet = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2417,7 +2426,7 @@ d_genovese_transport_convoy = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2459,7 +2468,7 @@ d_baltic_transport_fleet = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2501,7 +2510,7 @@ d_baltic_transport_convoy = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2543,7 +2552,7 @@ d_black_sea_merchant_convoy = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2585,7 +2594,7 @@ d_eastern_merchant_convoy = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 			religion = orthodox
 			religion_group = muslim
 		}
@@ -2627,7 +2636,7 @@ d_rus_legion = {
 		OR = {
 			religion_group = christian
 			religion_group = pagan_group
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -2999,7 +3008,7 @@ d_canarias_raiders = {
 			religion_group = pagan_group
 			religion = orthodox
 			religion_group = muslim
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 	}
 
@@ -3265,7 +3274,7 @@ d_jolof_band = {
 	color = { 135 170 60 }
 	color2 = { 255 255 255 }
 
-	capital = 937 # Cayor
+	capital = 1040 # Cayor
 
 	# Hire Trigger
 	allow = {
@@ -3337,4 +3346,31 @@ d_jolof_company = {
 	independent = yes
 
 	modifier = d_jolof_company_modifier
+}
+
+d_papal_knights = {
+	color = { 130 173 70 }
+	color2 = { 255 255 255 }
+
+	capital = 333 # Rome
+	culture = frankish
+	religion = catholic
+		
+	mercenary = yes
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Cannot be vassalized
+	independent = yes
+
+	strength_growth_per_century = 1.00
+	
+	modifier = d_papal_knights_modifier
 }

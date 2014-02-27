@@ -1,5 +1,393 @@
-2.05.0
+﻿2.7.1
 Major Additions:
+
+Minor Additions:
+- Added mercenaries for Alternate Bookmarks. Additionally removed most of the normal mercs from RotA/AND.
+- Added many new ideas to the EU4 Converter, courtesy of the MEIOU and Taxes team. In addition many previously available ones have been assigned to logical counterparts.
+
+Tweaks:
+- Slightly increased supply limits globally
+- You may now only donate once per lifetime to holy orders via decision
+- It is now possible for depressed AI characters to commit suicide on a very low chance
+- You can no longer borrow money from Holy Orders
+- If you decide to keep the lands of a crusade, you no longer gain the holy truce timer. Instead you are simply immune to crusades and holy wars for 10 years
+- 4th Crusade now triggers off of the Pope having the Wicked Priest trait, instead of other traits
+- Various Mesopotamian and Jerusalem provinces have been adjusted to be plains rather than desert (to represent the fertile crescent)
+- The trade post burning event chain bribe now scales based on whether you are the leader of the republic
+
+Fixes:
+- The Kingdom/Republic of Rome now displays as such instead of "The Rome"
+- You can no longer pick incorrect inheritance laws
+- Players can no longer build order houses
+- Holy Orders can no longer donate to themselves
+- Several history only titles have been locked out of random characters
+- There will no longer be an army of Smiths leftover in the old lands of the Magyar
+- The Magyar should no longer retain claims on their old lands
+- Fixed a minor issue with the Italian Reconquest CB
+- Fixed a few incorrect desert terrain spots in Egypt
+- Various issues with loan mechanics fixed. This fix will remove all current loans from saves prior to this patch for the fix
+- Duplicate Seize Trade Post CB removed
+- "Request Crusade" button now properly appears
+- Made holders of the Timurid horde gain the bloodlust trait
+- Removed nearly identical betrayal plot
+- Fixed a duplicate ID problem	
+- Added a cooldown for the "Call Family out of Hiding" event
+- Taking a bribe and then burning a trade post down no longer gives the trade post holder cash
+- Factions should no longer demand to change to lifetime appointment if already at that
+- Children and courtiers/vassals of the pope should no longer gain claims on the Papacy
+- Fixed narrative events on a new game in Alternate Bookmarks
+
+2.07.0
+
+Major Additions:
+- Republic Mechanics reworked, see the dev diary for details: http://forum.paradoxplaza.com/forum/showthread.php?740423-CK2Plus-Dev-Diary&p=16800773&viewfull=1#post16800773
+- Added a Norman-style invasion of Sicily by Catholic champions sent by the pope prior to crusades. This can activate the crusades if successful.
+- Miaphysites can now restore the Pentarchy as well
+- Saxon and Norwegian England now have their own unique nations and idea sets for the EU4 converter
+- You will no longer convert to Orthodox as Mia/Monophysite in the EU4 converter. Instead you will get a unique Monophysite religion instead
+- In 867 Russian culture does not exist. Instead it has been split into 3 proto-tribal cultures that can converge into Russian given the right circumstances. Later bookmarks are unaffected
+- The Samaritan High Priesthood is activated from the start and with it the full historic High Priests there-of
+
+Minor Additions:
+- Added the Kingdom of Carpathia as a place holder for Hungary until the Magyar settle down. Bookmarks after 867 are unaffected
+- Passover can now be planned, similar to feasts and summer fairs. In addition it can be done once a year
+- Added Reign of the Ancients (RoP) bookmark.
+- Added Another New Dawn (lite)'s basic functionalities
+- Added "Yehudi" trait for Jews, indicating a Jewish person of Matrilineal Jewish descent
+- Added various additional cultural titles for the cultural title submod
+
+
+Tweaks:
+- The AI should now be much more likely to Holy War for de Jure land that is rightfully theirs
+- The random claim event chance has been increased
+- Picking the become a king ambition increases the chance for the above mentioned event to occur
+- Various other modifiers have been added to this event to modify the chance of happening
+- Flavourful Titular Titles renamed to Additional Titular Titles to better distinguish it from Cultural Titles
+- The three major Jewish events have been slightly tweaked
+- The Zhayedan will now copy the culture of the person who enacts the decision
+- No longer need to be emperor of Persia for certain Zoroastrian decisions, although you still need to be an emperor
+- The number of stacks hordes receive has been quadrupled, the total number of troops however remains the same
+- Renamed Arabic and Greek based Sicilian to Siculo-Arabic and Siculo-Greek to better distinguish them
+- The Order of St. Anthony (Mia/Monophysite Holy Order) now adopts the culture of their liege on founding.
+- The Order of St. Anthony now vassalizes to the person who takes control of the key counties needed for them.
+- Republics take a penalty if they have cities outside their administration range (same range as mentioned in minor additions in regards to the new republic CB)
+- Made the tooltip for Crusades called by the player clearer
+- Republics can now have the highest level of taxes at Medium CA. Feudal requirements remain the same.
+- Republic Income heavily tweaked. Most event gains now are based upon scaled income, rather than flat numbers
+- Ramadan made a yearly decision, with rewards and events balanced around the more common cycle of the event
+- Many East African provinces along the Nile given the plains terrain type to better approximate the effect of the Nile
+- The events for capturing people via sieges have been revamped
+- Turkish characters should be more resilient to going pagan
+- Bumped up the Max Republic and Theocracy counties to 20%
+- Bumped up the levy multiplier for outside liege to 35%
+- Removed the Gallic pagans from alt bookmarks (via commenting) due to of hardcoding restrictions
+- Removed the "enable extra casus belli" decision from alt bookmarks
+- Removed the "enable extra casus belli" event from alt bookmarks
+- Made the extra casus belli usable in Reign of Princes and Shattered-world-type scenarios without the "turn on" requirement.
+- removed the "pagan names" because they appeared to be only norse names
+- Better Armies module match_multi (the modifier dealing with scaling of troops from events and history for BA) slightly adjusted to give more troops
+- Passover rewards adjusted now that it's yearly
+- Jewish Chancellors no longer have a chance to give free tech
+- Special Jewish chancellors have a lower chance of appearing and can only appear once per ruler
+- AI behaviour tweaked for the Seljuks and Mongols
+- Borrowing from the Jews now works almost the same as borrowing from the generic money lenders
+- Reformed Pagans can now borrow money from the Jews
+- Help I'm trapped in these patch notes.
+- Piety gain in hardcore module slightly increased
+- Shia Uprising limited to starting shortly after 867 to allow the game to start up without them potentially instantly popping up
+- Aglhabids given more troops in 867 war to favour them winning the war. Additonally, should they win the Greek lords leftover in Italy will become independent from Byzantium, leaving Byzantium weak inheritable claims on the land
+- 867 Reconquest of Bari by the Carolingian Empire removed
+- Landed titles now require a couple extra things from you to be creatable, see in-game for details
+- Various Kemetic decisions no longer require to hold the Kingdom/Empire of Egypt, instead requiring to simply be a king/emperor instead
+- A strait has been added between Byzantion and Nikomedia
+- Cynical no longer increases the chance to "go pagan"
+- Lunatic now has a chance for all cultures to cause a person to go pagan
+- The MA requirement for going pagan is 20 or lower for a demesne with the appropriate pagan religion, and 10 otherwise
+- Only independent lords can borrow from the Jews
+- Only if you have a physical Jewish community can you borrow from the Jews
+- If you expel them, the Jews won't return until at least 60 years have passed (this carries over to heirs as well)
+- Expelling Jews while you have a loan due with them will also incur the same penalties as refusing to pay the generic money lenders
+- CK2+ loan decision moved to be beside Jewish one
+- Saxon name list updated to be more appropriate
+- Removed the useless c_dyrrachion claim on Robert of Apulia and set his 1058 and later Piety total higher so he can Holy War for Sicily before he dies
+- Re-enabled Medium Crown Authority for Merchant Republics
+- Lowered the frequency of landless adventurers
+- Increased the likely hood of William the Bastard winning his 1066 Invasion
+- Reduced the number of Invasion event troops the Magyars start with in 867
+- Forming the Kingdom of Hungary changed - it is now only possible to settle down and form Hungary if you have an organized religion as your religion (i.e. reformed Pagan, one of the Abrahamic religions etc.)
+
+
+Fixes:
+- Shiites should no longer have a slightly disproportionate chance to go pagan
+- The Great Philosopher event should now give tech properly
+- If you die before the completion of the third temple, the event should now still fire
+- The Zhayedan will now properly adopt the same religion as the person enacting the decision
+- Jaen and Granada no longer improperly linked
+- Donate to Knights Templar decision icon now appears properly
+- The make a friend ambition is no longer repeatable
+- Can now properly use de Jure ducal claims on same religion targets in all cases
+- West African pagans can no longer change inheritance law before reformation
+- Patricians can now hold feasts as long as they have vassals
+- Creating an Anti-Pope no longer erroneously drops MA a huge amount
+- Republics will be dropped down to their correct CA level if they acquire titles are are higher than their intended CA
+- Republics will assume the proper inheritance law should they somehow shift from the correct one
+- Event 20392 should now properly give 50 military tech (Marshal finds Noble to help get tech)
+- Gaete holdings have been fixed to be on par with other similar locations
+- The Raise Banner/Lower Banner mechanics should now work properly for Female rulers
+- De Jure CB should be no longer useable instead of Holy War, if Holy War is an option
+- De Jure CB can no longer be used on heathens if you have more than 2 counties in the duchy
+- Slightly increased the chances of people converting due to Mending the Schism
+- Pentarchy Events can no longer fire if the Schism has been mended already
+- Various Map Fixes
+- Venerable Elder and Master of the Blade can now be applied properly
+- Donate to, and borrow from the Ansar now have their decision icons
+- EU4 converter updated for the EU4 expansion Conquest of Paradise
+- Piety gain from granting temples to barons removed
+- Sijilmasa should now properly convert to EU4
+- De Jure CBs should no longer work on some targets meant for Holy Wars
+- Many history fixes
+- Fixed a typo in BLG that was causing a CTD in Linux OSes
+- Various fixes to new religions that become the new Orthodoxy
+- Various missing holdings are now buildable
+- The Orthodox heresies now count for reclaiming Byzantium
+- The Knights Templar and Knights Hospitaller should now properly vassalize to a new orthodoxy Catholic
+- Byzantium should no longer shatter if held by someone who is a new orthodoxy Heretic
+- "Lip Service" event fixed
+- The Upper Pyrenees no longer is a de Jure part of Aquitaine past 934
+- Heresies that have become the new orthodoxy can now mend the Schism for Christians
+- The Patriach events should no longer appear for non-Christians holding the titles of the ERE or Roman Empire
+- Religions under 50 MA should no longer incorrectly have an increased chance of proselytizing
+- Higher moral authority now correctly makes it easier to proselytize
+- The 10 year cooldown on holy wars should now apply properly in hardcore mode
+- Hardcore mode should no longer cause a CTD on load
+- Boleslav's War should no longer end erroneously in the 1000AD bookmark
+- Removed extraneous ways of "going pagan". The decision should now be the only way of doing so outside of normal means
+- Troops and councillors should now properly appear within Sharawrah
+- The incorrect global event no longer appears when Kemetic forms the high priesthood
+- Old Wizard Appears event now properly has an option choice for Gallawa
+- Removed the Bishop asks to convert to Celtic Paganism event
+- The chance for a Celtic mystic to appear has been reduced significantly
+- The Jewish Community in Cordoba has been moved to Lucena
+- Fixed improper/missing localization for a rebellion event (ID 1000182418)
+- Cagliari port is now in the proper location
+- In the Millennium bookmark, the provinces south west of Gizeh are now properly assigned to be vassals of the Fatimids
+- Ludofinger typo fixed to be called Liudolfinger
+- Cuenca holdings are no longer incorrectly labelled
+- Saxon England is no longer available if the Witan is abolished
+- Fixed a performance sink in YouMessedWithThePope.txt
+- Fixed an issue with AI Guardians that should improve AI Education
+- Fixed a CTD that was caused by the Duchy of Bektashi Holy Order being defined twice
+- Alexios is now the Byzantine Emperor on April 1, 1081; the historical beginning of his rule
+- Many fixes to the title localisation files
+- Fixed an issue where troops were getting stuck in some Counties
+- Fixed a bug with starting Technology levels; they should now scale correctly based on your starting date
+- Fixed a bug (again) that was causing the Aztecs to invade when CK2+ was used with the Improved Duel Engine
+
+2.06.3
+
+Major Additions:
+
+Minor Additions:
+- Implemented Reign of Princes bookmarks in the Altered Bookmarks module. (beta)
+
+Tweaks:
+- Bookmarks pane is bigger now
+
+Fixes:
+- Minor West Africa history fixes
+- Znojmo now properly belongs to Bohemia 1000 AD and on
+- For the Cultural Titles sub-mod, added missing Muslim religious heads
+- Duplicate Muslim religious heads removed in core
+- Some missed cultural titles stripped from the core mod
+- No more CTD when reforming Norse Paganism or creating the Pontificate Maxima with the Cultural Titles sub-mod
+- Montbeliard can now properly build its extra barony holding
+
+
+2.06.1/2.06.2 (don't ask)
+
+Fixes:
+- Some rulers in East Africa are no longer incorrectly Monophysite
+- Sharqiya should no longer be ruled over by Norse rulers
+- Saxon England no longer formable after the abolishing of the Witan
+- Norman England will no longer have a Tanist heir when starting after Norman conquest
+- No more CTD when reforming Norse Paganism or creating the Pontificate Maxima
+- Several Alternate Bookmarks updates
+- Unreformed Celtic Pagans are now locked into Tanistry Succession
+- Fixed bugs with some new female events
+- All West Africans should now properly be black (if you have the African facepack)
+- Tweaked the holy site locations for hellenic pagans and extended the crusade weights for the ancient paganisms
+
+
+2.06.0
+Major Additions:
+- Alternate Bookmarks expanded and implemented without it crashing every time it starts/autosaves. (Still in beta!)
+- East Africa (including Egypt) and the Middle East has gained many new provinces to balance out the additions in Europe.
+- Many new female based events added
+
+Minor Additions:
+- Israelite culture group dynasty names added
+- All of the Muslim heresies can have a religious head now. It has the same requirements as the other Muslim caliphs, in addition to needing to be the new Orthodoxy.
+- The Sunni and Shia religious heads cannot be formed if they are no longer the Orthodoxy
+- Arko CoA pack replaced with a CK2+ unique CoA pack
+- Free family CB added. Victory results in the freedom of the POI, failure in the execution there-of
+- Changed the "blinded" graphic effect to be a blindfold
+- Integrated Papal Forces Mod
+- Added Hellenic Holy Orders
+- Celtic Paganism and Kemetic have new religious icons
+- d_egyptian_pagan has a new flag
+- Changed the base mod to use all English title names
+- Created the Cultural Titles sub-mod. Replaces most titles with culturally relevant versions, dependant on the ruler
+- Integrated several of Jordarkelf's micromods
+
+
+Tweaks:
+- Europe has lost a small number of provinces. In addition, most very small islands have been removed
+- Duchy of Nefoud history removed
+- Many provinces shifted around and/or cut in Europe
+- Outremer and Latin melting pots mean time to happen increased to be on par with other melting pots
+- Additionally they have been set to occur after Christian crusades are unlocked, rather than 1100
+- Various BLG adjustments
+- k_iceland made titular and replaced with k_north_sea
+- The Orkney Isles have been moved to k_north_sea until their historic absorption into Norway
+- Kemetic Icon replaced with a similar looking, but higher res, version
+- Jewish Icons have been uprezzed and consquently look much better in the EU4 Converter
+- Made Norse Holy Orders work more like the other pagan orders
+- Made the Pontifex Maximus creatable by decisions
+
+Fixes:
+- Expelled Jewry modifier can no longer be inherited
+- Stealing tech with the spymaster now properly works
+- Removed many French localisation that were stuck inside English localisation
+- "Gain a honorary title" ambition tooltip made more readable
+- b_skalholt internally moved to where it belongs
+- Roman cultural building present in Better Armies
+- Gallawa has cultural buildings in Better Armies
+- Jewish Cultural Buildings added
+- Now only Harold Hardrada can change England's CoA to the Scandinavian variety
+
+
+2.05.4
+Major Additions:
+- New shattered world sub-mod to replace the existing alternate scenarios module. Completely rebuilt and contains: Shattered World 867/1066, Reign of the Ancients (867/SW version), Reign of Princes 867/1066 (currently BETA)
+
+Minor Additions:
+- Added some Celtic and Roman location names for core
+- Normandy is now called Neustria until either a Norse or Norman ruler takes over
+- Aten now properly converts to Aten in EU4 if it's the new orthodoxy
+- Considerably enhanced the Anarchy bookmark
+- Corrected history of c_alencon
+
+Tweaks:
+- Should the Aztec DLC be on and they arrive, they are now more aggressive
+- AI holy wars should be now more common if their religion group has unlocked Crusades/Jihads/Great Wars
+- Venerable Elder can now be bestowed upon women
+- Genetics events optimized
+
+Fixes:
+- k_wallachia removed from bookmarks (redundant with k_pechenegs)
+- Pagan Economy modifier re-added
+- Missing FTT titles added
+- All languages should now have at least English entries for all their localization
+- Stillbirths no longer cause mothers to be permanently pregnant
+- Celtic Pagan and Kemetic icons fixed in the converter
+- Pagans can no longer "stack" certain minor titles
+- All, none minor title "Decisions" fixed
+
+
+
+2.05.3
+Major Additions:
+
+Minor Additions:
+- added historical rulers to c_ponthieu
+- added a Remove Antipope CB
+- added optional conquest casus belli for alt scenarios
+
+
+Tweaks:
+- You can only make 1 Celtic holy order as a king, the second can be made as an emperor
+- True Cognatic and Enatic successions can now have female councillors, as can Cathars
+
+Fixes:
+- Horusian Guard now activates properly when the decision is started
+- Missing event modifiers added, fixing a CTD with the relic and field event
+- A CTD with kingdom view in Base Localized Titles has been fixed
+- A CTD no longer occurs when celtic pagans form their holy orders
+- Missing Localization in Base Landed Titles added
+- Missing holding added in c_burgos
+- Fixed a Religion Tab CTD for the Sahelian West African Pagans that was caused by having 6 Holy Sites
+- West African Pagans changed so they won't be using European Castles
+- Fixed the Chancellor Frabicate Claims event to no longer offer more than two options
+- Fixed a CTD that was occurring when using dates between 1000 AD and 1066 AD
+- Fixed CTD with the Joan of Arc event chain
+
+
+2.05.2
+Major Additions:
+
+Minor Additions:
+- Recycled Unit Packs sub-module added. This pack is similar to Better Looking Garbs, but with units instead of portraits. Requires several unit pack DLCs. (http://forum.paradoxplaza.com/forum/showthread.php?736824-Recycled-Unit-Packs&p=16482249)
+- Base Localized Titles module Added. This module presents all titles in the game to the defined localization as set by Paradox in localisation files (NOTE: This also removes the ToG added ones from paradox as well)
+
+
+Tweaks:
+- You gain no money from expelling Jews without physical communities, however your loan obligations towards disappear as before (old pogrom gold acquires still apply)
+- Halved the piety gain from donating to Holy Orders
+- Siege Capture events from Dungeons & Sieges tweaked in several ways:
+- The option to kill and capture all family members have been locked to very specifically ill intended characters
+- The events no longer have a 100% chance of happening on siege victory. They happen semi-uncommonly now.
+- The events can only target counts and above
+- Unreformed Pagans can no longer do this
+- Removed the ARKO Interface as it was accidentally used without permission
+
+
+Fixes:
+- Some title localization cleaned up
+- Some French counties should no longer be Norman in 867
+- BLG removed until it can be updated, as it was causing CTDs with holy orders
+- Holy Orders should no longer auto-convert to their original religion if a new branch becomes the new orthodoxy
+- New Holy Orders have had their numbers brought down to CK2+ levels
+- Give to Charity decision icon fixed
+- Better Armies and Hardcore modules fixed
+- Ancona now has the proper holdings in 867
+- Urbino now has the proper capital in 867
+- Fixed some leftover 2.0.1 issues
+
+2.05.1
+Major Additions:
+
+Minor Additions:
+- Added the [No Pagan Looters] submod for players who would like to disable the continuous Viking raids
+- Some icons were slightly altered to look a bit better (mostly ambition icons)
+
+Tweaks:
+- Create Israel decision tweaked to include the old CK2+ holy order
+- Levies have been changed to use the new system, no more triggered modifier or waiting a day for them to happen
+- MA required for Ancient Religions set slightly lower
+- Pogrom merged into new expel Jewry decision
+- Reduced gold gain from Expel Jewry decision to reflect Pogrom portion of the decision
+- Jews can no longer return to a realm they have been expelled from (unless the liege who expelled them no longer rules)
+
+Fixes:
+- EU4 Converter now converts Jews properly
+- Lord Derpington was not present in Alternate Scenarios. He has taken it upon himself to address this foul transgression
+- Added new counties to the EU IV Converter
+- Fixed the Hashashin creation event so it wouldn't spam anymore
+- Fixed an intermittent CTD that was occuring during a Religious revolt
+- Fixed some Crusade based CTDs
+- Removed many duplicate entries in various files
+- Fixed the straits in Inverness and Lolland
+- Re-enabled many nickname triggers that weren't activating
+- Fixed some typos with Songhay that were interfering with the character histories
+- Fixed the "Crazy Aztecs" issue by removing all the custom Namespaces
+- Fixed the CTD that was occurring on dates from 1150 on
+- Fixed the County of Travonia "noreligion" issue
+- Fixed missing equal signs in Vanilla event files
+- Fixed various religion issues in /events/ /common/ /history/
+
+2.05.0 - ( Checksum: INVE )
+Major Additions:
+- Compatable with Crusader Kings II 2.0
 - "Better Looking Garbs" added as an optional module ( http://forum.paradoxplaza.com/forum/showthread.php?717897-MOD-Better-Looking-Garbs )
 - Ancient Egyptian (Kemetic) religion added. It is a reformed religion with its' own events and flavour
 - The HRE and the Italian Empire as well as Hellenics and Catholics can now restore the Roman Empire

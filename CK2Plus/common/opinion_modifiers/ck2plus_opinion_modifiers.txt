@@ -439,11 +439,11 @@ opinion_tailteann_craftsman = {
 }
 
 opinion_female_heir = {
-	opinion = -5
+	opinion = -10
 }
 
 opinion_female_ruler = {
-	opinion = -5
+	opinion = -15
 }
 
 opinion_hellenic_state_religion = {
@@ -504,3 +504,42 @@ left_to_rot = {
 	opinion = -40
 }
 
+####Added for Papal Forces
+guelf = {
+	opinion = -30
+	inherit = yes
+}
+
+####Added for females rulers
+favoured_heiress = {
+	opinion = 50
+}
+
+covets_inheritance = {
+	opinion = -25
+}
+
+disinherited = {
+	opinion = -100
+}
+
+chosen_heir = {
+	opinion = 50
+}
+
+swore_allegiance = {
+	opinion = 20
+	months = 120
+}
+refused_allegiance = {
+	opinion = -30
+}
+jealous = {
+	opinion = -30
+}
+papal_champion = {
+	opinion = 100
+}
+my_champion = {
+	opinion = 100
+}

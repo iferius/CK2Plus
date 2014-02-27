@@ -998,7 +998,10 @@ character_event = {
 		}
 	}
 
-
+	mean_time_to_happen = {
+		days = 1
+	}	
+	
 	option = {
 		name = "EVTOPTA72010"
 		set_character_flag = sent_invitations
@@ -1008,7 +1011,7 @@ character_event = {
 				NOT = { trait = incapable }
 				NOT = { has_character_modifier = holding_large_feast }
 				war = no
-				age = 16
+				is_adult = yes
 			}
 			letter_event = {
 				id = 72011
@@ -1653,7 +1656,7 @@ character_event = {
 				has_character_flag = host_feast_started
 				has_character_modifier = holding_large_feast
 			}
-			age = 16
+			is_adult = yes
 			NOT = { num_of_friends = 3 }
 			has_character_flag = guest_feast_started
 			NOT = {
@@ -1710,7 +1713,7 @@ character_event = {
 					has_character_flag = host_feast_started
 					has_character_modifier = holding_large_feast
 				}
-				age = 16
+				is_adult = yes
 				NOT = { num_of_friends = 3 }
 				has_character_flag = guest_feast_started
 				NOT = {
@@ -1778,7 +1781,7 @@ character_event = {
 	prisoner = no
 
 	trigger = {
-		age = 16
+		is_adult = yes
 		war = no
 		NOT = { num_of_friends = 3 }
 		has_character_flag = guest_feast_started
@@ -1795,7 +1798,7 @@ character_event = {
 				reverse_opinion = { who = ROOT value = 0 }
 			}
 			any_vassal = {
-				age = 16
+				is_adult = yes
 				NOT = { num_of_friends = 3 }
 				has_character_flag = guest_feast_started
 				NOT = {
@@ -1859,7 +1862,7 @@ character_event = {
 			random_vassal = {
 				limit = {
 					has_character_flag = guest_feast_started
-					age = 16
+					is_adult = yes
 					NOT = { num_of_friends = 3 }
 
 					NOT = {
@@ -1964,7 +1967,7 @@ character_event = {
 				has_character_flag = feast_duel
 			}
 			any_vassal = {
-				age = 16
+				is_adult = yes
 				is_female = no
 				has_character_flag = guest_feast_started
 				NOT = {
@@ -2046,7 +2049,7 @@ character_event = {
 			set_character_flag = feast_duel
 			random_vassal = {
 				limit = {
-					age = 16
+					is_adult = yes
 					is_female = no
 					has_character_flag = guest_feast_started
 					NOT = {
@@ -2495,7 +2498,7 @@ character_event = {
 			has_character_flag = guest_feast_started
 			spouse = {
 				prisoner = no
-				age = 16
+				is_adult = yes
 				is_pregnant = no
 				is_alive = yes
 				is_abroad = no
@@ -2605,7 +2608,7 @@ character_event = {
 				has_character_flag = guest_feast_started
 				spouse = {
 					prisoner = no
-					age = 16
+					is_adult = yes
 					is_pregnant = no
 					is_alive = yes
 					is_abroad = no
@@ -3294,169 +3297,6 @@ character_event = {
 				character_event = {
 					id = 72057
 				}
-			}
-		}
-		custom_tooltip = { text = TYRANTTOOLTIP5 }
-		hidden_tooltip = {
-			if = {
-				limit = {
-					trait = tyrant19
-				}
-				remove_trait = tyrant19
-				add_trait = tyrant20
-			}
-			if = {
-				limit = {
-					trait = tyrant18
-				}
-				remove_trait = tyrant18
-				add_trait = tyrant19
-			}
-			if = {
-				limit = {
-					trait = tyrant17
-				}
-				remove_trait = tyrant17
-				add_trait = tyrant18
-			}
-			if = {
-				limit = {
-					trait = tyrant16
-				}
-				remove_trait = tyrant16
-				add_trait = tyrant17
-			}
-			if = {
-				limit = {
-					trait = tyrant15
-				}
-				remove_trait = tyrant15
-				add_trait = tyrant16
-			}
-			if = {
-				limit = {
-					trait = tyrant14
-				}
-				remove_trait = tyrant14
-				add_trait = tyrant15
-			}
-			if = {
-				limit = {
-					trait = tyrant13
-				}
-				remove_trait = tyrant13
-				add_trait = tyrant14
-			}
-			if = {
-				limit = {
-					trait = tyrant12
-				}
-				remove_trait = tyrant12
-				add_trait = tyrant13
-			}
-			if = {
-				limit = {
-					trait = tyrant11
-				}
-				remove_trait = tyrant11
-				add_trait = tyrant12
-			}
-			if = {
-				limit = {
-					trait = tyrant10
-				}
-				remove_trait = tyrant10
-				add_trait = tyrant11
-			}
-			if = {
-				limit = {
-					trait = tyrant9
-				}
-				remove_trait = tyrant9
-				add_trait = tyrant10
-			}
-			if = {
-				limit = {
-					trait = tyrant8
-				}
-				remove_trait = tyrant8
-				add_trait = tyrant9
-			}
-			if = {
-				limit = {
-					trait = tyrant7
-				}
-				remove_trait = tyrant7
-				add_trait = tyrant8
-			}
-			if = {
-				limit = {
-					trait = tyrant6
-				}
-				remove_trait = tyrant6
-				add_trait = tyrant7
-			}
-			if = {
-				limit = {
-					trait = tyrant5
-				}
-				remove_trait = tyrant5
-				add_trait = tyrant6
-			}
-			if = {
-				limit = {
-					trait = tyrant4
-				}
-				remove_trait = tyrant4
-				add_trait = tyrant5
-			}
-			if = {
-				limit = {
-					trait = tyrant3
-				}
-				remove_trait = tyrant3
-				add_trait = tyrant4
-			}
-			if = {
-				limit = {
-					trait = tyrant2
-				}
-				remove_trait = tyrant2
-				add_trait = tyrant3
-			}
-			if = {
-				limit = {
-					trait = tyrant1
-				}
-				remove_trait = tyrant1
-				add_trait = tyrant2
-			}
-			if = {
-				limit = {
-					NOT = {
-						trait = tyrant1
-						trait = tyrant2
-						trait = tyrant3
-						trait = tyrant4
-						trait = tyrant5
-						trait = tyrant6
-						trait = tyrant7
-						trait = tyrant8
-						trait = tyrant9
-						trait = tyrant10
-						trait = tyrant11
-						trait = tyrant12
-						trait = tyrant13
-						trait = tyrant14
-						trait = tyrant15
-						trait = tyrant16
-						trait = tyrant17
-						trait = tyrant18
-						trait = tyrant19
-						trait = tyrant20
-					}
-				}
-				add_trait = tyrant1
 			}
 		}
 		if = {
@@ -4154,7 +3994,7 @@ character_event = {
 			has_character_flag = guest_feast_started
 			is_married = yes
 			spouse = {
-				age = 16
+				is_adult = yes
 				NOT = { is_close_relative = root }
 				is_female = yes
 				is_pregnant = no
@@ -4196,7 +4036,7 @@ character_event = {
 	immediate = {
 		random_vassal = {
 			limit = {
-				age = 16
+				is_adult = yes
 				not = { age = 30 }
 				has_character_flag = guest_feast_started
 				is_married = yes
@@ -4224,7 +4064,7 @@ character_event = {
 				has_character_flag = guest_feast_started
 				is_married = yes
 				spouse = {
-					age = 16
+					is_adult = yes
 					NOT = { is_close_relative = root }
 					is_female = yes
 					is_pregnant = no
@@ -4250,7 +4090,7 @@ character_event = {
 				has_character_flag = guest_feast_started
 				is_married = yes
 				spouse = {
-					age = 16
+					is_adult = yes
 					is_female = yes
 					is_pregnant = no
 					is_alive = yes
@@ -4666,7 +4506,7 @@ character_event = {
 		}
 		OR = {
 			religion_group = christian
-			religion_group = judaism_group
+			religion_group = jewish_group
 		}
 		has_lover = no
 		NOT = { trait = shy }
@@ -4687,7 +4527,7 @@ character_event = {
 				}
 			}
 			AND = {
-				age = 16
+				is_adult = yes
 				NOT = {
 					age = 26
 				}
@@ -4714,7 +4554,7 @@ character_event = {
 						is_betrothed = no
 						has_lover = no
 						NOT = { is_close_relative = root }
-						age = 16
+						is_adult = yes
 						NOT = {
 							age = 26
 						}
@@ -4732,7 +4572,7 @@ character_event = {
 					has_lover = no
 					fertility = 0.4
 					NOT = { is_close_relative = root }
-					age = 16
+					is_adult = yes
 					NOT = {
 						age = 26
 					}
@@ -4784,7 +4624,7 @@ character_event = {
 						fertility = 0.4
 						NOT = { is_close_relative = root }
 
-						age = 16
+						is_adult = yes
 						NOT = {
 							age = 26
 						}
@@ -4832,7 +4672,7 @@ character_event = {
 						NOT = {
 							family = ROOT
 						}
-						age = 16
+						is_adult = yes
 						NOT = {
 							age = 26
 						}
@@ -4880,7 +4720,7 @@ character_event = {
 					fertility = 0.4
 					NOT = { is_close_relative = root }
 
-					age = 16
+					is_adult = yes
 					NOT = {
 						age = 26
 					}
@@ -4922,7 +4762,7 @@ character_event = {
 					fertility = 0.4
 					NOT = { is_close_relative = root }
 
-					age = 16
+					is_adult = yes
 					NOT = {
 						age = 26
 					}
@@ -5410,7 +5250,7 @@ character_event = {
 			custom_tooltip = {
 				text = COURTFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_court" value = 0.5 }
-				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			}
 			set_character_flag = feast_mood_boost
 		}

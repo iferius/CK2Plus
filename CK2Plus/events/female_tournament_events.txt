@@ -1,0 +1,4852 @@
+########################################################
+#
+# Integrating females into tournaments
+#
+# Written by Miaow
+#
+#
+########################################################
+
+character_event = { #Invited to the tourney
+	id = 1000182583
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182583
+	
+	picture = GFX_evt_tournament_gallery
+	
+	is_triggered_only = yes
+	
+	option = { # I will watch it
+		name = EVTOPTA1000182583
+		ai_chance = { 
+			factor = 75
+			modifier = {
+				factor = 1.25
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = fair
+			}
+			modifier = {
+				factor = 1.25
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.25
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.25
+				trait = craven
+			}
+		}
+		prestige = 10
+		set_character_flag = spectating_tournament
+		set_character_flag = do_not_disturb
+	}
+	
+	option = { # My champion will defend my colours
+		name = EVTOPTB1000182583
+		trigger = {
+			OR = {
+				any_vassal = {
+					OR = {
+						has_minor_title = title_ladys_champion
+						has_minor_title = title_champion
+					}
+				}
+				any_courtier = {
+					OR = {
+						has_minor_title = title_ladys_champion
+						has_minor_title = title_champion
+					}
+				}
+			}
+		}
+		ai_chance = { 
+			factor = 100
+			modifier = {
+				factor = 1.25
+				NOT = { martial = 15 }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { martial = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { martial = 5 }
+			}
+			modifier = {
+				factor = 1.25
+				trait = proud
+			}
+			modifier = {
+				factor = 1.25
+				trait = fair
+			}
+			modifier = {
+				factor = 1.25
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.25
+				trait = gluttonous
+			}
+			modifier = { # women warriors should consider participating themselves
+				factor = 0.5
+				martial = 15
+				OR = {
+					trait = shield_maiden
+					trait = martial_lady
+					trait = martial_lady_tengri
+				}
+			}
+		}
+		prestige = 25
+		set_character_flag = spectating_tournament
+		set_character_flag = do_not_disturb
+		any_vassal = {
+			limit = {
+				OR = {
+					has_minor_title = title_ladys_champion
+					has_minor_title = title_champion
+				}
+			}
+			letter_event = { id = 1000182584 days = 1 }
+		}
+		any_courtier = { # need to attempt with any_courtier scope as players could appoint an unlanded courtier
+			limit = {
+				OR = {
+					has_minor_title = title_ladys_champion
+					has_minor_title = title_champion
+				}
+			}
+			letter_event = { id = 1000182584 days = 1 }
+		}
+	}
+	
+	option = { # I will fight myself!
+		name = EVTOPTC1000182583
+		trigger = {
+			martial = 15
+			trait = brave
+			OR = {
+				trait = misguided_warrior
+				trait = tough_soldier
+				trait = skilled_tactician
+				trait = brilliant_strategist
+				trait = shield_maiden
+				trait = martial_lady
+				trait = martial_lady_tengri
+			}
+		}
+		ai_chance = {   #this option is mainly for players, only very exceptionally should an AI chose it (a JoA character, for instance)
+			factor = 20
+			modifier = {
+				factor = 1.25
+				martial = 20
+			}
+			modifier = {
+				factor = 1.25
+				martial = 25
+			}
+			modifier = {
+				factor = 2
+				martial = 30 # only JoA should have this much
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = misguided_warrior
+					trait = tough_soldier
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = shield_maiden
+					trait = martial_lady
+					trait = martial_lady_tengri
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = dresses_as_man
+					trait = dresses_as_man_abm
+				}
+			}
+			modifier = {
+				factor = 1.25
+				trait = scarred_female
+			}
+		}
+		prestige = 100
+		IF = {
+			limit = {
+				OR = {
+					religion_group = christian
+					religion_group = jewish_group
+				}
+			}
+			piety = -25
+		}		
+		set_character_flag = spectating_tournament
+		set_character_flag = do_not_disturb
+	}
+	
+	option = { # Meh
+		name = EVTOPTD1000182583
+		ai_chance = { 
+			factor = 50
+			modifier = {
+				factor = 2
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = ugly
+			}
+			modifier = {
+				factor = 1.25
+				trait = chaste
+			}
+			modifier = {
+				factor = 1.25
+				trait = clubfooted
+			}
+			modifier = {
+				factor = 1.25
+				trait = craven
+			}
+			modifier = {
+				factor = 1.25
+				trait = hunchback
+			}
+			modifier = {
+				factor = 1.25
+				trait = dwarf
+			}
+		}
+	}
+}
+
+letter_event = {
+	id = 1000182584
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182584
+	
+	picture = GFX_evt_tournament_gallery
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA1000182584
+		prestige = 50
+		set_character_flag = spectating_tournament
+		set_character_flag = championing_liege_lady
+		set_character_flag = do_not_disturb
+	}
+}
+
+# Champion killed
+character_event = {
+	id = 1000182585
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182585
+	
+	picture = GFX_evt_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = SHEDATEAR
+		prestige = -50
+	}
+}
+
+# Champion maimed
+character_event = {
+	id = 1000182586
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182586
+	
+	picture = GFX_evt_injured
+
+	is_triggered_only = yes
+
+	option = {
+		name = SHEDATEAR
+		prestige = -25
+	}
+}
+
+# Champion injured
+character_event = {
+	id = 1000182587
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182587
+	
+	picture = GFX_evt_injured
+
+	is_triggered_only = yes
+
+	option = {
+		name = SHEDATEAR
+		prestige = -25
+	}
+}
+
+# Champion victorious
+character_event = {
+	id = 1000182588
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182588
+	
+	picture = GFX_evt_tournament_gallery
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA1000182588
+		prestige = 150
+		scaled_wealth = -0.2
+		opinion = { who = FROM modifier = opinion_tournament_winner years = 20 }
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 20 } }
+	}
+	option = {
+		name = EVTOPTB1000182588
+		prestige = 75
+		opinion = { who = FROM modifier = opinion_tournament_winner years = 20 }
+		FROM = { opinion = { who = ROOT modifier = opinion_upset years = 20 } }
+	}
+}
+
+# Champion runner-up
+character_event = {
+	id = 1000182589
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182589
+	
+	picture = GFX_evt_tournament_gallery
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA1000182588
+		prestige = 125
+		scaled_wealth = -0.15
+		opinion = { who = FROM modifier = opinion_tournament_second_place years = 15 } 
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 15 } }
+	}
+	option = {
+		name = EVTOPTB1000182588
+		prestige = 65
+		opinion = { who = FROM modifier = opinion_tournament_second_place years = 15 } 
+		FROM = { opinion = { who = ROOT modifier = opinion_upset years = 15 } }
+	}
+}
+
+# Champion third place
+character_event = {
+	id = 1000182590
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182590
+	
+	picture = GFX_evt_tournament_gallery
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA1000182588
+		prestige = 100
+		scaled_wealth = -0.10
+		opinion = { who = FROM modifier = opinion_tournament_third_place years = 10 }
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 10 } }
+	}
+	option = {
+		name = EVTOPTB1000182588
+		prestige = 50
+		opinion = { who = FROM modifier = opinion_tournament_third_place years = 10 } 
+		FROM = { opinion = { who = ROOT modifier = opinion_upset years = 10 } } 
+	}
+}
+
+character_event = { # Lady becomes proud
+	id = 1000182591
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182591
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = proud
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			trait = envious
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.67
+			trait = fair
+		}
+		modifier = {
+			factor = 0.67
+			trait = quick
+		}
+		modifier = {
+			factor = 0.67
+			trait = genius
+		}
+		modifier = {
+			factor = 0.67
+			trait = tall
+		}
+		modifier = {
+			factor = 2
+			trait = ugly
+		}
+		modifier = {
+			factor = 2
+			trait = dwarf
+		}
+		modifier = {
+			factor = 2
+			trait = hunchback
+		}
+		modifier = {
+			factor = 1.25
+			trait = chaste
+		}
+		modifier = {
+			factor = 1.25
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.25
+			trait = content
+		}
+		modifier = {
+			factor = 1.25
+			trait = kind
+		}
+		modifier = {
+			factor = 1.25
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.25
+			trait = shy
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		add_trait = proud
+		name = EVTOPTA1000182591
+	}
+}
+	
+character_event = { # Lady becomes humble
+	id = 1000182592
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182592
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = humble
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 0.8
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = shy
+		}
+		modifier = {
+			factor = 1.25
+			trait = envious
+		}
+		modifier = {
+			factor = 1.25
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.25
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.25
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.25
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.25
+			trait = gregarious
+		}
+		modifier = { # humility is meaningless without reasons for pride
+			factor = 0.9
+			trait = fair
+		}
+		modifier = {
+			factor = 0.9
+			trait = quick
+		}
+		modifier = {
+			factor = 0.9
+			trait = genius
+		}
+		modifier = {
+			factor = 0.9
+			trait = tall
+		}
+		modifier = {
+			factor = 2
+			trait = ugly
+		}
+		modifier = {
+			factor = 2
+			trait = dwarf
+		}
+		modifier = {
+			factor = 2
+			trait = hunchback
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		add_trait = humble
+		name = EVTOPTA1000182592
+	}
+}
+
+character_event = { # Lady becomes gregarious
+	id = 1000182593
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182593
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = gregarious
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			trait = lustful
+		}
+		modifier = {
+			factor = 0.8
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = deceitful
+		}
+		modifier = {
+			factor = 0.8
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = hedonist
+		}
+		modifier = {
+			factor = 0.8
+			trait = poet
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 11
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 13
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 15
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 17
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 19
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 21
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		add_trait = gregarious
+		name = EVTOPTA1000182593
+	}
+}
+
+character_event = { # Lady becomes shy
+	id = 1000182594
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182594
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = shy
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			trait = chaste
+		}
+		modifier = {
+			factor = 0.8
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.8
+			trait = honest
+		}
+		modifier = {
+			factor = 0.8
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.8
+			trait = scholar
+		}
+		modifier = {
+			factor = 0.8
+			trait = gardener
+		}
+		modifier = {
+			factor = 0.8
+			trait = hunter
+		}
+		modifier = {
+			factor = 0.8
+			trait = falconer
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 10 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 9 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 8 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 7 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 6 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 5 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 4 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 3 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { diplomacy = 2 }
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		name = EVTOPTA1000182594
+		add_trait = shy
+	}
+}
+
+character_event = { # Lady becomes honest
+	id = 1000182595
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182595
+	
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = honest
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.8
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = content
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = strong
+		}
+		modifier = {
+			factor = 0.8
+			trait = tall
+		}
+		modifier = {
+			factor = 1.25
+			trait = dwarf
+		}
+		modifier = {
+			factor = 1.25
+			trait = hunchback
+		}
+		modifier = {
+			factor = 1.25
+			trait = weak
+		}
+		modifier = {
+			factor = 1.25
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.25
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.25
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.25
+			trait = envious
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		add_trait = honest
+		name = EVTOPTA1000182595
+	}
+}
+
+character_event = { # Lady becomes deceitful
+	id = 1000182596
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182596
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = deceitful
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 1.25
+			trait = trusting
+		}
+		modifier = {
+			factor = 1.25
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.25
+			trait = proud
+		}
+		modifier = {
+			factor = 1.25
+			trait = content
+		}
+		modifier = {
+			factor = 1.25
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.25
+			trait = strong
+		}
+		modifier = {
+			factor = 1.25
+			trait = tall
+		}
+		modifier = {
+			factor = 0.8
+			trait = dwarf
+		}
+		modifier = {
+			factor = 0.8
+			trait = hunchback
+		}
+		modifier = {
+			factor = 0.8
+			trait = weak
+		}
+		modifier = {
+			factor = 0.8
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = envious
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		name = EVTOPTA1000182596
+		add_trait = deceitful
+	}
+}
+
+character_event = { # Lady becomes lustful
+	id = 1000182597
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182597
+	
+	picture = GFX_evt_courtly_love
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = lustful
+			trait = celibate
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.4
+			trait = hedonist
+		}
+		modifier = {
+			factor = 0.8
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.8
+			trait = kind
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.8
+			trait = greedy
+		}
+		modifier = {
+			factor = 0.8
+			trait = poet
+		}
+		modifier = {
+			factor = 0.8
+			trait = mystic
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.25
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.25
+			trait = patient
+		}
+		modifier = {
+			factor = 1.25
+			trait = slothful
+		}
+		modifier = {
+			factor = 1.25
+			trait = cynical
+		}
+		modifier = {
+			factor = 1.25
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.25
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.25
+			trait = charitable
+		}
+		modifier = {
+			factor = 1.25
+			trait = gardener
+		}
+		modifier = {
+			factor = 1.25
+			trait = duelist
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		add_trait = lustful
+		name = EVTOPTA1000182597
+	}
+}
+
+character_event = { # Lady becomes chaste
+	id = 1000182598
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182598
+	
+	picture = GFX_evt_courtly_love
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = { has_character_flag = spectating_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		NOT = {
+			trait = chaste
+			trait = hedonist
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.4
+			trait = celibate
+		}
+		modifier = {
+			factor = 1.25
+			trait = trusting
+		}
+		modifier = {
+			factor = 1.25
+			trait = kind
+		}
+		modifier = {
+			factor = 1.25
+			trait = proud
+		}
+		modifier = {
+			factor = 1.25
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.25
+			trait = greedy
+		}
+		modifier = {
+			factor = 1.25
+			trait = poet
+		}
+		modifier = {
+			factor = 1.25
+			trait = mystic
+		}
+		modifier = {
+			factor = 1.25
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = temperate
+		}
+		modifier = {
+			factor = 0.8
+			trait = patient
+		}
+		modifier = {
+			factor = 0.8
+			trait = slothful
+		}
+		modifier = {
+			factor = 0.8
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.8
+			trait = paranoid
+		}
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = charitable
+		}
+		modifier = {
+			factor = 0.8
+			trait = gardener
+		}
+		modifier = {
+			factor = 0.8
+			trait = duelist
+		}
+	}
+	
+	immediate = {
+		set_character_flag = spectating_tournament_event
+	}
+	
+	option = {
+		name = EVTOPTA1000182598
+		add_trait = chaste
+	}
+}
+
+character_event = { # Men react poorly to lady contestant
+	id = 1000182599
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182599
+	
+	picture = GFX_evt_woman_fighter
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = attending_tournament_event }
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		top_liege = {
+			has_character_flag = tournament_begins
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+		modifier = {
+			factor = 0.67
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = wroth
+		}
+		modifier = {
+			factor = 0.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.8
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.67
+			trait = ambitious
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = dresses_as_man
+		}
+		modifier = {
+			factor = 0.67
+			trait = dresses_as_man_abm
+		}
+		modifier = {
+			factor = 1.25
+			trait = tall
+		}
+		modifier = {
+			factor = 1.25
+			trait = strong
+		}
+		modifier = {
+			factor = 1.25
+			trait = humble
+		}
+		modifier = {
+			factor = 1.25
+			trait = shy
+		}
+		modifier = {
+			factor = 1.25
+			martial = 35 # you wouldn't want to mess with someone who has truly obscene martial
+		}
+	}
+	
+	immediate = {
+		set_character_flag = attending_tournament_event
+	}
+	
+	option = {
+		name = EVTOPTA1000182599 #RAGE
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.5
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.5
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = honest
+			}
+			modifier = {
+				factor = 1.5
+				OR = {
+					trait = dresses_as_man
+					trait = dresses_as_man_abm
+				}
+			}
+		}
+		piety = -25
+		add_trait = wroth
+		random = {
+			chance = 60
+			add_trait = diligent
+		}
+		random = {
+			chance = 75
+			add_trait = proud
+		}
+	}
+	option = {
+		name = EVTOPTB1000182599 #zen
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				trait = patient
+			}
+			modifier = {
+				factor = 1.5
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.5
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				trait = deceitful
+			}
+		}
+		prestige = -50
+		add_trait = humble
+		random = {
+			chance = 60
+			add_trait = shy
+		}
+		random = {
+			chance = 75
+			add_trait = patient
+		}
+	}
+}
+
+character_event = { # Character wins beauty pageant
+	id = 1000182600
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182600
+	
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		top_liege = {
+			had_character_flag = { flag = tournament_begins days = 50 }
+			NOT = {
+				has_character_flag = beauty_winner
+				has_character_flag = beauty_second
+				has_character_flag = beauty_third
+			}
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 60 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 70 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 80 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 90 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 100 }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			trait = fair
+		}
+		modifier = {
+			factor = 0.5
+			trait = tall
+		}
+		modifier = {
+			factor = 20
+			trait = ugly
+		}
+		modifier = {
+			factor = 20
+			trait = dwarf
+		}
+		modifier = {
+			factor = 20
+			trait = hunchback
+		}
+		modifier = {
+			factor = 20
+			trait = clubfooted
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 11
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 13
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 14
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 15
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 16
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 17
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 18
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 19
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 20
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 21
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 22
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 23
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 24
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 31
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 11
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 12
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 13
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 14
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 15
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 16
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 17
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 18
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 19
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 20
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 21
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 23
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 27
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 29
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 31
+		}
+	}
+
+	immediate = {
+		set_character_flag = spectating_tournament_event
+		top_liege = {
+			set_character_flag = beauty_winner
+		}
+	}
+
+	option = {
+		name = EVTOPTA1000182600
+		prestige = 300
+		add_character_modifier = {
+			name = beauty_queen_3
+			duration = 1095 #3 years
+		}
+		any_realm_character = {
+			limit = {
+				is_female = yes
+				has_character_flag = spectating_tournament 
+			}
+			character_event = { id = 1000182603 days = 1 }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { character_event = { id = 1000182604 } }
+			}
+		}
+	}
+}
+
+character_event = { # Character take second place in beauty pageant
+	id = 1000182601
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182601
+	
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		top_liege = {
+			had_character_flag = { flag = tournament_begins days = 50 }
+			has_character_flag = beauty_winner
+			NOT = {
+				has_character_flag = beauty_second
+				has_character_flag = beauty_third
+			}
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 60 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 70 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 80 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 90 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 100 }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			trait = fair
+		}
+		modifier = {
+			factor = 0.5
+			trait = tall
+		}
+		modifier = {
+			factor = 20
+			trait = ugly
+		}
+		modifier = {
+			factor = 20
+			trait = dwarf
+		}
+		modifier = {
+			factor = 20
+			trait = hunchback
+		}
+		modifier = {
+			factor = 20
+			trait = clubfooted
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 11
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 13
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 14
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 15
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 16
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 17
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 18
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 19
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 20
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 21
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 22
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 23
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 24
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 31
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 11
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 12
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 13
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 14
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 15
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 16
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 17
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 18
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 19
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 20
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 21
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 23
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 27
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 29
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 31
+		}
+	}
+
+	immediate = {
+		set_character_flag = spectating_tournament_event
+		top_liege = {
+			set_character_flag = beauty_second
+		}
+	}
+
+	option = {
+		name = EVTOPTA1000182600
+		prestige = 200
+		add_character_modifier = {
+			name = beauty_queen_2
+			duration = 730 #2 years
+		}
+		any_realm_character = {
+			limit = {
+				is_female = yes
+				has_character_flag = spectating_tournament 
+			}
+			character_event = { id = 1000182603 days = 1 }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { character_event = { id = 1000182605 } }
+			}
+		}
+	}
+}
+
+character_event = { # Character take third place in beauty pageant
+	id = 1000182602
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182602
+	
+	picture = GFX_evt_grazia
+
+	min_age = 16
+	only_women = yes
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_character_flag = spectating_tournament
+		NOT = {
+			has_character_flag = tournament_has_ended
+		}
+		top_liege = {
+			had_character_flag = { flag = tournament_begins days = 50 }
+			has_character_flag = beauty_winner
+			has_character_flag = beauty_second
+			NOT = {
+				has_character_flag = beauty_third
+			}
+			NOT = {
+				has_character_flag = tournament_has_ended
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 10
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 60 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 70 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 80 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 90 }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			top_liege = {
+				had_character_flag = { flag = tournament_begins days = 100 }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			trait = fair
+		}
+		modifier = {
+			factor = 0.5
+			trait = tall
+		}
+		modifier = {
+			factor = 20
+			trait = ugly
+		}
+		modifier = {
+			factor = 20
+			trait = dwarf
+		}
+		modifier = {
+			factor = 20
+			trait = hunchback
+		}
+		modifier = {
+			factor = 20
+			trait = clubfooted
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 11
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 12
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 13
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 14
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 15
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 16
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 17
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 18
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 19
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 20
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 21
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 22
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 23
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 24
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 31
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 11
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 12
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 13
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 14
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 15
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 16
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 17
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 18
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 19
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 20
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 21
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 23
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 27
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 29
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 31
+		}
+	}
+
+	immediate = {
+		set_character_flag = spectating_tournament_event
+		top_liege = {
+			set_character_flag = beauty_third
+		}
+	}
+
+	option = {
+		name = EVTOPTA1000182600
+		prestige = 200
+		add_character_modifier = {
+			name = beauty_queen_1
+			duration = 365 #1 year
+		}
+		any_realm_character = {
+			limit = {
+				is_female = yes
+				has_character_flag = spectating_tournament 
+			}
+			character_event = { id = 1000182603 days = 1 }
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					top_liege = {
+						NOT = {
+							character = ROOT
+						}
+					}
+				}
+				top_liege = { character_event = { id = 1000182606 } }
+			}
+		}
+	}
+}
+
+character_event = { #jealousy
+	id = 1000182603
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182603
+	
+	picture = GFX_evt_grazia
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA1000182603
+		prestige = -25
+		opinion = { who = FROM modifier = jealous years = 5 } 
+	}
+}
+
+character_event = { #Notify winner
+	id = 1000182604
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182604
+	
+	picture = GFX_evt_grazia
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #Notify winner
+	id = 1000182605
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182605
+	
+	picture = GFX_evt_grazia
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #Notify winner
+	id = 1000182606
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182606
+	
+	picture = GFX_evt_grazia
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #'hawt' knight
+	id = 1000182607
+
+	hide_window = yes
+	
+	only_men = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+	
+	trigger = {
+		has_lover = no
+		NOT = { # the middle ages were an attractivist era, live with it ;)
+			trait = ugly
+			trait = clubfooted
+			trait = dwarf
+			trait = hunchback
+			trait = imbecile
+			trait = inbred
+			trait = celibate
+		}
+		has_character_flag = attending_tournament
+		NOT = { has_character_flag = tournament_romance }
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.5
+			trait = fair
+		}
+		modifier = {
+			factor = 0.5
+			trait = tall
+		}
+		modifier = {
+			factor = 0.5
+			trait = strong
+		}
+		modifier = {
+			factor = 0.67
+			trait = poet
+		}
+		modifier = {
+			factor = 0.67
+			trait = brave
+		}
+		modifier = {
+			factor = 0.8
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = quick
+		}
+		modifier = {
+			factor = 0.8
+			trait = genius
+		}
+		modifier = {
+			factor = 0.8
+			trait = proud
+		}
+		modifier = {
+			factor = 0.8
+			trait = gregarious
+		}
+		modifier = {
+			factor = 0.8
+			trait = hedonist
+		}
+		modifier = {
+			factor = 0.8
+			trait = duelist
+		}
+		modifier = {
+			factor = 0.8
+			trait = crusader
+		}
+		modifier = {
+			factor = 0.8
+			trait = viking
+		}
+		modifier = {
+			factor = 0.8
+			trait = varangian
+		}
+		modifier = {
+			factor = 0.9
+			trait = scarred
+		}
+		modifier = {
+			factor = 0.9
+			age = 20
+		}
+		modifier = {
+			factor = 0.9
+			age = 25
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { age = 35 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { age = 40 }
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { age = 45 }
+		}
+		modifier = {
+			factor = 0.9
+			martial = 10
+		}
+		modifier = {
+			factor = 0.9
+			martial = 13
+		}
+		modifier = {
+			factor = 0.9
+			martial = 16
+		}
+		modifier = {
+			factor = 0.9
+			martial = 19
+		}
+		modifier = {
+			factor = 0.9
+			martial = 22
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 10
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 13
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 16
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 19
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 22
+		}
+		modifier = {
+			factor = 0.9
+			learning = 10
+		}
+		modifier = {
+			factor = 0.9
+			learning = 13
+		}
+		modifier = {
+			factor = 0.9
+			learning = 16
+		}
+		modifier = {
+			factor = 0.9
+			learning = 19
+		}
+		modifier = {
+			factor = 0.9
+			learning = 22
+		}
+		modifier = {
+			factor = 2
+			trait = harelip
+		}
+		modifier = {
+			factor = 2
+			trait = lisp
+		}
+		modifier = {
+			factor = 1.5
+			is_married = yes
+		}
+		modifier = {
+			factor = 1.33
+			trait = gluttonous
+		}
+		modifier = {
+			factor = 1.33
+			trait = slow
+		}
+		modifier = {
+			factor = 1.33
+			trait = craven
+		}
+		modifier = {
+			factor = 1.25
+			trait = gardener
+		}
+		modifier = {
+			factor = 1.25
+			trait = shy
+		}
+		modifier = {
+			factor = 1.25
+			trait = greedy
+		}
+		modifier = {
+			factor = 1.11
+			trait = cruel
+		}
+		modifier = {
+			factor = 1.11
+			trait = wroth
+		}
+		modifier = {
+			factor = 1.11
+			age = 50
+		}
+		modifier = {
+			factor = 1.11
+			age = 60
+		}
+		modifier = {
+			factor = 1.11
+			age = 70
+		}
+	}
+
+
+	immediate = {
+		random_realm_character = {
+			limit = {
+				is_female = yes
+				is_adult = yes
+				has_lover = no
+				OR = {
+					has_character_flag = spectating_tournament 
+					has_character_flag = attending_tournament 
+				}
+				NOT = {
+					trait = celibate
+					has_character_flag = tournament_romance 
+				}					
+			}
+			character_event = { id = 1000182608 days = 1 random = 3 }
+		}
+		set_character_flag = tournament_romance
+	}
+}
+
+character_event = { # A knight catches your eye
+	id = 1000182608
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182608
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182608 #Send him a signal
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.5
+				trait = poet
+			}
+			modifier = {
+				factor = 1.25
+				trait = honest
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.25
+				trait = gregarious
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.5
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				trait = shy
+			}
+			modifier = {
+				factor = 0.8
+				trait = craven
+			}
+			modifier = {
+				factor = 0.8
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.8
+				trait = patient
+			}
+			modifier = {
+				factor = 0.8
+				trait = paranoid
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		set_character_flag = tournament_romance
+		FROM = {
+			character_event = { id = 1000182609 days = 1 random = 3 }
+		}
+	}
+	option = {
+		name = EVTOPTB1000182608 #Do nothing
+		ai_chance = {
+			factor = 40
+		}
+		FROM = {
+			character_event = { id = 1000182610 }
+		}	
+	}
+}
+
+character_event = { # A lady beckons to you
+	id = 1000182609
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182609
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182609 #Respond favourably
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = fair }
+			}
+			modifier = {
+				factor = 2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.5
+				trait = poet
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { trait = poet }
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { trait = tall }
+			}
+			modifier = {
+				factor = 1.25
+				trait = honest
+			}
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				trait = trusting
+			}
+			modifier = {
+				factor = 1.25
+				trait = gregarious
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.11
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = ugly }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = dwarf }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = hunchback }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = clubfooted }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = harelip }
+			}
+			modifier = {
+				factor = 0.5
+				FROM = { trait = lisp }
+			}
+			modifier = {
+				factor = 0.5
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.5
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.75
+				FROM = { is_married = yes }
+			}
+			modifier = {
+				factor = 0.8
+				trait = shy
+			}
+			modifier = {
+				factor = 0.8
+				trait = craven
+			}
+			modifier = {
+				factor = 0.8
+				trait = temperate
+			}
+			modifier = {
+				factor = 0.8
+				trait = patient
+			}
+			modifier = {
+				factor = 0.8
+				trait = paranoid
+			}
+			modifier = {
+				factor = 0.8
+				FROM = { trait = slow }
+			}
+			modifier = {
+				factor = 0.8
+				FROM = { trait = imbecile }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		FROM = {
+			character_event = { id = 1000182611 days = 1 random = 3 }
+		}
+	}
+	
+	option = {
+		name = EVTOPTB1000182609 #Rebuff her
+		ai_chance = {
+			factor = 20
+		}
+		FROM = {
+			character_event = { id = 1000182612 }
+		}	
+		clr_character_flag = tournament_romance
+	}
+}
+
+character_event = { # clear flag from rejected knight
+	id = 1000182610
+
+	hide_window = yes
+	
+	immediate = {
+		clr_character_flag = tournament_romance
+	}
+}
+
+character_event = { # The knight comes to you
+	id = 1000182611
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182611
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182611 #Offer him your favour for the jousting
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.25
+				trait = brave
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = shield_maiden
+					trait = martial_lady
+					trait = martial_lady_tengri
+				}
+			}
+			modifier = {
+				factor = 1.25
+				religion = catholic
+			}
+			modifier = {
+				factor = 1.25
+				trait = honest
+			}
+			modifier = {
+				factor = 1.25
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = shy
+			}
+		}
+		FROM = { character_event = { id = 1000182613 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182611 #Mention your love of minstrels
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.25
+				trait = poet
+			}
+			modifier = {
+				factor = 1.25
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.25
+				culture = occitan
+			}
+			modifier = {
+				factor = 1.25
+				trait = gregarious
+			}
+			modifier = {
+				factor = 1.25
+				trait = fair
+			}
+		}
+		FROM = { character_event = { id = 1000182614 } }
+	}
+	
+	option = {
+		name = EVTOPTC1000182611 #Ask him to show you how to shoot the bow
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.25
+				trait = strong
+			}
+			modifier = {
+				factor = 1.25
+				trait = tall
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = shield_maiden
+					trait = martial_lady
+					trait = martial_lady_tengri
+				}
+			}
+			modifier = {
+				factor = 1.25
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.25
+				trait = hunter
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = misguided_warrior
+					trait = tough_soldier
+					trait = skilled_tactician
+					trait = brilliant_strategist
+				}
+			}
+		}
+		FROM = { character_event = { id = 1000182615 } }
+	}
+	
+	option = {
+		name = EVTOPTD1000182611 #Reject him
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 1.25
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.25
+				trait = impaler
+			}
+			modifier = {
+				factor = 1.25
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.25
+				trait = paranoid
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.25
+				trait = chaste
+			}
+		}
+		FROM = { character_event = { id = 1000182616 } }
+		FROM = { opinion = { who = ROOT modifier = insulted } }
+		clr_character_flag = tournament_romance
+	}
+}
+
+character_event = { # The knight snubs you
+	id = 1000182612
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182612
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182612 #Oh no!
+		prestige = -25
+		opinion = { who = FROM modifier = insulted }
+		clr_character_flag = tournament_romance
+	}
+}
+
+character_event = { # jousting for your lady--pure martial 'date'
+	id = 1000182613
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182613
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182613 #Joust successfully
+		trigger = {
+			OR = {
+				AND = {
+					martial = 7
+					OR = {	
+						trait = strong
+						trait = tough_soldier
+						trait = veteran
+						trait = champion
+						trait = fair
+					}
+				}
+				AND = {
+					martial = 9
+					OR = {
+						trait = tall
+						trait = misguided_warrior
+						trait = duelist
+						trait = brave
+					}
+				}
+				AND = {
+					martial = 11
+					OR = {
+						trait = skilled_tactician
+						trait = brilliant_strategist
+					}
+				}
+				martial = 12
+			}
+		}
+		prestige = 50
+		FROM = { character_event = { id = 1000182617 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 1 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182613 #Joust unsuccessfully
+		trigger = {
+			NOT = {
+				AND = {
+					martial = 7
+					OR = {	
+						trait = strong
+						trait = tough_soldier
+						trait = veteran
+						trait = champion
+						trait = fair
+					}
+				}
+				AND = {
+					martial = 9
+					OR = {
+						trait = tall
+						trait = misguided_warrior
+						trait = duelist
+						trait = brave
+					}
+				}
+				AND = {
+					martial = 11
+					OR = {
+						trait = skilled_tactician
+						trait = brilliant_strategist
+					}
+				}
+				martial = 12
+			}
+		}
+		prestige = -25
+		FROM = { character_event = { id = 1000182618 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_disappointed years = 1 } }
+	}
+}
+
+character_event = { # the minstrel's show--diplomacy 'date'
+	id = 1000182614
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182614
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182614 # Improvise a love song
+		trigger = {
+			OR = {
+				AND = {
+					diplomacy = 5
+					OR = {
+						trait = poet
+						trait = genius
+						trait = grey_eminence
+					}
+				}
+				AND = {
+					diplomacy = 7
+					OR = {
+						trait = quick
+						trait = charismatic_negotiator
+						trait = scholar
+						trait = trusting
+						trait = detached_priest
+					}
+				}
+				AND = {
+					diplomacy = 9
+					OR = {
+						trait = underhanded_rogue
+						trait = brilliant_strategist
+						trait = mastermind_theologian
+						trait = elusive_shadow
+						trait = midas_touched
+						trait = deceitful
+						trait = gregarious
+					}
+				}
+				diplomacy = 12
+			}
+		}
+		prestige = 50
+		FROM = { character_event = { id = 1000182617 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 1 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182614 #Embarass yourself dancing
+		trigger = {
+			NOT = {
+				AND = {
+					diplomacy = 5
+					OR = {
+						trait = poet
+						trait = genius
+						trait = grey_eminence
+					}
+				}
+				AND = {
+					diplomacy = 7
+					OR = {
+						trait = quick
+						trait = charismatic_negotiator
+						trait = scholar
+						trait = trusting
+						trait = detached_priest
+					}
+				}
+				AND = {
+					diplomacy = 9
+					OR = {
+						trait = underhanded_rogue
+						trait = brilliant_strategist
+						trait = mastermind_theologian
+						trait = elusive_shadow
+						trait = midas_touched
+						trait = deceitful
+						trait = gregarious
+					}
+				}
+				diplomacy = 12
+			}
+		}
+		prestige = -25
+		FROM = { character_event = { id = 1000182618 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_disappointed years = 1 } }
+	}
+}
+
+character_event = { # the archery range--intrigue/martial 'date'
+	id = 1000182615
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182615
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182615 # Show her a bullseye, then split her arrow
+		trigger = {
+			OR = {
+				AND = {
+					trait = hunter
+					martial = 4
+					intrigue = 4
+				}
+				AND = {
+					trait = strong
+					martial = 5
+					intrigue = 5
+				}
+				AND = {
+					martial = 6
+					intrigue = 6
+					OR = {
+						trait = patient
+						trait = diligent
+					}
+				}
+				AND = {
+					martial = 7
+					intrigue = 7
+					OR = {
+						trait = cynical
+						trait = kind
+					}
+				}
+				AND = {
+					martial = 8
+					intrigue = 8
+				}
+			}
+		}
+		prestige = 25
+		FROM = {
+			IF = {
+				limit = { NOT = { lifestyle_traits = 1 } }
+				random = {
+					chance = 33
+					add_trait = hunter
+				}
+			}	
+		}
+		IF = {
+			limit = { NOT = { trait = diligent } }
+			random = {
+				chance = 50
+				add_trait = diligent
+			}
+		}	
+		IF = {
+			limit = { NOT = { trait = patient } }
+			random = {
+				chance = 50
+				add_trait = patient
+			}
+		}	
+		FROM = { character_event = { id = 1000182617 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_impressed years = 2 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182615 #Embarass yourself
+		trigger = {
+			NOT = {
+				AND = {
+					trait = hunter
+					martial = 4
+					intrigue = 4
+				}
+				AND = {
+					trait = strong
+					martial = 5
+					intrigue = 5
+				}
+				AND = {
+					martial = 6
+					intrigue = 6
+					OR = {
+						trait = patient
+						trait = diligent
+					}
+				}
+				AND = {
+					martial = 7
+					intrigue = 7
+					OR = {
+						trait = cynical
+						trait = kind
+					}
+				}
+				AND = {
+					martial = 8
+					intrigue = 8
+				}
+			}
+		}
+		prestige = -25
+		FROM = { character_event = { id = 1000182618 } }
+		FROM = { opinion = { who = ROOT modifier = opinion_disappointed years = 1 } }
+	}
+}	
+
+character_event = { # The lady snubs you
+	id = 1000182616
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182616
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182616 #Oh no!
+		prestige = -50
+		clr_character_flag = tournament_romance
+	}
+}
+
+character_event = { # successful 'date'
+	id = 1000182617
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182617
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182617 # Continue the romance
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.25
+				trait = shy
+			}
+			modifier = {
+				factor = 1.25
+				trait = just
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = mastermind_theologian
+					trait = scholarly_theologian
+					trait = martial_cleric
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = grey_eminence
+					trait = charismatic_negotiator
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = quick
+					trait = genius
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.75
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.75
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		prestige = 25
+		FROM = { character_event = { id = 1000182621 days = 1 random = 2 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182617 # Leave the bedroom door ajar....
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.25
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = elusive_shadow
+					trait = intricate_webweaver
+					trait = flamboyant_schemer
+					trait = amateurish_plotter
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = strong
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = tall
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.75
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.75
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		prestige = 25
+		FROM = { character_event = { id = 1000182620 days = 1 random = 2 } }
+	}
+	
+	option = {
+		name = EVTOPTC1000182617 # He's not right for me
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.33
+				trait = homosexual
+			}
+			modifier = {
+				factor = 1.25
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = brilliant_strategist
+					trait = skilled_tactician
+					trait = tough_soldier
+					trait = misguided_warrior
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = quick
+					trait = genius
+				}
+			}
+			modifier = {
+				factor = 0.5
+				trait = lustful
+			}
+		}
+		prestige = 10
+		FROM = { character_event = { id = 1000182619 days = 1 random = 2 } }
+	}
+}
+
+character_event = { # failed 'date'
+	id = 1000182618
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182618
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182618 # He's not right for me
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.33
+				trait = homosexual
+			}
+			modifier = {
+				factor = 1.25
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = brilliant_strategist
+					trait = skilled_tactician
+					trait = tough_soldier
+					trait = misguided_warrior
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = quick
+					trait = genius
+				}
+			}
+			modifier = {
+				factor = 0.5
+				trait = lustful
+			}
+		}
+		prestige = -10
+		FROM = { character_event = { id = 1000182619 days = 1 random = 2 } }
+	}
+	
+	option = {
+		name = EVTOPTB1000182618 # Continue the romance
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.25
+				trait = shy
+			}
+			modifier = {
+				factor = 1.25
+				trait = just
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = mastermind_theologian
+					trait = scholarly_theologian
+					trait = martial_cleric
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = grey_eminence
+					trait = charismatic_negotiator
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = quick
+					trait = genius
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.75
+				trait = lustful
+			}
+			modifier = {
+				factor = 0.75
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		prestige = -25
+		FROM = { character_event = { id = 1000182621 days = 1 random = 2 } }
+	}
+	
+	option = {
+		name = EVTOPTC1000182618 # Leave the bedroom door ajar....
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.25
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = elusive_shadow
+					trait = intricate_webweaver
+					trait = flamboyant_schemer
+					trait = amateurish_plotter
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = strong
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = tall
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.75
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.75
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		prestige = -25
+		FROM = { character_event = { id = 1000182620 days = 1 random = 2 } }
+	}	
+}
+
+character_event = { # The lady breaks it off
+	id = 1000182619
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182619
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182619 #Oh no!
+		prestige = -25
+		clr_character_flag = tournament_romance
+		opinion = { who = FROM modifier = opinion_angry years = 999 }
+		reverse_opinion = { who = FROM modifier = opinion_angry years = 999 }
+	}
+}
+
+character_event = { # a trip to the bedroom?
+	id = 1000182620
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182620
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182620 # Hubba Hubba
+		ai_chance = {
+			factor = 80 #men...
+			modifier = {
+				factor = 2
+				trait = lustful
+			}
+			modifier = {
+				factor = 2
+				trait = hedonist
+			}
+			modifier = {
+				factor = 1.25
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.25
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.25
+				trait = wroth
+			}
+			modifier = {
+				factor = 1.25
+				trait = greedy
+			}
+			modifier = {
+				factor = 1.25
+				trait = gluttonous
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = tall
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.5
+				trait = chaste
+			}
+			modifier = {
+				factor = 0.5
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.8
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		add_lover = FROM
+		prestige = 10
+		FROM = { character_event = { id = 1000182623 days = 1 random = 2 } }
+		add_trait = lustful
+		remove_trait = temperate
+		random = {
+			chance = 50
+			remove_trait = patient
+		}
+	}
+	
+	option = {
+		name = EVTOPTB1000182620 #What a slut
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 3
+				trait = homosexual
+			}
+			modifier = {
+				factor = 1.25
+				trait = chaste
+			}
+			modifier = {
+				factor = 1.25
+				trait = scholar
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					trait = mastermind_theologian
+					trait = scholarly_theologian
+					trait = martial_cleric
+				}
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 100 }
+			}
+		}
+		FROM = { character_event = { id = 1000182622 days = 1 random = 2 } }
+		clr_character_flag = tournament_romance 
+		add_trait = chaste
+		piety = 50
+	}
+	
+	option = {
+		name = EVTOPTC1000182620 # This is too soon...
+		ai_chance = { factor = 100 }
+		trigger = { learning = 16 }
+		prestige = 25
+		piety = 25
+		add_trait = patient
+		add_trait = temperate
+		add_lover = FROM
+		FROM = { character_event = { id = 1000182624 days = 1 random = 2 } }
+	}	
+}
+
+character_event = { # keep it up?
+	id = 1000182621
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182621
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182621 # Courtly love
+		ai_chance = {
+			factor = 50 
+			modifier = {
+				factor = 1.25
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.25
+				trait = patient
+			}
+			modifier = {
+				factor = 1.25
+				trait = honest
+			}
+			modifier = {
+				factor = 1.25
+				trait = poet
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = fair
+				}
+			}
+			modifier = {
+				factor = 1.25
+				FROM = {
+					trait = tall
+				}
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 1.25
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 0.67
+				trait = homosexual
+			}
+			modifier = {
+				factor = 0.8
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.8
+				trait = slothful
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 0.8
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+		}
+		add_lover = FROM
+		prestige = 25
+		FROM = { character_event = { id = 1000182624 days = 1 random = 2 } }
+		IF = {
+			limit = { NOT = { lifestyle_traits = 1 } }
+			random = {
+				chance = 50
+				add_trait = poet
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB1000182621 #Break up
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.25
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = 0 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -10 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -20 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -30 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -40 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -50 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -60 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -70 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -80 } }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { opinion = { who = FROM value = -90 } }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 10 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 30 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 60 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 70 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 80 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 90 }
+			}
+			modifier = {
+				factor = 0.8
+				opinion = { who = FROM value = 100 }
+			}
+		}
+		FROM = { character_event = { id = 1000182622 days = 1 random = 2 } }
+		clr_character_flag = tournament_romance
+		add_trait = arbitrary
+		prestige = 10
+	}
+	
+	option = {
+		name = EVTOPTC1000182621 # I'd rather just be friends
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 2
+				trait = chaste
+			}
+			modifier = {
+				factor = 1.25
+				trait = slothful
+			}
+			modifier = {
+				factor = 1.25
+				trait = temperate
+			}
+			modifier = {
+				factor = 1.25
+				trait = just
+			}
+			modifier = {
+				factor = 1.25
+				trait = zealous
+			}
+		}
+		prestige = 25
+		piety = 25
+		add_trait = chaste
+		FROM = { character_event = { id = 1000182625 days = 1 random = 2 } }
+	}	
+}
+
+character_event = { # Knight breaks it off
+	id = 1000182622
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182622
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182622 #Oh no!
+		prestige = -25
+		clr_character_flag = tournament_romance
+		random = {
+			chance = 50
+			add_trait = shy
+		}
+		random = {
+			chance = 50
+			add_trait = cynical
+		}
+		opinion = { who = FROM modifier = opinion_angry years = 50 }
+		reverse_opinion = { who = FROM modifier = opinion_disappointed years = 50 }
+	}
+}
+
+character_event = { # nocturnal gymnastics
+	id = 1000182623
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182623
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182623 # heavy breathing
+		add_trait = lustful
+		prestige = 10
+		clr_character_flag = tournament_romance
+		random = {
+			chance = 33
+			impregnate = FROM
+		}
+	}	
+}
+
+character_event = { # romance continues
+	id = 1000182624
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182624
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182624 # sickeningly sweet
+		prestige = 25
+		clr_character_flag = tournament_romance
+		random = {
+			chance = 50
+			add_trait = diligent # long-distance relationship, 'nuff said
+		}
+		IF = {
+			limit = { NOT = { lifestyle_traits = 1 } }
+			random = {
+				chance = 50
+				add_trait = poet
+			}
+		}
+	}	
+}
+
+character_event = { # just friends?
+	id = 1000182625
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182625
+	
+	picture = GFX_evt_courtly_love
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182625 # I've made a friend
+		prestige = 25
+		clr_character_flag = tournament_romance
+		add_trait = chaste
+		opinion = { who = FROM modifier = opinion_friend years = 999 }
+		reverse_opinion = { who = FROM modifier = opinion_friend years = 999 }
+	}	
+	
+	option = {
+		name = EVTOPTB1000182625 # I wanted more — player-only
+		prestige = 10
+		add_trait = wroth
+		clr_character_flag = tournament_romance
+		opinion = { who = FROM modifier = opinion_angry years = 50 }
+		reverse_opinion = { who = FROM modifier = opinion_disappointed years = 50 }
+	}
+}
+
+character_event = { # Tournament is over
+	id = 1000182626
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182626
+	
+	picture = GFX_evt_tournament_gallery
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182626 # it was fun
+		prestige = 25
+		clr_character_flag = spectating_tournament
+		clr_character_flag = spectating_tournament_event
+		clr_character_flag = beauty_winner
+		clr_character_flag = beauty_second
+		clr_character_flag = beauty_third
+		clr_character_flag = do_not_disturb
+	}	
+}
+
+character_event = { # Tournament is cancelled
+	id = 1000182631
+	title = TOURNAMENTTITLE
+	desc = EVTDESC1000182631
+	
+	picture = GFX_evt_tournament_gallery
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA1000182631 # awww
+		prestige = -25
+		clr_character_flag = spectating_tournament
+		clr_character_flag = spectating_tournament_event
+		clr_character_flag = beauty_winner
+		clr_character_flag = beauty_second
+		clr_character_flag = beauty_third
+		clr_character_flag = do_not_disturb
+	}	
+}

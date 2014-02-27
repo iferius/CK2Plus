@@ -1,6 +1,6 @@
 #enclaved character declares independence
 character_event = {
-	id = 2500000
+	id = 1000182684
 	is_triggered_only = yes
 	picture = "GFX_evt_council"
 
@@ -19,13 +19,13 @@ character_event = {
 		}
 	}
 
-	desc = "EVTDESC2500000"
+	desc = "EVTDESC1000182684"
 
 	option = {
-		name = "EVTOPTA2500000" # Declare independence
+		name = "EVTOPTA1000182684" # Declare independence
 		trigger = {
 			prisoner = no
-			age = 16
+			is_adult = yes
 			NOT = { trait = incapable }
 		}
 		ai_chance = {
@@ -81,58 +81,58 @@ character_event = {
 				lower_tier_than = king
 				OR = {
 					ROOT = {
-						AND = {
-							OR = {
-								religion = catholic
-								is_heresy_of = catholic
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 20 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = orthodox
-												is_heresy_of = orthodox
-											} 
-										}
-									}
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+						any_demesne_province = {
+						any_neighbor_province = {
+								realm = { realm_size = 20 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = orthodox
+										religion = bogomilist
+										religion = nestorian
+										religion = monothelite
+										religion = iconoclast
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							OR = {
-								religion = orthodox
-								is_heresy_of = orthodox
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 20 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = catholic
-												is_heresy_of = catholic
-											} 
-										}
-									}
+						OR = {
+							religion = orthodox
+							religion = bogomilist
+							religion = nestorian
+							religion = monothelite
+							religion = iconoclast
+						}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 20 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = catholic
+										religion = cathar
+										religion = fraticelli
+										religion = waldensian
+										religion = lollard
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 20 }
-										NOT = { top_liege = { religion = ROOT } }
-									}
-								}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 20 }
+								NOT = { top_liege = { religion = ROOT } }
 							}
 						}
 					}
@@ -143,58 +143,58 @@ character_event = {
 				tier = king
 				OR = {
 					ROOT = {
-						AND = {
-							OR = {
-								religion = catholic
-								is_heresy_of = catholic
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 54 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = orthodox
-												is_heresy_of = orthodox
-											} 
-										}
-									}
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 54 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = orthodox
+										religion = bogomilist
+										religion = nestorian
+										religion = monothelite
+										religion = iconoclast
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							OR = {
-								religion = orthodox
-								is_heresy_of = orthodox
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 54 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = catholic
-												is_heresy_of = catholic
-											} 
-										}
-									}
+						OR = {
+							religion = orthodox
+							religion = bogomilist
+							religion = nestorian
+							religion = monothelite
+							religion = iconoclast
+						}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 54 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = catholic
+										religion = cathar
+										religion = fraticelli
+										religion = waldensian
+										religion = lollard
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 54 }
-										NOT = { top_liege = { religion = ROOT } }
-									}
-								}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 54 }
+								NOT = { top_liege = { religion = ROOT } }
 							}
 						}
 					}
@@ -205,58 +205,58 @@ character_event = {
 				tier= king
 				OR = {
 					ROOT = {
-						AND = {
-							OR = {
-								religion = catholic
-								is_heresy_of = catholic
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 72 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = orthodox
-												is_heresy_of = orthodox
-											} 
-										}
-									}
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 72 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = orthodox
+										religion = bogomilist
+										religion = nestorian
+										religion = monothelite
+										religion = iconoclast
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							OR = {
-								religion = orthodox
-								is_heresy_of = orthodox
-							}
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 72 }
-										NOT = { 
-											top_liege = { 
-												religion = ROOT
-												religion = catholic
-												is_heresy_of = catholic
-											} 
-										}
-									}
+						OR = {
+							religion = orthodox
+							religion = bogomilist
+							religion = nestorian
+							religion = monothelite
+							religion = iconoclast
+						}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 72 }
+								NOT = { 
+									top_liege = { 
+										religion = ROOT
+										religion = catholic
+										religion = cathar
+										religion = fraticelli
+										religion = waldensian
+										religion = lollard
+									} 
 								}
 							}
 						}
 					}
 					ROOT = {
-						AND = {
-							any_demesne_province = {
-								any_neighbor_province = {
-									AND = {
-										realm = { realm_size = 72 }
-										NOT = { top_liege = { religion = ROOT } }
-									}
-								}
+						any_demesne_province = {
+							any_neighbor_province = {
+								realm = { realm_size = 72 }
+								NOT = { top_liege = { religion = ROOT } }
 							}
 						}
 					}
@@ -299,12 +299,12 @@ character_event = {
 				who = liege
 				years = 100
 			}
-			liege = { character_event = { id = 2500001 } }
+			liege = { character_event = { id = 1000182685 } }
 		}
 		set_defacto_liege = ROOT
 	}
 	option = {
-		name = "EVTOPTB2500000" # Remain loyal
+		name = "EVTOPTB1000182684" # Remain loyal
 		ai_chance = {
 			factor = 25
 			modifier = {
@@ -331,7 +331,7 @@ character_event = {
 				factor = 10
 				liege = {
 					has_landed_title = e_hre
-					has_trait = crowned_by_pope
+					trait = crowned_by_pope
 				}
 			}
 			modifier = {
@@ -426,15 +426,6 @@ character_event = {
 					decadence = 25
 				}
 			}			
-			modifier = {
-				factor = 1
-				religion_group = muslim
-				liege = {
-					religion_group = muslim
-					NOT = { decadence = 25 }
-					decadence = 20
-				}
-			}
 			modifier = {
 				factor = 2
 				religion_group = muslim
@@ -536,14 +527,14 @@ character_event = {
 }
 
 character_event = {
-	id = 2500001
+	id = 1000182685
 	is_triggered_only = yes
 	picture = "GFX_evt_council"
 
-	desc = "EVTDESC2500001"
+	desc = "EVTDESC1000182685"
 
 	option = {
-		name = "EVTOPTA2500001"
+		name = "EVTOPTA1000182685"
 		opinion = {
 			modifier = opinion_independent
 			who = FROM

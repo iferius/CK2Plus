@@ -37,7 +37,7 @@ character_event = {
 		tier = count
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -143,7 +143,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -187,7 +187,7 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				age = 16
+				is_adult = yes
 				OR = {
 					trait = slothful
 					trait = content
@@ -312,7 +312,7 @@ character_event = {
 		NOT = { trait = cruel }
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -374,7 +374,7 @@ character_event = {
 		custom_tooltip = {
 			text = RELIGIOUSFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_religious" value = 0.5 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 	}
 
@@ -398,7 +398,7 @@ character_event = {
 		custom_tooltip = {
 			text = RELIGIOUSFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_religious" value = 1 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 	}
 }
@@ -429,7 +429,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -557,7 +557,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -709,7 +709,7 @@ character_event = {
 		NOT = { personality_traits = 4 }
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -783,7 +783,7 @@ character_event = {
 
 	immediate = { set_character_flag = dragon }
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -847,7 +847,7 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				age = 16
+				is_adult = yes
 			}
 			opinion = {
 				modifier = brave_pos
@@ -903,7 +903,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -1241,7 +1241,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -1548,7 +1548,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -1788,7 +1788,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -1826,7 +1826,7 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				age = 16
+				is_adult = yes
 				OR = {
 					trait = falconer
 					trait = hunter
@@ -1843,7 +1843,7 @@ character_event = {
 			text = COURTFACTIONMOODPLUS
 			change_variable = { which = "faction_mood_court" value = 0.5 }
 			change_variable = { which = "lifestyle_falconer" value = 1 }
-			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+			hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 		}
 	}
 
@@ -1860,7 +1860,7 @@ character_event = {
 					trait = hunter
 					martial = 10
 				}
-				age = 16
+				is_adult = yes
 			}
 			opinion = {
 				modifier = opinion_oblivious
@@ -1905,7 +1905,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2207,7 +2207,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2331,7 +2331,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2428,7 +2428,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2522,7 +2522,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2604,7 +2604,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2703,7 +2703,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2896,7 +2896,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -2984,7 +2984,7 @@ character_event = {
 		set_character_flag = troubadour
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -3073,7 +3073,7 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 
 		modifier = {
@@ -3087,12 +3087,12 @@ character_event = {
 		trigger = {
 			NOT = {
 				any_courtier = {
-					age = 16
+					is_adult = yes
 					trait = diligent
 					is_female = no
 				}
 				any_courtier = {
-					age = 16
+					is_adult = yes
 					trait = ambitious
 					OR = {
 						trait = cruel
@@ -3109,13 +3109,13 @@ character_event = {
 		name = "EVTOPTB4175"
 		trigger = {
 			any_courtier = {
-				age = 16
+				is_adult = yes
 				trait = diligent
 				is_female = no
 			}
 			NOT = {
 				any_courtier = {
-					age = 16
+					is_adult = yes
 					trait = ambitious
 					OR = {
 						trait = cruel
@@ -3132,7 +3132,7 @@ character_event = {
 		}
 		random_courtier = {
 			limit = {
-				age = 16
+				is_adult = yes
 				trait = diligent
 				is_female = no
 			}
@@ -3148,7 +3148,7 @@ character_event = {
 		name = "EVTOPTC4175"
 		trigger = {
 			any_courtier = {
-				age = 16
+				is_adult = yes
 				trait = ambitious
 				OR = {
 					trait = cruel
@@ -3160,7 +3160,7 @@ character_event = {
 		add_trait = maimed
 		random_courtier = {
 			limit = {
-				age = 16
+				is_adult = yes
 				trait = ambitious
 				OR = {
 					trait = cruel

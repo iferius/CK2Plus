@@ -4,7 +4,7 @@ k_qarakhnid = { # Actually Khiva
         color = { 39 138 51 }
         color2 = { 255 255 255 }
         
-        capital        = 626 # Khiva
+        capital = 626 # Khiva
         culture = persian
         
         tengri_pagan_reformed = 50
@@ -33,7 +33,7 @@ k_gondar = {
         allow = {
                 war = no
                 OR = {
-                        religion_group = judaism_group
+                        religion_group = jewish_group
                         k_gondar = { OR = { is_titular = no has_holder = yes } }
                 }
         }
@@ -51,16 +51,6 @@ k_magna_graecia = {
         }
         culture = greek
         dignity = 10
-        greek = "Megane Hellas"
-        sicilian_greek = "Megane Hellas"
-        sicilian = "Magna Grecia"
-        italian = "Magna Grecia"
-        bedouin_arabic = "Majna Ghrasya"
-        maghreb_arabic = "Majna Ghrasya"
-        levantine_arabic = "Majna Ghrasya"
-        egyptian_arabic = "Majna Ghrasya"
-        andalusian_arabic = "Majna Ghrasya"
-        sicilian_arabic = "Majna Ghrasya"
 }
 
 k_bhutan = {
@@ -87,30 +77,12 @@ k_bavaria = {
                 }
                 
                 catholic = 700 # Crusade target weight
-                hungarian = "Bajorország"
-                frankish = "Bavière"
-                bohemian = "Bavorsko"
-                italian = "Baviera"
-                german = "Bayern"
-                greek = "Bavaría"
-                croatian = "Bavarska"
-                polish = "Bawaria"
-                dutch = "Beieren"
 }
 
 k_cornwall = {
         color = { 195 65 15 }
         capital = 31 # Cornwall
         culture = cornish
-        
-        saxon = "Cornweall"
-        cornish = "Kernow"
-        scottish = "Dumnonia"
-        breton = "Dumnonia"
-        welsh = "Cernyw"
-        norman = "Cornualia"
-        frankish = "Cornualia"
-        
         
         allow = {
                 war = no
@@ -137,12 +109,7 @@ k_dublin = {
                         k_dublin = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        irish = "Dubhlinn"
-        saxon = "Difelin"
-        norwegian = "Dyflin"
-        swedish = "Dyflin"
-        danish = "Dyflin"
-        welsh = "Dulyn"
+        
 }
 
 k_epirus = {
@@ -156,32 +123,62 @@ k_epirus = {
                         k_epirus = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        greek = "Epeiros"
-        sicilian_greek = "Epeiros"
-        croatian = "Epir"
-        serbian = "Epir"
-        frankish = "Epire"
-        bulgarian = "Epir"
 }
 
 k_holland = {
-        color = { 156  96  100 }
-        culture = dutch
-        capital = 80
-        allow = {
-                lower_tier_than = king
-                OR = {
-                        culture = dutch
-                        k_holland = { OR = { is_titular = no has_holder = yes } }
-                }
-                has_global_flag = alternate_scenarios
-        }
-        frankish = "Hollande"
-        italian = "Olanda"
-        castillan = "Holanda"
-        frisian = "Hollân"
-        bohemian = "Holandsko"
-        polish = "Holandia"
+	color = { 156  96  100 }
+	culture = dutch
+	capital = 80
+	allow = {
+		lower_tier_than = king
+		OR = {
+				culture = dutch
+				k_holland = { OR = { is_titular = no has_holder = yes } }
+		}
+		has_global_flag = alternate_scenarios
+	}
+}
+
+k_iceland = {
+	color={ 105 55 215 }
+	color2={ 120 220 120 }
+	
+	culture = icelandic
+
+    capital = 1 #Vestisland
+	
+	
+	allow = {
+		war = no
+		OR = {
+			culture_group = north_germanic
+			k_iceland = {
+				OR = {
+						is_titular = no
+						has_holder = yes
+				}
+			}
+		}
+    }
+}
+
+k_israel = {
+	color={ 120 120 220 }
+	color2={ 255 255 255 }
+
+	capital = 774 # Jerusalem
+
+	dignity = 100 # Counted as having this many more counties than it does
+
+	allow = {
+		religion_group = jewish_group
+		k_israel = { 
+			OR = { 
+				is_titular = no 
+				has_holder = yes
+			} 
+		}
+	}
 }
 
 k_livonia = {
@@ -195,17 +192,6 @@ k_livonia = {
                         k_livonia = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        swedish = "Livland"
-        danish = "Livland"
-        norwegian = "Livland"
-        norse = "Livland"
-        german = "Livland"
-        lithuanian = "Livonija"
-        finnish = "Liivinmaa"
-        russian = "Liflyandiya"
-        ugricbaltic = "Liivimaa"
-        lettigallish = "Livonika"
-        polish = "Inflanty"
 }
 
 k_mercia = {
@@ -222,20 +208,11 @@ k_mercia = {
                         k_mercia = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        saxon = "Mierce"
-        norman = "Mercie"
-        frankish = "Mercie"
 }
 
 k_normandy = { #unused
         color={ 73 136 4 }
         color2={ 255 255 255 }
-        culture = norman
-        frankish = "Normandie"
-        norman = "Normanz"
-        breton = "Normandi"
-        dutch = "Normandië"
-        occitan = "Normandia"
 }
 
 k_northumbria = {
@@ -252,32 +229,20 @@ k_northumbria = {
                         k_northumbria = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        saxon = "Northymbraland"
-        norman = "Northumbrie"
 }
 
 k_prussia = {
-        color={ 121 176 209 }
-        capital = 370 # Marienburg
-        culture = german
-        allow = {
-                war = no
-                OR = {
-                        culture = german
-                        culture_group = baltic
-                        k_prussia = { OR = { is_titular = no has_holder = yes } }
-                }
-        }
-        german = "Preußen"
-        lettigallish = "Prusija"
-        lithuanian = "Prusija"
-        polish = "Prusy"
-        prussian = "Prusa"
-        danish = "Prøjsen"
-        swedish = "Projsen"
-        norse = "Projsen"
-        norwegian = "Projsen"
-        dutch = "Pruissen"
+	color={ 121 176 209 }
+	capital = 370 # Marienburg
+	culture = german
+	allow = {
+		war = no
+		OR = {
+			culture = german
+			culture_group = baltic
+			k_prussia = { OR = { is_titular = no has_holder = yes } }
+		}
+	}
 }
 
 k_sami = {
@@ -303,12 +268,6 @@ k_sami = {
         title = "HEAD_CHIEF"
         foa = "HEAD_CHIEF_FOA"
         title_prefix = "UNIFIED_TRIBES_OF"        
-        finnish = "Lapps"
-        swedish = "Lapps"
-        norwegian = "Lapps"
-        danish = "Lapps"
-        norse = "Lapps"
-        russian = "Lopari"
 }
 
 k_sardinia = {
@@ -323,11 +282,6 @@ k_sardinia = {
                         k_sardinia = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        italian = "Sardegna"
-        catalan = "Sardenya"
-        castillan = "Cerdena"
-        occitan = "Sardenha"
-        sicilian = "Sardigna"
 }
 
 k_saxony = {
@@ -347,18 +301,6 @@ k_saxony = {
                         k_saxony = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        german = "Sachsen"
-        bohemian = "Sasko"
-        polish = "Saksonia"
-        italian = "Sassonia"
-        frankish = "Saxe"
-        saxon = "Sakska"
-        dutch = "Saksen"
-        lithuanian = "Saksonija"
-        prussian = "Sakska"
-        pommeranian = "Sakska"
-        russian = "Saksonija"
-        hungarian ="Szászország"
 }
 
 k_thessalonika = {
@@ -370,10 +312,6 @@ k_thessalonika = {
                 religion = catholic
         }
         capital = 490 #Thessalonica
-        turkish = "Salonika"
-        bulgarian = "Solun"
-        frankish = "Salonique"
-        serbian = "Solun"
 }
 
 k_roma = {
@@ -384,20 +322,14 @@ k_roma = {
         title = "Consul"
         title_female = "Consul"
 
-        short_name = yes
-
         allow = {
                 war = no
                 OR = {
                         is_republic = yes
+						culture = roman
                         k_roma = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        german = "Rom"
-        frankish = "Rome"
-        italian = "Roma"
-        greek = "Romi"
-        dutch = "Rome"
 }
 
 k_gotland = {
@@ -417,8 +349,6 @@ k_gotland = {
                         k_gotland = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        finnish = "Gotlanti"
-        ugricbaltic = "Gotlanti"
 }
 
 k_ancona = {
@@ -438,9 +368,6 @@ k_ancona = {
                         k_ancona = { OR = { is_titular = no has_holder = yes } }
                 }
         }
-        greek = "Ankon"
-        sicilian_greek = "Ankon"
-        frankish = "Ancone"
 }
 
 k_wend = {
@@ -456,11 +383,6 @@ k_wend = {
                 }
         }
         dignity = 100
-        danish = "Vindr"
-        norwegian = "Vindr"
-        norse = "Vindr"
-        swedish = "Vindr"
-        polish = "Wendowie"
 }
 
 k_wessex = {
@@ -507,18 +429,13 @@ k_cyprus = {
         color = { 85 138 236 }
         color2= { 190 0 0 }
         capital = 757 # Famagusta
-        greek = "Kypros"
-        sicilian_greek = "Kypros"
-        turkish = "Kibris"
-        frankish = "Chypre"
-        outremer = "Chypre"
-        norman = "Cipre"
-        italian = "Cipro"
-        sicilian = "Cipru"
         allow = {
                 OR = {
-                        religion = catholic
-                        is_heresy_of = catholic
+					religion = catholic
+					religion = cathar
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
                 }
         }
 }
@@ -551,7 +468,7 @@ k_fatimids = {
         # OBSOLETE
         color={ 10 140 4 }
         color2={ 200 200 0 }
-#        capital        = 796 # Cairo
+#       capital = 796 # Cairo
         culture = egyptian_arabic
         
         allow = {
@@ -573,13 +490,74 @@ k_karaman = {
 }
 k_magyar = {
         color={ 187 70 70 }
-        tribe = yes
         culture = hungarian
         
         capital = 522 # Pest
         
         allow = {
-                always = no
+		
+			hidden_tooltip = {
+				has_global_flag = magyar_victory
+				NOT = {
+					has_global_flag = hungary_formed
+				}
+			}
+		
+			is_adult = yes
+		prisoner = no
+		NOT = { trait = incapable }
+			ruled_years = 5
+			war = no
+			NOT = {
+				AND = {
+					has_landed_title = e_byzantium
+					ai = yes
+				}
+			}
+                OR = {
+                        culture = hungarian
+                        k_magyar = {
+                                OR = {
+                                        is_titular = no
+                                        has_holder = yes
+                                }
+                        }
+                }
+        }
+}
+k_hungary = {
+        color={ 187 70 70 }
+        culture = hungarian
+        
+        capital = 522 # Pest
+        
+        allow = {
+		
+			hidden_tooltip = {
+				has_global_flag = magyar_victory
+				has_global_flag = hungary_formed
+			}
+		
+			is_adult = yes
+		prisoner = no
+		NOT = { trait = incapable }
+			ruled_years = 5
+			war = no
+			NOT = {
+				AND = {
+					has_landed_title = e_byzantium
+					ai = yes
+				}
+			}
+                OR = {
+                        culture = hungarian
+                        k_hungary = {
+                                OR = {
+                                        is_titular = no
+                                        has_holder = yes
+                                }
+                        }
+                }
         }
 }
 k_marinid = {
@@ -604,12 +582,6 @@ k_naples = {
         color = { 0 0 255 }
         color2= { 255 216 0 }
         capital = 334 # Napoli
-        german = "Neapel"
-        norman = "Naples"
-        frankish = "Naples"
-        occitan = "Nàpols"
-        italian = "Napoli"
-        greek = "Neapolis"
         allow = {
                 always = no
         }
@@ -660,8 +632,11 @@ k_trinacria = {
         
         allow = {
                 OR = {
-                        religion = catholic
-                        is_heresy_of = catholic
+					religion = catholic
+					religion = cathar
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
                 }
         }
 }
@@ -708,11 +683,7 @@ k_ziyanids = {
 d_limburg = {
         color={ 255 0 0 }
         color2={ 230 230 230 }
-        frankish = "Limbourg"
-        italian = "Limburgo"
-        bohemian = "Limburk"
-        castillan = "Limburgo"
-        capital = 912 #Limburg
+        capital = 939 #Limburg
         culture = dutch
 }
         
@@ -780,14 +751,13 @@ d_cumberland = {
 }
 d_curonian = {
         color = { 141 55 29 }
-        lettigallish = "Kursi"
         tribe = yes
         
         allow = {
                 always = no
         }
         
-        capital        = 373 # Kurzeme
+        capital = 373 # Kurzeme
         culture = lettigallish
         title = "HIGH_CHIEF"
         foa = "HIGH_CHIEF_FOA"
@@ -802,7 +772,7 @@ d_danes = {
         
         dignity = 10
         
-        capital        = 266 # Sjaelland
+        capital = 266 # Sjaelland
         
         allow = {
                 always = no
@@ -827,8 +797,8 @@ d_erzerum = {
 }
 d_estonia = {
         color = { 94 60 22 }
-        ugricbaltic = "Eesti"
-        capital        = 378 # Reval
+
+        capital = 378 # Reval
         
         allow = {
                 always = no
@@ -854,7 +824,7 @@ d_geats = {
         
         dignity = 8
         
-        capital        = 297 # Västergötland
+        capital = 297 # V�sterg�tland
         
         allow = {
                 always = no
@@ -870,7 +840,6 @@ d_ikonion = {
 }
 d_ingers = {
         color={ 125 125 40 }
-        ugricbaltic = "Inkerikot"
         tribe = yes
         
         allow = {
@@ -884,9 +853,6 @@ d_ingers = {
 }
 d_kajaneborg = {
         color = { 123 73 13 }
-        finnish = "kveeni"
-        ugricbaltic = "kveeni"
-        lappish = "kveeni"
         tribe = yes
         
         allow = {
@@ -906,7 +872,6 @@ d_karnten = {
 }
 d_kexholm = {
         color={ 121 98 20 }
-        finnish = "Käkisalmelainen"
         tribe = yes
         
         allow = {
@@ -934,7 +899,7 @@ d_khazars = {
 }
 d_kola = {
         color = { 111 69 33 }
-        lappish = "Guoládat"
+		
         
         tribe = yes
         
@@ -1084,7 +1049,7 @@ d_pruthenians = {
                 always = no
         }
         
-        capital        = 370 # Marienburg
+        capital = 370 # Marienburg
         culture = prussian
         title = "HIGH_CHIEF"
         foa = "HIGH_CHIEF_FOA"
@@ -1109,7 +1074,6 @@ d_sandomiersk = {
 }
 d_satakunta = {
         color = { 117 47 47 }
-        finnish = "Satakuntalainen"
         tribe = yes
         
         allow = {
@@ -1141,7 +1105,7 @@ d_sweden = {
         
         dignity = 10
         
-        capital        = 290 # Uppland
+        capital = 290 # Uppland
         
         allow = {
                 always = no
@@ -1151,7 +1115,6 @@ d_sweden = {
 }
 d_tavasts = {
         color = { 131 21 21 }
-        finnish = "Hämäläiset"
         tribe = yes
         
         allow = {
@@ -1230,8 +1193,6 @@ d_volga = {
 }
 d_votes = {
         color = { 0 193 119 }
-        ugricbaltic = "Vadjalaisot"
-        finnish = "Vatjalaiset"
         
         tribe = yes
         
@@ -1456,8 +1417,7 @@ d_amalfi = {
 d_gaete = {
         color={ 220 220 200 }
         color2={ 250 0 0 }
-        greek = "Gaeta"
-        capital = 1019 # Gaète
+        capital = 1019 # Ga�te
         allow = {
                 is_republic = yes
         }
@@ -1476,9 +1436,6 @@ d_noli = {
 d_raguse = {
         color={ 133 98 17 }
         color2={ 255 255 255 }
-        greek = "Raugia"
-        croatian = "Dubrovnik"
-        serbian = "Dubrovnik"
         capital = 468 # Ragusa
         allow = {
                 is_republic = yes
@@ -1491,7 +1448,7 @@ d_raguse = {
 ######################################
 
 ##############################
-# Gaète
+# Ga�te
 ##############################
 b_coniulo  = {
         culture = italian
@@ -1689,7 +1646,7 @@ b_caetani = {
         religion = catholic
 }
 
-# LÜBECK:
+# L�BECK:
 
 b_bardewik = {
         culture = german
@@ -1774,18 +1731,6 @@ d_acre = {
         color = { 19 180 16 }
         dignity = 10
         greek = "Ptolemais"
-
-        sicilian_greek = "Ptolemais"
-
-        bedouin_arabic = "Akko"
-
-        maghreb_arabic = "Akko"
-        levantine_arabic = "Akko"
-        egyptian_arabic = "Akko"
-
-        andalusian_arabic = "Akko"
-
-        sicilian_arabic = "Akko"
 }
 
 d_aquileia = {
@@ -1799,9 +1744,6 @@ d_aquileia = {
                 is_theocracy = yes
         }
         dignity = 10
-        croatian = "Akvileja"
-        serbian = "Akvileja"
-        german = "Agley"
 }
 
 d_bologna = {
@@ -1818,10 +1760,6 @@ d_bologna = {
                 }
         }
         dignity = 10
-        frankish = "Bologne"
-        occitan = "Bolonha"
-        sicilian = "Bulogna"
-        english = "Baloney"
 }
 
 d_foix = {
@@ -1842,11 +1780,6 @@ d_hamburg = {
         }
         capital = 261
         dignity = 10
-	saxon = "Hamborg"
-        danish = "Hamborg"
-        swedish = "Hamborg"
-        norwegian = "Hamborg"
-        norse = "Hamborg"
 }
 
 d_galatia = {
@@ -1862,13 +1795,6 @@ d_galatia = {
                 }
         }
         dignity = 10
-        turkish = "Kirsehir"
-        bedouin_arabic = "Kirshur"
-        maghreb_arabic = "Kirshur"
-        levantine_arabic = "Kirshur"
-        egyptian_arabic = "Kirshur"
-        andalusian_arabic = "Kirshur"
-        sicilian_arabic = "Kirshur"
 }
 
 d_karelians = {
@@ -1881,12 +1807,6 @@ d_karelians = {
         foa = "HIGH_CHIEF_FOA"
         title_prefix = "TRIBE_OF"
         dignity = 10
-        swedish = "Karelen"
-        danish = "Karelen"
-        norwegian = "Karelen"
-        russian = "Kareliya"
-        finnish = "Karjala"
-        komi = "Karjala"
 }
 
 d_mainz = {
@@ -1916,11 +1836,6 @@ d_marino = {
                 }
         }
         dignity = 10
-        frankish = "Marin"
-        occitan = "Marin"
-        sicilian = "Marinu"
-        greek = "Marinos"
-        sicilian_greek = "Marinos"
 }
 
 d_pfalz = {
@@ -1932,11 +1847,6 @@ d_pfalz = {
                 d_pfalz = { has_holder = yes }
         }
         dignity = 10
-        english = "Palatinate"
-        frankish = "Palatinat"
-        dutch = "Palts"
-        italian = "Palatinato"
-        occitan = "Palatinat"
 }
 
 d_ravenna = {
@@ -1950,23 +1860,10 @@ d_ravenna = {
                 is_theocracy = yes
         }
         dignity = 10
-        german = "Raben"
-        frankish = "Ravenne"
-        occitan = "Ravena"
 }
 
 d_tobruk = {
         color={ 10 48 243 }
-        bedouin_arabic = "Tubruq"
-        maghreb_arabic = "Tubruq"
-        levantine_arabic = "Tubruq"
-        egyptian_arabic = "Tubruq"
-        andalusian_arabic = "Tubruq"
-        sicilian_arabic = "Tubruq"
-        greek = "Antipyrgos"
-        sicilian_greek = "Antipyrgos"
-        italian = "Tobruch"
-        sicilian = "Tobruch"
 }
 
 d_trier = {
@@ -1978,9 +1875,6 @@ d_trier = {
         }
         dignity = 10
         capital = 118
-        italian = "Treviri"
-        frankish = "Trèves"
-        occitan = "Treveri"
 }
 
 d_salzburg = {
@@ -1992,9 +1886,6 @@ d_salzburg = {
                 is_theocracy = yes
         }
         dignity = 10
-        frankish = "Salzbourg"
-        italian = "Salisburgo"
-        bohemian = "Solnohrad"
 }
 
 d_samarra = {
@@ -2009,23 +1900,10 @@ d_syracuse = {
                 war = no
                 culture_group = byzantine
         }
-        greek = "Syrakousa"
-        sicilian_greek = "Syrakousa"
-        sicilian = "Sarausa"
-        sicilian_arabic = "Surkush"
-        maghreb_arabic = "Surkush"
-        levantine_arabic = "Surkush"
-        egyptian_arabic = "Surkush"
-        bedouin_arabic = "Surkush"
-        andalusian_arabic = "Surkush"
 }
 
 d_tyrone = {
         color={ 137 14 21 }
-        irish = "TÌr Eoghain"
-        english = "Tyrone"
-        norman = "Tirowen"
-        saxon = "Tirowen"
 }
 
 d_kasogs = {

@@ -5,6 +5,7 @@ castle = {
 		potential = {
 			FROM = {
 				independent = yes
+				ai = yes
 				OR = {
 					has_landed_title = d_teutonic_order
 					has_landed_title = d_knights_templar
@@ -21,6 +22,21 @@ castle = {
 					has_landed_title = d_zhayedan_2
 					has_landed_title = d_anubis
 					has_landed_title = d_horus
+					has_landed_title = d_immortals
+					has_landed_title = d_zealots
+					has_landed_title = d_holy_sepulchre
+					has_landed_title = d_saint_anthony
+					has_landed_title = d_sky_lords
+					has_landed_title = d_spirit_guardians
+					has_landed_title = d_warriors_perun
+					has_landed_title = d_chosen_perkunas
+					has_landed_title = d_sons_kaleva
+					has_landed_title = d_huitzilopochtli
+					has_landed_title = d_knights_santiago
+					has_landed_title = d_knights_calatrava
+					has_landed_title = d_braedralag
+					has_landed_title = d_herculean
+					has_landed_title = d_sacred_band
 				}
 			}
 		}
@@ -58,9 +74,9 @@ city = {
 	ct_jewish_community_1 = {
 		potential = {
 			FROM = {
-				NOT = { religion_group = judaism_group }
+				NOT = { religion_group = jewish_group }
 			}
-			NOT = { religion_group = judaism_group }
+			NOT = { religion_group = jewish_group }
 		}
 		trigger = {
 			always = no
@@ -76,9 +92,9 @@ city = {
 		upgrades_from = ct_jewish_community_1
 		potential = {
 			FROM = {
-				NOT = { religion_group = judaism_group }
+				NOT = { religion_group = jewish_group }
 			}
-			NOT = { religion_group = judaism_group }
+			NOT = { religion_group = jewish_group }
 		}
 		trigger = {
 			always = no
@@ -94,9 +110,9 @@ city = {
 		upgrades_from = ct_jewish_community_2
 		potential = {
 			FROM = {
-				NOT = { religion_group = judaism_group }
+				NOT = { religion_group = jewish_group }
 			}
-			NOT = { religion_group = judaism_group }
+			NOT = { religion_group = jewish_group }
 		}
 		trigger = {
 			always = no

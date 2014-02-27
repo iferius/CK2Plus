@@ -44,7 +44,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 			}
 		}
@@ -57,7 +57,7 @@ de_jure_laws = {
 				revoke_law = centralization_4
 			}
 			set_appoint_generals = yes
-			set_appoint_regents = no
+#			set_appoint_regents = no
 			set_the_kings_peace = no
 			set_the_kings_full_peace = no
 			set_protected_inheritance = no
@@ -122,7 +122,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 				if = {
 					limit = {
@@ -143,7 +143,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 			}
 		}
@@ -156,7 +156,7 @@ de_jure_laws = {
 				revoke_law = centralization_4
 			}
 			set_appoint_generals = yes
-			set_appoint_regents = no
+#			set_appoint_regents = no
 			set_the_kings_peace = no
 			set_the_kings_full_peace = no
 			set_protected_inheritance = no
@@ -180,7 +180,7 @@ de_jure_laws = {
 
 		allow = {
 			holder_scope = {
-				is_republic = no
+				#is_republic = no  #Commented by Minrog, testing Republic changes
 
 				custom_tooltip = {
 					text = TT_NOT_UNREFORMED_PAGAN
@@ -191,6 +191,7 @@ de_jure_laws = {
 						NOT = { religion = finnish_pagan }
 						NOT = { religion = aztec_pagan }
 						NOT = { religion = slavic_pagan }
+						NOT = { religion = west_african_pagan }
 					}
 				}
 			}
@@ -244,7 +245,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 				if = {
 					limit = {
@@ -265,7 +266,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 			}
 		}
@@ -278,7 +279,7 @@ de_jure_laws = {
 				revoke_law = centralization_4
 			}
 			set_appoint_generals = yes
-			set_appoint_regents = yes
+#			set_appoint_regents = yes
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = no
 			set_protected_inheritance = no
@@ -312,6 +313,7 @@ de_jure_laws = {
 						NOT = { religion = finnish_pagan }
 						NOT = { religion = aztec_pagan }
 						NOT = { religion = slavic_pagan }
+						NOT = { religion = west_african_pagan }
 					}
 				}
 			}
@@ -366,7 +368,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 				if = {
 					limit = {
@@ -387,7 +389,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 			}
 		}
@@ -400,7 +402,7 @@ de_jure_laws = {
 				revoke_law = centralization_4
 			}
 			set_appoint_generals = yes
-			set_appoint_regents = yes
+#			set_appoint_regents = yes
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = no
 			set_protected_inheritance = yes
@@ -434,6 +436,7 @@ de_jure_laws = {
 						NOT = { religion = finnish_pagan }
 						NOT = { religion = aztec_pagan }
 						NOT = { religion = slavic_pagan }
+						NOT = { religion = west_african_pagan }
 					}
 				}
 			}
@@ -481,7 +484,7 @@ de_jure_laws = {
 							months = 120
 						}
 					}
-					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } } }
+					holder_scope = { hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } } }
 				}
 			}
 		}
@@ -494,7 +497,7 @@ de_jure_laws = {
 				revoke_law = centralization_4
 			}
 			set_appoint_generals = yes
-			set_appoint_regents = yes
+#			set_appoint_regents = yes
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = yes
 			set_protected_inheritance = yes
@@ -514,13 +517,19 @@ de_jure_laws = {
 
 # INVESTITURE
 
+	# Papal Investiture
 	investiture_law_0 = {
 		show_as_title = yes
 		group = investiture_law
 		default = yes
 		potential = {
 			NOT = { has_law = investiture_law_0 }
-			holder_scope = { religion = catholic }
+			holder_scope = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
 		}
 		allow = {
 			NOT = { empire = { NOT = { title = PREV } holder_scope = { OR = { character = ROOT is_liege_of = ROOT } } } }
@@ -547,15 +556,21 @@ de_jure_laws = {
 		}
 	}
 
+	# Free Investiture
 	investiture_law_1 = {
 		show_as_title = yes
 		rel_head_opinion = -20
 		free_invest_vassal_opinion = 5
-		temple_all_opinion = 20 # Bishops will be grateful to their liege for their appointment
+		temple_all_opinion = 10 # Bishops will be grateful to their liege for their appointment
 		group = investiture_law
 		potential = {
 			NOT = { has_law = investiture_law_1 }
-			holder_scope = { religion = catholic }
+			holder_scope = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
 		}
 		allow = {
 			NOT = { title = k_papal_state }
@@ -567,10 +582,15 @@ de_jure_laws = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 0.002 # Rare to do this
+			}
+			modifier = {
 				factor = 0
 				OR = {
-					NOT = { holder_scope = { trait = cynical } }
-					NOT = { holder_scope = { trait = greedy } }
+					holder_scope = {
+						NOT = { trait = cynical }
+					}
+					NOT = { has_law = investiture_law_0 }
 				}
 			}
 		}
@@ -582,5 +602,4 @@ de_jure_laws = {
 			set_investiture = any
 		}
 	}
-
 }

@@ -471,7 +471,7 @@ character_event = {
 		random_vassal = {
 			limit = {
 				learning = 10
-				age = 16
+				is_adult = yes
 			}
 			opinion = {
 				modifier = opinion_approves
@@ -903,6 +903,7 @@ character_event = {
 		name = "EVTOPTA74047"
 		clr_character_flag = prosperity_increase
 		remove_character_modifier = holding_summer_fair
+		clr_character_flag = do_not_disturb
 		set_character_flag = recent_summer_fair
 		prestige = 10
 		change_variable = { which = "lifestyle_gardener" value = 1 }
@@ -919,7 +920,7 @@ character_event = {
 			custom_tooltip = {
 				text = REPUBLICANFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_republican" value = 1 }
-				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			}
 			set_character_flag = fair_mood_boost
 		}
@@ -1012,7 +1013,7 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				age = 16
+				is_adult = yes
 				reverse_opinion = {
 					who = ROOT
 					value = 20
@@ -1036,7 +1037,7 @@ character_event = {
 			limit = {
 				war = no
 				prisoner = no
-				age = 16
+				is_adult = yes
 				reverse_opinion = {
 					who = ROOT
 					value = 20

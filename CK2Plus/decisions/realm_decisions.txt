@@ -1,31 +1,56 @@
 decisions = {
 
 	hold_a_epic_tournament  = {
+		is_high_prio = yes
 		potential = {
-			NOT = {
-				religion_group = muslim
-				has_character_flag = epic_tournament
-			}
+			is_ruler = yes
 			independent = yes
-			NOT = { is_female = yes	}
 			OR = {
 				tier = king
 				tier = emperor
 			}
+			NOT = {
+				religion_group = muslim
+				has_character_flag = epic_tournament
+			}
 			NOT = { has_character_modifier = holding_epic_tournament }
 		}
 		allow = {
+			is_adult = yes
 			war = no
-			age = 16
 			ruled_years = 5
 			prestige = 500
 			wealth = 200
+			OR = {
+				is_female = no
+				OR = {
+					martial = 15
+					any_vassal = {
+						OR = {
+							has_minor_title = title_ladys_champion
+							has_minor_title = title_champion
+						}
+					}
+					any_courtier = {
+						OR = {
+							has_minor_title = title_ladys_champion
+							has_minor_title = title_champion
+						}
+					}
+				}
+			}
 			NOT = { has_character_modifier = holding_large_feast }
 			NOT = { has_character_modifier = holding_summer_fair }
-			NOT = { has_character_modifier = holding_grand_hunt }
+			NOT = { 
+				has_character_modifier = holding_grand_hunt
+				has_character_modifier = planning_grand_banquet
+				has_character_modifier = holding_grand_banquet
+				has_character_flag = held_grand_banquet				
+			}
 		}
 		effect = {
 			set_character_flag = epic_tournament
+			set_character_flag = do_not_disturb			
 			set_character_flag = holding_epic_tournament
 			wealth = -200
 			prestige = 100
@@ -38,14 +63,30 @@ decisions = {
 				character_event = { id = 70001 days = 60 } # Tournament start
 				any_realm_character = {
 					limit = {
+						is_adult = yes
 						is_feudal = yes
-						NOT = { has_job_title = job_spiritual }
-						age = 16
-						NOT = { health_traits = 1 }
 						prisoner = no
-						NOT = { is_female = yes	}
+						is_female = no
+						NOT = { health_traits = 1 }
+						NOT = { 
+							AND = {
+								has_job_title = job_spiritual 
+								OR = {
+									religion_group = christian
+									religion_group = jewish_group
+								}
+							}
+						}
 					}
 					character_event = { id = 70000 }
+				}
+				any_realm_character = {
+					limit = {
+						is_feudal = yes
+						is_female = yes
+						is_adult = yes
+					}
+					character_event = { id = 1000182583 }
 				}
 			}
 		}
@@ -65,8 +106,9 @@ decisions = {
 
 	buy_indulgence_for_sins = {
 		potential = {
+			is_ruler = yes
+			is_adult = yes
 			religion = catholic
-			age = 16
 			demesne_size = 1
 			NOT = { trait = excommunicated }
 			rightful_religious_head_scope = {
@@ -77,8 +119,8 @@ decisions = {
 			}
 		}
 		allow = {
-			NOT = { has_character_modifier = indulgence_timer }
 			treasury = 50
+			NOT = { has_character_modifier = indulgence_timer }
 		}
 		effect = {
 			treasury = -50
@@ -86,7 +128,7 @@ decisions = {
 			custom_tooltip = {
 				text = RELIGIOUSFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_religious" value = 1 }
-				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			}
 			rightful_religious_head_scope = {
 				opinion = {
@@ -120,18 +162,6 @@ decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { treasury = 200 }
-			}
-			modifier = {
-				factor = 0
-				piety = 100
-			}
-			modifier = {
-				factor = 0
-				lower_tier_than = duke
-			}
-			modifier = {
-				factor = 0
 				trait = cynical
 			}
 			modifier = {
@@ -142,11 +172,26 @@ decisions = {
 				factor = 0
 				trait = greedy
 			}
+			modifier = {
+				factor = 0
+				piety = 100
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 200 }
+			}
+			modifier = {
+				factor = 0
+				lower_tier_than = duke
+			}
 		}
 	}
 
 	give_to_charity = {
 		potential = {
+			is_ruler = yes
+			is_adult = yes
+			demesne_size = 1
 			OR = {
 				AND = {
 					NOT = { religion = catholic }
@@ -162,12 +207,10 @@ decisions = {
 					}
 				}
 			}
-			age = 16
-			demesne_size = 1
 		}
 		allow = {
-			NOT = { has_character_modifier = charity_timer }
 			treasury = 50
+			NOT = { has_character_modifier = charity_timer }
 		}
 		effect = {
 			treasury = -50
@@ -175,7 +218,7 @@ decisions = {
 			custom_tooltip = {
 				text = RELIGIOUSFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_religious" value = 1 }
-				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			}
 			rightful_religious_head_scope = {
 				opinion = {
@@ -209,18 +252,6 @@ decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { treasury = 200 }
-			}
-			modifier = {
-				factor = 0
-				piety = 100
-			}
-			modifier = {
-				factor = 0
-				lower_tier_than = duke
-			}
-			modifier = {
-				factor = 0
 				trait = cynical
 			}
 			modifier = {
@@ -231,13 +262,26 @@ decisions = {
 				factor = 0
 				trait = greedy
 			}
+			modifier = {
+				factor = 0
+				piety = 100
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 200 }
+			}
+			modifier = {
+				factor = 0
+				lower_tier_than = duke
+			}
 		}
 	}
 
 	issue_declaration_of_repentance = {
 		potential = {
+			is_ruler = yes
 			religion = catholic
-			age = 16
+			is_adult = yes
 			demesne_size = 1
 			OR = {
 				NOT = { has_character_flag = ask_for_repentance }
@@ -253,8 +297,8 @@ decisions = {
 			}
 		}
 		allow = {
-			scaled_wealth = 2.0
 			is_heretic = no
+			scaled_wealth = 2.0
 		}
 		effect = {
 			set_character_flag = ask_for_repentance
@@ -276,7 +320,11 @@ decisions = {
 	demand_liege_title = {
 		is_high_prio = yes
 		potential = {
-			# always = no #obsolete
+			is_playable = yes
+			is_adult = yes
+			prisoner = no
+			tier = count
+			NOT = { trait = incapable }
 			NOT = { has_character_flag = requested_de_jure_title }
 			liege = {
 				NOT = { character = ROOT }
@@ -299,11 +347,6 @@ decisions = {
 					}
 				}
 			}
-			age = 16
-			prisoner = no
-			is_playable = yes
-			tier = count
-			NOT = { trait = incapable }
 		}
 		allow = {
 			liege = {
@@ -324,12 +367,13 @@ decisions = {
 
 	sadaqah_saddka  = {
 		potential = {
+			is_ruler = yes
+			is_adult = yes
+			demesne_size = 1
 			OR = {
 				religion = shiite
 				religion = sunni
 			}
-			age = 16
-			demesne_size = 1
 			rightful_religious_head_scope = {
 				is_alive = yes
 				NOT = {
@@ -338,8 +382,8 @@ decisions = {
 			}
 		}
 		allow = {
-			NOT = { has_character_modifier = charity_timer }
 			treasury = 50
+			NOT = { has_character_modifier = charity_timer }
 		}
 		effect = {
 			treasury = -50
@@ -347,7 +391,7 @@ decisions = {
 			custom_tooltip = {
 				text = RELIGIOUSFACTIONMOODPLUS
 				change_variable = { which = "faction_mood_religious" value = 1 }
-				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 110073 days = 1 } } }
+				hidden_tooltip = { random_courtier = { limit = { ai = yes } character_event = { id = 1000183004 days = 1 } } }
 			}
 			rightful_religious_head_scope = {
 				opinion = {
@@ -381,18 +425,6 @@ decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				NOT = { treasury = 200 }
-			}
-			modifier = {
-				factor = 0
-				piety = 100
-			}
-			modifier = {
-				factor = 0
-				lower_tier_than = duke
-			}
-			modifier = {
-				factor = 0
 				trait = cynical
 			}
 			modifier = {
@@ -403,26 +435,43 @@ decisions = {
 				factor = 0
 				trait = greedy
 			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 200 }
+			}
+			modifier = {
+				factor = 0
+				piety = 100
+			}
+			modifier = {
+				factor = 0
+				lower_tier_than = duke
+			}
 		}
 	}
 
 	hold_a_furusiyya  = {
 		potential = {
-			NOT = {
-				has_character_flag = epic_tournament_furusiyya
-			}
-			religion_group = muslim
 			independent = yes
-			NOT = { is_female = yes	}
+			is_adult = yes
+			religion_group = muslim
+#			is_female = no
 			OR = {
 				tier = king
 				tier = emperor
 			}
+			NOT = {
+				has_character_flag = epic_tournament_furusiyya
+			}
 			NOT = { has_character_modifier = holding_epic_tournament }
+			NOT = { 
+				has_character_modifier = planning_grand_banquet
+				has_character_modifier = holding_grand_banquet
+				has_character_flag = held_grand_banquet				
+			}			
 		}
 		allow = {
 			war = no
-			age = 16
 			ruled_years = 5
 			prestige = 500
 			wealth = 200
@@ -445,11 +494,11 @@ decisions = {
 				any_realm_character = {
 					limit = {
 						is_feudal = yes
-						NOT = { has_job_title = job_spiritual }
-						age = 16
-						NOT = { trait = incapable }
+						is_adult = yes
 						prisoner = no
 						is_female = no
+						NOT = { has_job_title = job_spiritual }
+						NOT = { trait = incapable }
 					}
 					clr_character_flag = tournament_has_ended_furusiyya
 					character_event = { id = 88250 }
@@ -481,7 +530,8 @@ decisions = {
 		is_high_prio = yes
 		potential = {
 			has_dlc = "Legacy of Rome"
-			age = 16
+			independent = yes
+			is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
 			OR = {
@@ -493,8 +543,10 @@ decisions = {
 			OR = {
 				religion_group = christian
 				religion = hellenic_pagan
-				is_heresy_of = hellenic_pagan
+				religion = mystery_eleusinia
+				religion = mystery_mithras
 			}
+			NOT = { has_global_flag = rome_restored }
 		}
 		allow = {
 			prestige = 3000
@@ -514,6 +566,7 @@ decisions = {
 			completely_controls = d_croatia
 		}
 		effect = {
+			set_global_flag = rome_restored
 			narrative_event = { id = LoR.20 tooltip = EVTTOOLTIPLoR.20 }
 		}
 		ai_will_do = {
@@ -521,33 +574,96 @@ decisions = {
 		}
 	}
 
-	mend_great_schism = {
+	mend_great_schism = { #Mend the Schism (Orthodox)
 		is_high_prio = yes
 		potential = {
 			has_dlc = "Legacy of Rome"
-			age = 16
+			independent = yes
+			is_adult = yes
 			prisoner = no
+			is_heretic = no
 			NOT = { trait = incapable }
 			OR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
 			}
-			religion = orthodox
+			OR = {
+				religion = orthodox
+				religion = bogomilist
+				religion = nestorian
+				religion = monothelite
+				religion = iconoclast
+			}
 			NOT = { has_global_flag = schism_mended }
 		}
 		allow = {
 			piety = 2000
 			religion_authority = 0.5
 			completely_controls = c_byzantion
-			b_hagiasophia = { holder_scope = { religion = orthodox } }
+			b_hagiasophia = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = orthodox
+						religion = bogomilist
+						religion = nestorian
+						religion = monothelite
+						religion = iconoclast
+					}
+				}
+			}
 			completely_controls = c_antiocheia
-			b_antiocheia = { holder_scope = { religion = orthodox } }
+			b_antiocheia = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = orthodox
+						religion = bogomilist
+						religion = nestorian
+						religion = monothelite
+						religion = iconoclast
+					}
+				}
+			}
 			completely_controls = c_jerusalem
-			b_jerusalem = { holder_scope = { religion = orthodox } }
+			b_jerusalem = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = orthodox
+						religion = bogomilist
+						religion = nestorian
+						religion = monothelite
+						religion = iconoclast
+					}
+				}
+			}
 			completely_controls = c_alexandria
-			b_alexandria = { holder_scope = { religion = orthodox } }
+			b_alexandria = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = orthodox
+						religion = bogomilist
+						religion = nestorian
+						religion = monothelite
+						religion = iconoclast
+					}
+				}
+			}
 			completely_controls = c_roma
-			b_roma = { holder_scope = { religion = orthodox } }
+			b_roma = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = orthodox
+						religion = bogomilist
+						religion = nestorian
+						religion = monothelite
+						religion = iconoclast
+					}
+				}
+			}
 		}
 		effect = {
 			narrative_event = { id = LoR.210 tooltip = EVTTOOLTIPLoR.210 }
@@ -558,39 +674,113 @@ decisions = {
 		}
 	}
 	
-	mend_great_schism_catholic = {
+	mend_great_schism_catholic = { #Mend the Schism (Catholic)
 		is_high_prio = yes
 		potential = {
 			has_dlc = "Legacy of Rome"
-			age = 16
+			independent = yes
+			is_adult = yes
 			prisoner = no
+			is_heretic = no
 			NOT = { trait = incapable }
 			OR = {
 				has_landed_title = k_papal_state
 				num_of_emperor_titles = 1
 			}
-			religion = catholic
+			OR = {
+				religion = catholic
+				religion = cathar
+				religion = fraticelli
+				religion = waldensian
+				religion = lollard
+			}
 			NOT = { has_global_flag = schism_mended }
 		}
 		allow = {
 			piety = 2000
 			religion_authority = 0.9
 			completely_controls = c_byzantion
-			b_hagiasophia = { holder_scope = { religion = catholic } }
-			completely_controls = c_antiocheia
-			b_antiocheia = { holder_scope = { religion = catholic } }
-			completely_controls = c_jerusalem
-			b_jerusalem = { holder_scope = { religion = catholic } }
-			completely_controls = c_alexandria
-			b_alexandria = { holder_scope = { religion = catholic } }
-			OR = {
-				AND = {
-				completely_controls = c_roma
-				b_roma = { holder_scope = { religion = catholic } }
+			b_hagiasophia = {
+				holder_scope = {
+					is_heretic = no
+					hidden_tooltip = {
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+					}
 				}
-				c_roma = {
-					holder_scope = {
-						has_landed_title = k_papal_state
+			}
+			completely_controls = c_antiocheia
+			b_antiocheia = {
+				holder_scope = {
+					is_heretic = no
+					hidden_tooltip = {
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+					}
+				}
+			}
+			completely_controls = c_jerusalem
+			b_jerusalem = {
+				holder_scope = {
+					is_heretic = no
+					hidden_tooltip = {
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+					}
+				}
+			}
+			completely_controls = c_alexandria
+			b_alexandria = {
+				holder_scope = {
+					is_heretic = no
+					hidden_tooltip = {
+						OR = {
+							religion = catholic
+							religion = cathar
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = ctt_schism_catholic_rome
+				OR = {
+					AND = {
+						completely_controls = c_roma
+						b_roma = { 
+							holder_scope = {
+								is_heretic = no
+								OR = {
+									religion = catholic
+									religion = cathar
+									religion = fraticelli
+									religion = waldensian
+									religion = lollard
+								}
+							}
+						}
+					}
+					c_roma = {
+						holder_scope = {
+							has_landed_title = k_papal_state
+						}
 					}
 				}
 			}
@@ -603,18 +793,161 @@ decisions = {
 			factor = 1
 		}
 	}
+	
+	mend_great_schism_miaphysite = { #Mend the Schism (Miaphysite)
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Legacy of Rome"
+			independent = yes
+			is_adult = yes
+			prisoner = no
+			is_heretic = no
+			NOT = { trait = incapable }
+		
+			num_of_emperor_titles = 1
+			
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = miaphysite
+					religion = monophysite
+				}
+			}
+		
+			NOT = { has_global_flag = schism_mended }
+		
+		}
+		allow = {
+			piety = 2000
+			religion_authority = 0.5
+			completely_controls = c_byzantion
+			b_hagiasophia = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = miaphysite
+						religion = monophysite
+					}
+				}
+			}
+			completely_controls = c_antiocheia
+			b_antiocheia = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = miaphysite
+						religion = monophysite
+					}
+				}
+			}
+			completely_controls = c_jerusalem
+			b_jerusalem = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = miaphysite
+						religion = monophysite
+					}
+				}
+			}
+			completely_controls = c_alexandria
+			b_alexandria = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = miaphysite
+						religion = monophysite
+					}
+				}
+			}
+			completely_controls = c_roma
+			b_roma = {
+				holder_scope = {
+					is_heretic = no
+					OR = {
+						religion = miaphysite
+						religion = monophysite
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { religion = miaphysite }
+				create_character = {
+					religion = ROOT
+					culture = ROOT
+					random_traits = no
+					trait = mastermind_theologian
+					trait = patient
+					trait = mystic
+					dynasty = NONE
+					age = 34
+					attributes = {
+						martial = 2
+						diplomacy = 8
+						intrigue = 2
+						learning = 9
+						stewardship = 2
+					}
+				}
+				new_character = {
+					d_miaphysite = {
+						grant_title = PREV						
+					}
+					b_alexandria = {
+						grant_title = PREV
+					}					
+					set_defacto_liege = ROOT
+				}
+			}	
+			if = {
+				limit = { religion = monophysite }
+				create_character = {
+					religion = ROOT
+					culture = ROOT
+					random_traits = no
+					trait = mastermind_theologian
+					trait = patient
+					trait = mystic
+					dynasty = NONE
+					age = 34
+					attributes = {
+						martial = 2
+						diplomacy = 8
+						intrigue = 2
+						learning = 9
+						stewardship = 2
+					}
+				}
+				new_character = {
+					d_monophysite = {
+						grant_title = PREV						
+					}
+					b_alexandria = {
+						grant_title = PREV
+					}
+					set_defacto_liege = ROOT
+				}
+			}					
+			narrative_event = { id = 1000182638 tooltip = EVTTOOLTIPLoR.210 }
+			set_global_flag = schism_mended
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
 
 	claim_constantinople = {
 		is_high_prio = yes
 		potential = {
 			has_dlc = "Legacy of Rome"
+			independent = yes
 			NOT = { has_landed_title = c_byzantion }
 			has_landed_title = e_byzantium
 			any_realm_lord = {
-				AND = {
-					ai = yes
-					has_landed_title = c_byzantion
-				}
+				ai = yes
+				has_landed_title = c_byzantion
 			}
 		}
 		allow = {
@@ -639,21 +972,18 @@ decisions = {
 		is_high_prio = yes
 		potential = {
 			has_dlc = "Legacy of Rome"
+			independent = yes
 			has_landed_title = e_roman_empire
 			capital_scope = {
 				NOT = { province_id = 333 }
 			}
 			any_realm_lord = {
-				AND = {
-					ai = yes
-					has_landed_title = c_roma
-				}
+				ai = yes
+				has_landed_title = c_roma
 			}
 			any_realm_lord = {
-				AND = {
-					ai = yes
-					has_landed_title = b_tivoli
-				}
+				ai = yes
+				has_landed_title = b_tivoli
 			}
 		}
 		allow = {
@@ -808,19 +1138,18 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			prisoner = no
+			NOT = { year = 1150 }
 			OR = {
 				culture_group = north_germanic
 				religion = norse_pagan
 				religion = norse_pagan_reformed
 			}
 			NOT = {	has_character_flag = commissioned_runestone }
-			NOT = { year = 1150 }
 		}
 		allow = {
 			wealth = 100
-			prisoner = no
 		}
 		effect = {
 			wealth = -100
@@ -841,7 +1170,7 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			is_female = no
 			prisoner = no
 			culture = mongol
@@ -852,20 +1181,21 @@ decisions = {
 			}
 			NOT = { has_character_modifier = morale_from_nerge }
 			NOT = {	has_character_flag = holding_nerge }
+			NOT = {	has_character_flag = do_not_disturb }
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
-			}
 			month = 8
 			scaled_wealth = 0.20
 			NOT = { month = 10 }
-			prisoner = no
+			any_demesne_title = {
+				is_occupied = no
+			}
 		}
 		effect = {
 			scaled_wealth = -0.20
 			set_character_flag = holding_nerge
+			set_character_flag = do_not_disturb
 			custom_tooltip = {
 				text = prepare_nerge
 				hidden_tooltip = {
@@ -885,17 +1215,6 @@ decisions = {
 					scaled_wealth = 3.0
 				}
 			}
-			modifier = {
-				factor = 0
-				NOT = {
-					martial = 8
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { month = 9 }
-
-			}
 		}
 	}
 
@@ -903,7 +1222,7 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			prisoner = no
 			OR = {
 				religion = norse_pagan
@@ -911,22 +1230,23 @@ decisions = {
 			}
 			NOT = { has_character_modifier = held_blot_timer }
 			NOT = {	has_character_flag = holding_blot }
+			NOT = {	has_character_flag = do_not_disturb }
 		}
 		allow = {
 			war = no
-			any_demesne_title = {
-				is_occupied = no
-			}
+			scaled_wealth = 0.20
 			OR = {
 				NOT = { month = 2 }
 				month = 10
 			}
-			scaled_wealth = 0.20
-			prisoner = no
+			any_demesne_title = {
+				is_occupied = no
+			}
 		}
 		effect = {
 			scaled_wealth = -0.20
 			set_character_flag = holding_blot
+			set_character_flag = do_not_disturb
 			custom_tooltip = {
 				text = prepare_blot
 				hidden_tooltip = {
@@ -946,17 +1266,6 @@ decisions = {
 					scaled_wealth = 3.0
 				}
 			}
-			modifier = {
-				factor = 0
-				NOT = {
-					martial = 8
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { month = 9 }
-
-			}
 		}
 	}
 
@@ -964,7 +1273,7 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			prisoner = no
 			OR = {
 				religion = finnish_pagan
@@ -972,22 +1281,21 @@ decisions = {
 			}
 			NOT = { has_character_modifier = held_ukon_juhla_timer }
 			NOT = {	has_character_flag = holding_ukon_juhla }
+			NOT = {	has_character_flag = do_not_disturb }
 		}
 		allow = {
 			war = no
+			NOT = { month = 7 }
+			month = 4
+			scaled_wealth = 0.20
 			any_demesne_title = {
 				is_occupied = no
 			}
-			AND = {
-				NOT = { month = 7 }
-				month = 4
-			}
-			scaled_wealth = 0.20
-			prisoner = no
 		}
 		effect = {
 			scaled_wealth = -0.20
 			set_character_flag = holding_ukon_juhla
+			set_character_flag = do_not_disturb
 			custom_tooltip = {
 				text = prepare_ukon_juhla
 				hidden_tooltip = {
@@ -1007,17 +1315,6 @@ decisions = {
 					scaled_wealth = 3.0
 				}
 			}
-			modifier = {
-				factor = 0
-				NOT = {
-					martial = 8
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { month = 9 }
-
-			}
 		}
 	}
 
@@ -1025,7 +1322,7 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			prisoner = no
 			OR = {
 				religion = baltic_pagan
@@ -1033,22 +1330,21 @@ decisions = {
 			}
 			NOT = { has_character_modifier = held_uzgavenes_timer }
 			NOT = {	has_character_flag = holding_uzgavenes }
+			NOT = {	has_character_flag = do_not_disturb }
 		}
 		allow = {
 			war = no
+			NOT = { month = 7 }
+			month = 4
+			scaled_wealth = 0.20
 			any_demesne_title = {
 				is_occupied = no
 			}
-			AND = {
-				NOT = { month = 7 }
-				month = 4
-			}
-			scaled_wealth = 0.20
-			prisoner = no
 		}
 		effect = {
 			scaled_wealth = -0.20
 			set_character_flag = holding_uzgavenes
+			set_character_flag = do_not_disturb
 			custom_tooltip = {
 				text = prepare_uzgavenes
 				hidden_tooltip = {
@@ -1068,17 +1364,6 @@ decisions = {
 					scaled_wealth = 3.0
 				}
 			}
-			modifier = {
-				factor = 0
-				NOT = {
-					martial = 8
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { month = 9 }
-
-			}
 		}
 	}
 
@@ -1086,7 +1371,7 @@ decisions = {
 		potential = {
 			has_dlc = "The Old Gods"
 			is_ruler = yes
-			age = 16
+			is_adult = yes
 			prisoner = no
 			OR = {
 				religion = slavic_pagan
@@ -1094,22 +1379,21 @@ decisions = {
 			}
 			NOT = { has_character_modifier = held_jarilo_timer }
 			NOT = {	has_character_flag = holding_jarilo }
+			NOT = {	has_character_flag = do_not_disturb }
 		}
 		allow = {
 			war = no
+			NOT = { month = 7 }
+			month = 4
+			scaled_wealth = 0.20
 			any_demesne_title = {
 				is_occupied = no
 			}
-			AND = {
-				NOT = { month = 7 }
-				month = 4
-			}
-			scaled_wealth = 0.20
-			prisoner = no
 		}
 		effect = {
 			scaled_wealth = -0.20
 			set_character_flag = holding_jarilo
+			set_character_flag = do_not_disturb
 			custom_tooltip = {
 				text = prepare_jarilo
 				hidden_tooltip = {
@@ -1129,27 +1413,20 @@ decisions = {
 					scaled_wealth = 3.0
 				}
 			}
-			modifier = {
-				factor = 0
-				NOT = {
-					martial = 8
-				}
-			}
-			modifier = {
-				factor = 0
-				NOT = { month = 9 }
-
-			}
 		}
 	}
 
 	organize_varangian_guard = {
 		is_high_prio = yes
 		potential = {
-			has_landed_title = e_byzantium
+			independent = yes
+			is_adult = yes
 			is_female = no
 			prisoner = no
-			age = 16
+			OR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_roman_empire
+			}
 			NOT = { has_global_flag = varangian_guard_founded }
 		}
 		allow = {
@@ -1188,13 +1465,25 @@ decisions = {
 	create_hungary = {
 		is_high_prio = yes
 		potential = {
+			independent = yes
 			has_landed_title = k_magyar
 			culture = hungarian
 			k_hungary = {
 				has_holder = no
 			}
+			NOT = { has_global_flag = hungary_formed }
 		}
 		allow = {
+			war = no
+			has_regent = no
+			ruled_years = 5
+			custom_tooltip = {
+				text = CTT_MUST_BE_REFORMED
+				OR = {
+					NOT = { religion_group = pagan_group }
+					is_reformed_religion = yes
+				}
+			}
 			completely_controls = d_pest
 			OR = {
 				completely_controls = d_transylvania
@@ -1203,48 +1492,43 @@ decisions = {
 			}
 		}
 		effect = {
-			custom_tooltip = {
-				text = EVTOPTA62910_CUSTOM
-			}
-			narrative_event = { id = 62910 tooltip = EVTTOOLTIP62910 }
+			set_global_flag = hungary_formed
 			hidden_tooltip = {
-				if = {
-					has_landed_title = k_magyar
-					k_magyar = {
-						destroy_landed_title = yes
+				any_playable_ruler = {
+				  any_realm_character = {
+						limit = {
+							has_claim = k_magyar
+						}
+						add_pressed_claim = k_hungary
+						remove_claim = k_magyar
 					}
 				}
-			}
-			if = {
-				limit = { has_nickname = no }
-				give_nickname = nick_the_great
-			}
-			prestige = 1000
-			wealth = 1000
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				match_character = ROOT
-				match_mult = 2.0
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				match_character = ROOT
-				match_mult = 2.0
-				attrition = 0.5
-			}
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				match_character = ROOT
-				match_mult = 2.0
-				attrition = 0.5
+				d_pecs = {
+					de_jure_liege = k_hungary
+				}
+				d_esztergom = {
+					de_jure_liege = k_hungary
+				}	
+				d_nyitra = {
+					de_jure_liege = k_hungary
+				}	
+				d_ungvar = {
+					de_jure_liege = k_hungary
+				}	
+				d_pest = {
+					de_jure_liege = k_hungary
+				}	
+				d_transylvania = {
+					de_jure_liege = k_hungary
+				}	
+				d_temes = {
+					de_jure_liege = k_hungary
+				}
+				narrative_event = { id = 62910 tooltip = EVTTOOLTIP62910 }
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 10.0
 		}
 	}
 
@@ -1252,11 +1536,13 @@ decisions = {
 		is_high_prio = yes
 		potential = {
 			has_dlc = "The Old Gods"
+			is_adult = yes
 			religion_group = zoroastrian_group
-			NOT = { has_global_flag = saoshyant_appears }
 			has_landed_title = e_persia
+			NOT = { has_global_flag = saoshyant_appears }
 		}
 		allow = {
+			war = no
 			completely_controls = d_tabriz
 			completely_controls = d_khorasan
 			completely_controls = d_hormuz
@@ -1275,6 +1561,7 @@ decisions = {
 			completely_controls = d_mosul
 			completely_controls = d_jazira
 			OR = {
+				piety = 2000
 				AND = {
 					piety = 1500
 					OR = {
@@ -1286,7 +1573,6 @@ decisions = {
 						trait = genius
 					}
 				}
-				piety = 2000
 			}
 		}
 		effect = {
@@ -1307,6 +1593,7 @@ decisions = {
 	create_leon = {
 		is_high_prio = yes
 		potential = {
+			is_ruler = yes
 			has_landed_title = k_asturias
 			k_leon = {
 				has_holder = no
@@ -1336,11 +1623,9 @@ decisions = {
 		is_high_prio = yes
 		potential = {
 			has_dlc = "The Old Gods"
+			NOT = { has_global_flag = zoroastrian_priesthood_founded }			
+			independent = yes
 			religion_group = zoroastrian_group
-			NOT = { has_global_flag = zoroastrian_priesthood_founded }
-			age = 16
-			prisoner = no	
-			has_landed_title = e_persia
 		}
 		allow = {
 			realm_learning = 25
@@ -1348,6 +1633,9 @@ decisions = {
 			wealth = 500
 			war = no
 			religion_authority = 0.6
+			tier = emperor
+			is_heretic = no
+			NOT = { has_regent = yes } # Redundant code, but produces a much clearer tooltip			
 		}
 		effect = {
 			set_global_flag = zoroastrian_priesthood_founded
@@ -1358,8 +1646,8 @@ decisions = {
 			hidden_tooltip = {
 				create_random_priest = {
 					random_traits = yes
-					religion = zoroastrian
-					culture = persian
+					religion = ROOT
+					culture = ROOT
 					dynasty = random
 					female = no
 					age = 41
@@ -1373,9 +1661,11 @@ decisions = {
 			}
 			d_zoroastrian = {
 				holder_scope = {
-					e_persia = {
-						holder_scope = {
-							set_defacto_vassal = PREVPREV
+					ROOT = {
+						primary_title = {
+							holder_scope = {
+								set_defacto_vassal = PREVPREVPREV
+							}
 						}
 					}
 				}
@@ -1383,6 +1673,846 @@ decisions = {
 		}
 		ai_will_do = {
 			factor = 1
+		}
+	}
+	build_third_temple = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			NOT = { 
+					has_global_flag = third_temple_built
+					has_global_flag = building_third_temple 
+			}			
+			is_ruler = yes
+			religion_group = jewish_group
+			higher_tier_than = DUKE
+		}
+		allow = {
+			wealth = 1500
+			piety = 1500
+			completely_controls = c_jerusalem
+			is_heretic = no
+			NOT = { has_regent = yes } # Redundant code, but produces a much clearer tooltip			
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = { id = SoA.100 }
+				add_character_modifier = {
+					name = third_temple_builder
+					hidden = yes
+					inherit = yes
+					duration = -1
+				}				
+				k_papal_state = {
+					holder_scope = {
+						add_character_modifier = {
+							name = third_temple_timer
+							hidden = yes
+							inherit = yes
+							duration = 1460
+						}
+					}
+				}
+			}
+			set_global_flag = building_third_temple
+			wealth = -1500
+			prestige = 500
+			piety = 500
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	restore_high_priesthood = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			NOT = { has_global_flag = jewish_priesthood_founded }			
+			is_ruler = yes
+			religion_group = jewish_group
+			has_landed_title = k_israel
+			has_global_flag = third_temple_built
+		}
+		allow = {
+			NOT = { has_regent = yes } # Redundant code, but produces a much clearer tooltip
+			piety = 1000
+			tier = emperor
+			is_heretic = no			
+			completely_controls = c_jerusalem
+		}
+		effect = {
+			set_global_flag = jewish_priesthood_founded
+			if = {
+				limit = {
+					AND = {
+						religion_group = jewish_group
+						NOT = { religion = samaritan }
+					}
+				}
+				activate_title = { title = d_jewish status = yes }
+				hidden_tooltip = {
+					create_random_priest = {
+						random_traits = yes
+						religion = ROOT
+						culture = ROOT
+						dynasty = random
+						female = no
+						age = 41
+					}
+					new_character = {
+						d_jewish = {
+							grant_title = PREV
+						}
+						narrative_event = { id = SoA.550 }
+					}
+				}
+				d_jewish = {
+					holder_scope = {
+						k_israel = {
+							holder_scope = {
+								set_defacto_vassal = PREVPREV
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion = samaritan
+				}
+				d_samaritan = {
+					holder_scope = {
+						narrative_event = { id = 1000182705 }
+						k_israel = {
+							holder_scope = {
+								set_defacto_vassal = PREVPREV
+							}
+						}
+					}
+				}
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	create_israel = {
+		is_high_prio = yes
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			religion_group = jewish_group
+			independent = yes			
+			k_israel = {
+				has_holder = no
+			}
+			NOT = { has_global_flag = israel_remade }
+		}
+		allow = {
+			piety = 500
+			prestige = 500
+			OR = {
+				has_landed_title = k_jerusalem
+				k_jerusalem = { is_titular = yes }
+			}
+			is_heretic = no
+			NOT = { has_regent = yes } # Redundant code, but produces a much clearer tooltip		
+			completely_controls = d_jerusalem
+			completely_controls = d_ascalon
+			completely_controls = d_galilee
+			completely_controls = d_oultrejourdain
+		}
+		effect = {
+			set_global_flag = israel_remade
+			set_character_flag = centralize_without_penalties
+			k_israel = {
+				hidden_tooltip = {
+					copy_title_laws = k_jerusalem
+				}
+				gain_title = ROOT				
+			}
+			clr_character_flag = centralize_without_penalties
+			hidden_tooltip = {
+				any_playable_ruler = {
+				  any_realm_character = {
+						limit = {
+							has_claim = k_jerusalem
+						}
+						add_pressed_claim = k_israel
+						remove_claim = k_jerusalem
+					}
+				}			
+				k_jerusalem = {
+						any_de_jure_vassal_title = {
+							de_jure_liege = k_israel
+						}
+					destroy_landed_title = yes 
+				}
+			}			
+			narrative_event = { id = SoA.102 tooltip = EVTTOOLTIP_SoA_102 }
+			activate_title = { title = d_sons_of_judea status = yes }
+			d_sons_of_judea = {
+				holder_scope = {
+					set_defacto_liege = PREVPREV
+				}
+			}
+			prestige = 1000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	welcome_jews = {
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			primary_title = { higher_tier_than = DUKE }
+			NOT = { 
+				religion_group = jewish_group 
+				has_character_modifier = expelled_jews_timer
+				has_character_flag = pogrom
+			}
+			has_character_modifier = expelled_jewish
+		}
+		allow = {
+		}
+		effect = {
+			remove_character_modifier = expelled_jewish
+			custom_tooltip = {
+				text = jews_are_welcome
+			}
+			hidden_tooltip = {
+				character_event = { id = SoA.106 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0.1 # Less likely to do it
+			}
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+		}
+	}
+
+	expel_jews = {
+		potential = {
+			independent = yes
+			is_playable = yes
+			prisoner = no
+			is_adult = yes
+			has_dlc = "Sons of Abraham"
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+			}
+			NOT = {
+				religion_group = jewish_group
+				trait = incapable
+				has_character_modifier = expelled_jewish
+				has_character_flag = pogrom
+				any_realm_province = { religion = jewish }
+			}
+			OR = {
+				any_demesne_title = {
+					has_building = ct_jewish_community_1
+				}
+				any_realm_lord = {
+					is_republic = yes
+					any_demesne_title = {
+						has_building = ct_jewish_community_1
+					}
+				}
+				has_character_modifier = borrowed_from_jews
+				any_courtier = {
+					religion_group = jewish_group
+				}
+			}
+		}
+		allow = { }
+		effect = {
+			if = {
+				limit = { has_character_modifier = borrowed_from_jews }
+				remove_character_modifier = borrowed_from_jews
+				any_demesne_title = {
+					limit = { tier = count }
+					location = {
+						add_province_modifier = {
+							name = offended_moneylenders
+							duration = 3650
+						}
+					}
+				}				
+				set_character_flag = offended_moneylenders
+			}
+			if = {
+				limit = { has_character_modifier = loan_timer_jews }
+				remove_character_modifier = loan_timer_jews
+			}			
+			add_character_modifier = {
+				name = expelled_jewish
+				duration = 21900 #in days. 60 years
+				inherit = no
+			}
+			custom_tooltip = {
+				text = jews_are_expelled
+			}
+			hidden_tooltip = {
+				character_event = { id = SoA.105 }
+				add_character_modifier = {
+					name = expelled_jews_timer
+					duration = 21900 #in days. 60 years
+					hidden = yes
+					inherit = yes
+				}
+				set_character_flag = pogrom	
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				trait = kind
+			}
+			modifier = {
+				factor = 0
+				any_spouse = {
+					religion = jewish
+				}
+			}
+			modifier = {
+				factor = 0
+				any_child = {
+					religion = jewish
+				}
+			}
+			modifier = {
+				factor = 0
+				any_courtier = {
+					religion = jewish
+					reverse_opinion = { who = ROOT value = 20 }
+				}
+			}
+			modifier = {
+				factor = 0.001 # Less likely to do it
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+				trait = arbitrary
+			}
+			modifier = {
+				factor = 1.2
+				has_character_modifier = borrowed_from_jews
+				trait = greedy
+			}
+		}
+	}
+	
+	embrace_mutazila = {
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			is_adult = yes
+			prisoner = no
+			religion = sunni
+			NOT = { 
+				trait = mutazilite
+				trait = ashari
+			}
+		}
+		
+		allow = {
+			piety = 50
+		}
+		
+		effect = {
+			add_trait = mutazilite
+			character_event = { id = SoA.600 tooltip = EVTTOOLTIP_SoA_600 }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.2
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.2
+				liege = { trait = mutazilite }
+			}
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+		}
+	}
+	embrace_ashari = {
+		potential = {	
+			has_dlc = "Sons of Abraham"
+			is_ruler = yes
+			is_adult = yes
+			prisoner = no
+			religion = sunni
+			NOT = { 
+				trait = mutazilite
+				trait = ashari
+			}
+		}
+		
+		allow = {
+			piety = 50
+		}
+		
+		effect = {
+			add_trait = ashari
+			character_event = { id = SoA.601 tooltip = EVTTOOLTIP_SoA_601 }
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.2
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.2
+				liege = { trait = ashari }
+			}
+			modifier = {
+				factor = 1.2
+				decadence = 40
+			}
+			modifier = {
+				factor = 1.2
+				decadence = 60
+			}
+			modifier = {
+				factor = 1.2
+				decadence = 80
+			}
+			modifier = {
+				factor = 0.005 # Slow it down
+			}
+		}
+	}	
+	hold_grand_banquet = {
+		is_high_prio = yes
+		potential = {
+			independent = yes
+			NOT = {
+				has_character_modifier = planning_grand_banquet
+				has_character_modifier = holding_grand_banquet
+				has_character_flag = held_grand_banquet
+			}
+			OR = {
+				higher_tier_than = duke
+				AND = {
+					higher_tier_than = count
+					is_patrician = yes
+				}
+			}
+			always = no # Disabled for now
+		}
+		allow = {
+			NOT = {
+				has_regent = yes
+			}
+			wealth = 500
+			prestige = 2000
+			# ruled_years = 10 # Temp. disabled for testing WIP
+			NOT = { 
+				has_character_modifier = holding_epic_tournament
+				has_character_modifier = holding_large_feast
+				has_character_modifier = holding_summer_fair
+				has_character_modifier = holding_grand_hunt 
+			}			
+		}
+		effect = {
+			add_character_modifier = {
+				name = planning_grand_banquet
+				duration = -1
+			}
+			wealth = -500
+			# This big block of code extends rumours to any independent neighbours, vassals, friends and lovers as well as their spouses (except for lovers)
+			any_independent_ruler = { # Word spreads of a Grand Banquet to the neighbours & Vassals
+				if = {
+					limit = {
+						religion_group = ROOT
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_friend = { 
+									character = PREVPREV # Don't pulse for friends, they get a different event
+								}
+								lover = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_sibling = { 
+									character = PREVPREV # Don't pulse for siblings, they get a different event
+								}								
+							} 
+						}
+						any_realm_province = {
+							any_neighbor_province = {
+								owner = {
+									OR = {
+										same_realm = ROOT
+										character = ROOT
+									}
+								}
+							}
+						}
+					}
+					hidden_tooltip = {
+						ROOT = {
+							PREV = {
+								character_event = { id = 1000182706 }
+								any_spouse = { # Even the spouse(s) hear of this
+									if = {
+										limit = {
+											ROOT = {
+												NOT = { 
+													current_heir = { 
+														character = PREVPREV # Don't pulse for heirs, they get a different event
+													}
+													any_friend = { 
+														character = PREVPREV # Don't pulse for friends, they get a different event
+													}
+													lover = { 
+														character = PREVPREV # Don't pulse for heirs, they get a different event
+													}
+													any_sibling = { 
+														character = PREVPREV # Don't pulse for siblings, they get a different event
+													}													
+												} 
+											}										
+										}
+										character_event = { id = 1000182712 }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			any_realm_lord = { # The vassals hear of this
+				if = {
+					limit = {
+						religion_group = ROOT
+						has_regent = no
+						higher_tier_than = baron
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_friend = { 
+									character = PREVPREV # Don't pulse for friends, they get a different event
+								}
+								lover = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_sibling = { 
+									character = PREVPREV # Don't pulse for siblings, they get a different event
+								}
+								any_child = { 
+									character = PREVPREV # Don't pulse for their children, they get a different event
+								}								
+							} 
+						}						
+					}
+					hidden_tooltip = {
+						ROOT = {
+							PREV = {
+								character_event = { id = 1000182707 }
+								any_spouse = { # Even the spouse(s) hear of this
+									if = {
+										limit = {
+											ROOT = {
+												NOT = { 
+													current_heir = { 
+														character = PREVPREV # Don't pulse for heirs, they get a different event
+													}
+													any_friend = { 
+														character = PREVPREV # Don't pulse for friends, they get a different event
+													}
+													lover = { 
+														character = PREVPREV # Don't pulse for heirs, they get a different event
+													}
+													any_sibling = { 
+														character = PREVPREV # Don't pulse for siblings, they get a different event
+													}													
+												} 
+											}										
+										}
+										character_event = { id = 1000182712 }
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			custom_tooltip = { text = ctt_gb_rumours_neighbours} 
+			custom_tooltip = { text = ctt_gb_rumours_lords} 
+			any_friend = { # Friends hear of this
+				if = {
+					limit = {
+						age = 16
+						NOT = {
+							trait = incapable
+						}
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								lover = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_sibling = { 
+									character = PREVPREV # Don't pulse for siblings, they get a different event
+								}
+								any_child = { 
+									character = PREVPREV # Don't pulse for their children, they get a different event
+								}								
+							} 
+						}
+					}
+					custom_tooltip = { text = ctt_gb_rumours_friend} 
+					hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182711 } } } }
+				}
+			}
+			any_friend = { # Spouse of  friend
+				any_spouse = {
+					if = {
+						limit = { 
+							NOT = {
+								trait = incapable
+							}
+							age = 16
+							ROOT = {
+								NOT = { 
+									current_heir = { 
+										character = PREVPREVPREV # Don't pulse for heirs, they get a different event
+									}
+									any_friend = { 
+										character = PREVPREVPREV # Don't pulse for friends, they get a different event
+									}
+									lover = {
+										character = PREVPREVPREV # Don't pulse for lovers, they get a different event
+									}
+								} 
+							}						
+						}
+						hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+					}
+				}
+			}
+			lover = { # Lover hears of this
+				if = {
+					limit = { 
+						NOT = {
+							trait = incapable
+						}
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_friend = { 
+									character = PREVPREV # Don't pulse for friends, they get a different event
+								}
+								any_sibling = { 
+									character = PREVPREV # Don't pulse for siblings, they get a different event
+								}
+								any_child = { 
+									character = PREVPREV # Don't pulse for their children, they get a different event
+								}								
+							} 
+						}						
+					}
+					custom_tooltip = { text = ctt_gb_rumours_lover} 
+					hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182710 } } } }
+				}
+			}
+			any_sibling = {
+				if = {
+					limit = { 
+						NOT = {
+							trait = incapable
+						}
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_friend = { 
+									character = PREVPREV # Don't pulse for friends, they get a different event
+								}
+								any_child = { 
+									character = PREVPREV # Don't pulse for their children, they get a different event
+								}								
+							} 
+						}						
+					}
+					custom_tooltip = { text = ctt_gb_rumours_sibling} 
+					hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+				}
+			}
+			any_sibling = { # Spouse of sibling
+				any_spouse = {
+					if = {
+						limit = { 
+							NOT = {
+								trait = incapable
+							}
+							age = 16
+							ROOT = {
+								NOT = { 
+									current_heir = { 
+										character = PREVPREVPREV # Don't pulse for heirs, they get a different event
+									}
+									any_friend = { 
+										character = PREVPREVPREV # Don't pulse for friends, they get a different event
+									}
+									lover = {
+										character = PREVPREVPREV # Don't pulse for lovers, they get a different event
+									}
+								} 
+							}						
+						}
+						hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+					}
+				}
+			}			
+			any_child = {
+				if = {
+					limit = { 
+						NOT = {
+							trait = incapable
+						}
+						age = 16
+						ROOT = {
+							NOT = { 
+								current_heir = { 
+									character = PREVPREV # Don't pulse for heirs, they get a different event
+								}
+								any_friend = { 
+									character = PREVPREV # Don't pulse for friends, they get a different event
+								}
+								lover = {
+									character = PREVPREV # Don't pulse for lovers, they get a different event
+								}							
+							} 
+							any_child = {
+									NOT = {
+									any_spouse = {
+										character = PREVPREVPREV # Don't pulse for friends, they get a different event
+									}
+								}
+							}
+						}						
+					}
+					custom_tooltip = { text = ctt_gb_rumours_children} 
+					hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+				}
+			}
+			any_child = { # Spouse of children
+				any_spouse = {
+					if = {
+						limit = { 
+							NOT = {
+								trait = incapable
+							}
+							age = 16
+							ROOT = {
+								NOT = { 
+									current_heir = { 
+										character = PREVPREV # Don't pulse for heirs, they get a different event
+									}
+									any_friend = { 
+										character = PREVPREV # Don't pulse for friends, they get a different event
+									}
+									lover = {
+										character = PREVPREV # Don't pulse for lovers, they get a different event
+									}									
+								}								
+							}						
+						}
+						hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+					}
+				}
+			}			
+			current_heir = { # The current heir hears of this
+				if = {
+					limit = { 
+						NOT = { 
+							trait = incapable
+						} 
+						age = 16
+					}
+					custom_tooltip = { text = ctt_gb_rumours_heir} 
+					hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182709 } } } }
+				}
+			}
+			current_heir = { # Spouse of heir
+				any_spouse = {
+					if = {
+						limit = { 
+							NOT = {
+								trait = incapable
+							}
+							age = 16
+							ROOT = {
+								NOT = { 
+									any_friend = { 
+										character = PREVPREV # Don't pulse for friends, they get a different event
+									}
+									lover = {
+										character = PREVPREV # Don't pulse for lovers, they get a different event
+									}									
+								}								
+							}						
+						}
+						hidden_tooltip = { ROOT = { PREV = { character_event = { id = 1000182713 } } } }
+					}
+				}
+			}				
+			character_event = { id = 1000182708 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1000
 		}
 	}
 }

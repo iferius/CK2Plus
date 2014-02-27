@@ -106,7 +106,7 @@ character_event = {
 	is_triggered_only = yes
 
 	# On_action, so BIG is MORE OFTEN!
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 		modifier = {
 			factor = 0.6
@@ -279,7 +279,7 @@ character_event = {
 	is_triggered_only = yes
 
 	# On_action, so BIG is MORE OFTEN
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 		modifier = {
 			factor = 0.6
@@ -478,7 +478,7 @@ character_event = {
 	is_triggered_only = yes
 
 	# On_action, so BIG is MORE OFTEN
-	mean_time_to_happen = {
+	weight_multiplier = {
 		days = 1
 		modifier = {
 			factor = 0.6
@@ -972,9 +972,18 @@ narrative_event = {
 	option = {
 		name = EVTOPTA62910
 		hidden_tooltip = {
-			k_magyar = {
-				any_direct_de_jure_vassal_title = {
-					de_jure_liege = k_hungary
+				k_magyar = {
+					any_direct_de_jure_vassal_title = {
+						de_jure_liege = k_hungary
+					}
+				}
+			any_playable_ruler = {
+			  any_realm_character = {
+					limit = {
+						has_claim = k_magyar
+					}
+					add_pressed_claim = k_hungary
+					remove_claim = k_magyar
 				}
 			}
 		}
@@ -983,26 +992,13 @@ narrative_event = {
 			copy_title_laws = k_magyar
 			copy_title_history = k_magyar
 		}
-		k_magyar = {
-			destroy_landed_title = THIS
-		}
-
-		if = {
-			limit = {
-				NOT = { has_landed_title = c_pest }
-			}
-			c_pest = {
-				usurp_title = ROOT
-				location = {
-					ROOT = {
-						capital = PREV
-					}
-				}
+		hidden_tooltip = {
+			k_magyar = {
+				destroy_landed_title = THIS
 			}
 		}
 
 		custom_tooltip = {
-			text = EVTOPTA62910_CUSTOM
 		
 			hidden_tooltip = {
 				any_playable_ruler = {
@@ -1011,171 +1007,6 @@ narrative_event = {
 						ai = no
 					}
 					narrative_event = { id = 62911 }
-				}
-
-				any_realm_province = {
-					limit = {
-						kingdom = {
-							title = k_hungary
-						}
-					}
-					culture = hungarian
-					religion = ROOT
-				}
-
-				# The Hungarian culture in the Ukraine is lost
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-				random_realm_province = {
-					limit = {
-						culture = hungarian
-						kingdom = {
-							NOT = { title = k_hungary }
-						}
-						any_neighbor_province = {
-							NOT = { culture = hungarian }
-						}
-					}
-					random_neighbor_province = {
-						limit = {
-							NOT = { culture = hungarian }
-						}
-						reverse_culture = PREV
-						reverse_religion = PREV
-					}
-				}
-
-				# Lose control of the Ukraininan lands
-				any_realm_province = {
-					limit = {
-						OR = {
-							kingdom = {
-								OR = {
-									title = k_crimea
-									title = k_rus
-									title = k_cuman
-									title = k_alania
-								}
-							}
-							duchy = {
-								title = d_moldau
-							}
-						}
-						owner = {
-							# Human vassals get to keep their stuff
-							OR = {
-								ai = yes
-								character = ROOT
-							}
-						}
-					}
-					county = {
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = PREV
-							culture = PREV
-							female = no
-							age = 25
-							trait = peasant_leader
-						}
-						new_character = {
-							usurp_title_plus_barony_if_unlanded = PREV
-							set_defacto_liege = THIS
-						}
-					}
-				}
-
-				any_claim = {
-					remove_claim = ROOT
 				}
 			}
 		}
@@ -1200,7 +1031,7 @@ narrative_event = {
 
 # Special event for Asturias to create León
 # Triggered by Decision: create_leon
-character_event = {
+narrative_event = {
 	id = 62920
 	title = EVTNAME62920
 	desc = EVTDESC62920
@@ -1343,6 +1174,39 @@ character_event = {
 		name = EVTOPTA1000182333
 		set_global_flag = hre_renamed
 		e_hre = {
+			set_name=""
+			adjective=""
+		}
+	}
+}
+# Special event for Neustria to be renamed to Normandy
+character_event = {
+	id = 1000182563
+	title = EVTNAME1000182563
+	desc = EVTDESC1000182563
+
+	picture = GFX_evt_council
+	border = GFX_event_normal_frame_diplomacy
+
+	only_playable = yes
+
+	trigger = {
+		has_landed_title = d_normandy
+		OR = {
+			culture = norse
+			culture = norman
+		}
+		NOT = { has_global_flag = neustria_renamed }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = EVTOPTA1000182563
+		set_global_flag = neustria_renamed
+		d_normandy = {
 			set_name=""
 			adjective=""
 		}

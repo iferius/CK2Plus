@@ -1237,7 +1237,7 @@ guiTypes = {
 		name = "pv_tempmod_entry"
 		backGround =""
 		position = { x=0 y=0 }
-		size = { x=48 y=48 }
+		size = { x=28 y=28 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder = "0"
@@ -1477,7 +1477,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "modifiers"
-			position = { x = 9 y = 66 }
+			position = { x = -9 y = 66 }
 			size = { x = 104 y = 50 }
 			format = right
 			spacing = 0
@@ -1594,7 +1594,7 @@ guiTypes = {
 		
 		OverlappingElementsBoxType = {
 			name = "modifiers"
-			position = { x = 34 y = 86 }
+			position = { x = 16 y = 86 }
 			size = { x = 100 y = 50 }
 			format = right
 			spacing = 0

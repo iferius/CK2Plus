@@ -1,8 +1,8 @@
 NDefines = {
 
 NDiplomacy = {
-	PRESTIGE_LOSS_ON_SEND_GIFT_DECLINE = 10,
-	PIETY_FROM_CHURCH_GIFTS = 3,
+	PRESTIGE_LOSS_ON_SEND_GIFT_DECLINE = 10,	-- OBSOLETE
+	PIETY_FROM_CHURCH_GIFTS = 3,				-- OBSOLETE
 	BREAK_TRUCE_PRESTIGE_PERC_COST = 0.5,		-- Percent of current prestige lost before the base prestige cost (below)
 	BREAK_TRUCE_PRESTIGE_COST = 200,			-- Base Prestige cost for breaking a truce
 	MONTHS_PER_SUCCESSION_CB = 24,				-- Number of months a succession CB lasts
@@ -45,14 +45,14 @@ NDiplomacy = {
 	MAX_ELECTOR_TITLES_LEGALLY_HELD = 1,		-- Max elector titles that a king or above can hold before vassals start getting angry
 	ASSASSINATION_COST_RANK_MULT = 50,			-- Additional cost for assassinations multiplied by rank (count = 1, emperor = 4). Also applies to children of rulers.
 	WOMEN_INHERIT_PRESSED_CLAIMS = 1,			-- If set to 1, they will get pressed claims on their parents' titles
-	BASTARDS_INHERIT_PRESSED_CLAIMS = 1,		-- If set to 1, they will get pressed claims on their parents' titles	
+	BASTARDS_INHERIT_PRESSED_CLAIMS = 1,		-- If set to 1, they will get pressed claims on their parents' titles
 	MUSLIM_LAW_CHANGE_PIETY_COST = 50,			-- Piety cost for Muslims when changing normal demesne laws
 	MUSLIM_CROWN_LAW_CHANGE_PIETY_COST = 100,	-- Piety cost for Muslims when changing Crown laws
 	INTER_MUSLIM_WAR_MONTHLY_PIETY_COST = 2,  	-- Monthly Piety cost for Muslims who are primary attackers against a ruler of the same religion (not civil wars)
 	MUSLIM_TEMPLE_HOLDING_MONTHLY_PIETY = 0.2, 	-- Monthly Piety for Muslims for each Temple holding in the demesne
 	DOWRY_MULTIPLIER = 1.0,						-- The Dowry cost for a Patrician is prestige gain from marriage * this
 	PAGAN_PEACE_MONTHS = 60,					-- Months before the Peace Prestige loss kicks in for certain Pagan religions
-	PAGAN_PEACE_MONTHLY_PRESTIGE_LOSS = 5.0,	-- Prestige loss for being at peace, for certain Pagan religions
+	PAGAN_PEACE_MONTHLY_PRESTIGE_LOSS = 2.0,	-- Prestige loss for being at peace, for certain Pagan religions
 	PRESTIGE_OPINION_DIV = 100,					-- Divider for prestige to vassal opinion (5x higher effect for negative prestige)
 	PRESTIGE_OPINION_MAX = 20,					-- Max opinion impact of prestige (positive OR negative)
 	PIETY_OPINION_DIV = 25,						-- Divider for piety to church opinion
@@ -321,11 +321,35 @@ NDiplomacy = {
 	RETRACT_VASSAL_INTERACTION_PRESTIGE = 0,
 	RETRACT_VASSAL_INTERACTION_THRESHOLD_FOR_NO = 25,
 	RETRACT_VASSAL_INTERACTION_THRESHOLD_FOR_YES = 75,
+	
+	ASK_FOR_MONEY_INTERACTION_MONEY = 0,
+	ASK_FOR_MONEY_INTERACTION_PIETY = 100,
+	ASK_FOR_MONEY_INTERACTION_PRESTIGE = 0,
+	ASK_FOR_MONEY_INTERACTION_THRESHOLD_FOR_NO = 50,
+	ASK_FOR_MONEY_INTERACTION_THRESHOLD_FOR_YES = 150,
+	
+	ASK_FOR_CLAIM_INTERACTION_MONEY = 0,
+	ASK_FOR_CLAIM_INTERACTION_PIETY = 100,
+	ASK_FOR_CLAIM_INTERACTION_PRESTIGE = 0,
+	ASK_FOR_CLAIM_INTERACTION_THRESHOLD_FOR_NO = 50,
+	ASK_FOR_CLAIM_INTERACTION_THRESHOLD_FOR_YES = 150,
+	
+	ASK_FOR_CRUSADE_INTERACTION_MONEY = 0,
+	ASK_FOR_CRUSADE_INTERACTION_PIETY = 500,
+	ASK_FOR_CRUSADE_INTERACTION_PRESTIGE = 0,
+	ASK_FOR_CRUSADE_INTERACTION_THRESHOLD_FOR_NO = 50,
+	ASK_FOR_CRUSADE_INTERACTION_THRESHOLD_FOR_YES = 150,
+	
+	NOMINATE_BISHOP_TO_POPE_INTERACTION_MONEY = 50,
+	NOMINATE_BISHOP_TO_POPE_INTERACTION_PIETY = 30,
+	NOMINATE_BISHOP_TO_POPE_INTERACTION_PRESTIGE = 0,
+	NOMINATE_BISHOP_TO_POPE_INTERACTION_THRESHOLD_FOR_NO = 50,
+	NOMINATE_BISHOP_TO_POPE_INTERACTION_THRESHOLD_FOR_YES = 150
 },
 
 NCharacter = {
 	MAX_AGE_BEFORE_BETROTHAL_BREAKS = 20,
-NOMINATE_CROWN_BISHOP_PIETY_COST = 15, 					-- OBSOLETE
+	NOMINATE_CROWN_BISHOP_PIETY_COST = 15, 				-- OBSOLETE
 	NOMINATE_CROWN_BISHOP_REL_AUTHORITY_CHANGE = -0.01, -- OBSOLETE
 	WRONG_GOV_FORM_TAX_MOD = -0.5,
 	CHANGE_SUCC_LAW_YEARS = 10,						-- Rulers must have reigned this long before they can change succession laws
@@ -345,11 +369,12 @@ NOMINATE_CROWN_BISHOP_PIETY_COST = 15, 					-- OBSOLETE
 	INBRED_DIVINE_BLOOD_TRAIT_CHANCE_FACTOR = 0.2,	-- Inbreeding: Multiplier to the base chance
 	LUNATIC_DIVINE_BLOOD_TRAIT_CHANCE_FACTOR = 1.0,	-- Inbreeding: Multiplier to the base chance
 	MAX_LED_FACTIONS = 2,							-- Maximum number of led Factions
-	PORTRAIT_ADULT_MALE_AGE_THRESHOLD = 16,			-- Male child to adult age portrait switch
-	PORTRAIT_ADULT_FEMALE_AGE_THRESHOLD = 16,		-- Female child to adult age portrait switch
-	PORTRAIT_MID_AGE_THRESHOLD = 30,				-- Middle age switch for character portraits
+	PORTRAIT_ADULT_MALE_AGE_THRESHOLD = 16,		-- Male child to adult age portrait switch
+	PORTRAIT_ADULT_FEMALE_AGE_THRESHOLD = 16,	-- Female child to adult age portrait switch
+	PORTRAIT_MID_AGE_THRESHOLD = 32,				-- Middle age switch for character portraits
 	PORTRAIT_OLD_AGE_THRESHOLD = 50,				-- Old age switch for character portraits
-	AGE_OF_ADULTHOOD = 16,							-- Can rule at this age. Also determines when a proper portrait is shown.
+	AGE_OF_ADULTHOOD_MALE = 16,						-- Male can rule at this age. 
+	AGE_OF_ADULTHOOD_FEMALE = 16,					-- Female can rule at this age.
 	AGE_OF_MARRIAGE_MALE = 16,						-- Male allowed to marry at this age.
 	AGE_OF_MARRIAGE_FEMALE = 16,					-- Female allowed to marry at this age.
 	MAX_CHILD_BIRTH_AGE = 45,						-- Female menopause age.
@@ -357,6 +382,10 @@ NOMINATE_CROWN_BISHOP_PIETY_COST = 15, 					-- OBSOLETE
 	BASE_NR_OF_CHILDREN_PER_COUPLE = 2,
 	EXTRA_NR_OF_CHILDREN_FOR_PLAYERS = 2,
 	COURT_SIZE_CHILD_PENALTY_THRESHOLD = 30,
+	DYNASTY_CONTROLS_HOLY_ORDER_PRESTIGE = 2,		-- Monthly Prestige from a dynasty member as head of a Holy Order (only for counts+ and if the same religion)
+	DYNASTY_CONTROLS_HOLY_ORDER_PIETY = 1,			-- Monthly Piety from a dynasty member as head of a Holy Order (only for counts+ and if the same religion)
+	DYNASTY_CONTROLS_RELIGIOUS_HEAD_PRESTIGE = 2,	-- Monthly Prestige from a dynasty member as head of a religion (only for counts+ and if the same religion)
+	DYNASTY_CONTROLS_RELIGIOUS_HEAD_PIETY = 1,		-- Monthly Piety from a dynasty member as head of a religion (only for counts+ and if the same religion)	
 	NATURAL_DEATH_CHANCE_AGE_0 = 0,					-- Natural deaths per decade out of 10000 people: Age 0-9
 	NATURAL_DEATH_CHANCE_AGE_10 = 0,				-- Natural deaths per decade out of 10000 people: Age 10-19
 	NATURAL_DEATH_CHANCE_AGE_20 = 0,				-- Natural deaths per decade out of 10000 people: Age 20-29
@@ -369,6 +398,9 @@ NOMINATE_CROWN_BISHOP_PIETY_COST = 15, 					-- OBSOLETE
 	NATURAL_DEATH_CHANCE_AGE_90 = 4000,				-- Natural deaths per decade out of 10000 people: Age 90-99
 	NATURAL_DEATH_CHANCE_AGE_100 = 8160,			-- Natural deaths per decade out of 10000 people: Age 100+
 	FERTILITY_BASE_MULT = 0.50,						-- Base fertility multiplier to adjust the base chance of impregnation
+	SECONDARY_SPOUSE_FERTILITY_MULT = 0.5,			-- Applied to fertility of secondary spouses and concubines
+	MATERNITY_DEATH_CHANCE = 0.03,					-- Chance of the mother dying in labor
+	INFANT_DEATH_CHANCE = 0.03						-- Chance of stillbirth / death at birth	
 },
 
 NTitle = {
@@ -401,9 +433,9 @@ NTitle = {
 	EMPEROR_TITLE_DYNASTY_PRESTIGE = 40,
 
 -- Piety from giving titles to the Church or Holy Orders
-	BARON_GRANT_TO_CHURCH_PIETY = 25,
-	COUNT_GRANT_TO_CHURCH_PIETY = 50,
-	DUKE_GRANT_TO_CHURCH_PIETY = 100,
+	BARON_GRANT_TO_CHURCH_PIETY = 0,
+	COUNT_GRANT_TO_CHURCH_PIETY = 10,
+	DUKE_GRANT_TO_CHURCH_PIETY = 20,
 	KING_GRANT_TO_CHURCH_PIETY = 100,
 	EMPEROR_GRANT_TO_CHURCH_PIETY = 100,
 	
@@ -454,43 +486,59 @@ NTitle = {
 	NORMAL_LAW_CHANGE_MONTHS = 60,
 	TITLE_USURP_COOLDOWN_MONTHS = 60,
 	DE_JURE_ASSIMILATION_YEARS = 50,			-- Duchies a under the de facto control of another kingdom will change de jure liege after this many years
-	EMPIRE_DE_JURE_ASSIMILATION_YEARS = 50,		-- Kingdoms under the de facto control of another empire will change de jure liege after this many years
-	ALLOW_DE_JURE_ASSIMILATION_ANYWHERE = 0,	-- If set to 0, will only assimilate duchy titles which contain the assimilating Kingdom's capital or border existing de jure land of that title
+	EMPIRE_DE_JURE_ASSIMILATION_YEARS = 100,	-- Kingdoms under the de facto control of another empire will change de jure liege after this many years
+	ALLOW_DE_JURE_ASSIMILATION_ANYWHERE = 1,	-- If set to 0, will only assimilate duchy titles which contain the assimilating Kingdom's capital or border existing de jure land of that title
 	REQ_DUCHIES_FOR_KINGDOM_CREATION = 3, 		-- Number of held duchies required to create a kingdom (for rulers who are not already kings or emperors)
 	REQ_KINGDOMS_FOR_EMPIRE_CREATION = 3, 		-- Number of held kingdoms required to create an Empire (for rulers who are not already emperors)
 	TITULAR_TITLE_CREATION_COST_MULT = 1,		-- Titular titles are more expensive to create
 	ENFORCE_ONE_OF_EACH_HOLDING = 1,			-- Require players to build at least one City, Temple and Castle in each province
+	MAX_REPUBLIC_COUNTIES_IN_REALM = 0.2,		-- 10% of a feudal realm is allowed to be under vassal republics (affects title grants)
+	MAX_THEOCRACY_COUNTIES_IN_REALM = 0.2,		-- 10% of a feudal realm is allowed to be under vassal theocracies/bishoprics (affects title grants)
+	THEOCRACY_COUNTIES_CAN_BORDER = 1,			-- Can feudal lords create neighboring theocracy counties?
+	REPUBLIC_COUNTIES_CAN_BORDER = 1,				-- Can feudal lords create neighboring republic counties?
+	MIN_REVOKE_MONTHS_AFTER_GRANT = 12,			-- Months that must pass before you can revoke the title off someone you granted it to	
 
 -- Title creation and usurpation requirements	
 	DEJURE_COUNTY_LIMIT_TO_CREATE = 0.51,			-- Fraction of de jure counties that you must control to create a non-imperial title
 	DEJURE_COUNTY_LIMIT_TO_USURP = 0.51,			-- Fraction of de jure counties that you must control to usurp a non-imperial title
 	EMPIRE_DEJURE_COUNTY_LIMIT_TO_CREATE = 0.8,		-- Fraction of de jure counties that you must control to create an imperial title
-	EMPIRE_DEJURE_COUNTY_LIMIT_TO_USURP = 0.8,		-- Fraction of de jure counties that you must control to usurp an imperial title	
+	EMPIRE_DEJURE_COUNTY_LIMIT_TO_USURP = 0.8		-- Fraction of de jure counties that you must control to usurp an imperial title	
 },
 
 NReligion = {
 	AUTHORITY_FROM_CROWN_LOYALIST = -0.01,
 	AUTHORITY_FROM_CHURCH_LOYALIST = 0.005,
 	CREATE_ANTIPOPE_PRESTIGE_COST = 2000,
-	CREATE_ANTIPOPE_AUTHORITY_LOSS = 0.2,
-	ANTIPOPE_MONTHLY_AUTHORITY_LOSS = 0.001,
+	CREATE_ANTIPOPE_AUTHORITY_LOSS = 0.0,
 	POPE_DIPLO_TO_AUTHORITY_DIV = 10000,
 	EXCOM_MIN_AUTHORITY = 0.4,
 	INVASION_MIN_AUTHORITY = 0.5,
 	KINGDOM_CREATION_PIETY_COST = 50,
 	EMPIRE_CREATION_PIETY_COST = 100,
 	CRUSADE_AUTHORITY_COST = 0.05,
-	ORTHODOX_PENTARCH_MONTHLY_AUTHORITY = 0.001,
 	REFORM_RELIGION_MIN_AUTHORITY = 0.5,			-- Moral authority required to reform a pagan faith
 	REFORM_RELIGION_MIN_HOLY_SITES = 3,				-- Number of holy sites you must control to reform a pagan faith
 	REFORM_RELIGION_PIETY_COST = 750,				-- Piety cost of reforming a pagan faith
 	AUTHORITY_FROM_HOLY_SITE = 0.1,					-- Authority from each holy site held
-	AUTHORITY_FROM_ANTIPOPE = -0.2,					-- Authority from each antipope
+	AUTHORITY_FROM_ANTIPOPE = 0.0,					-- Authority from each antipope
 	AUTHORITY_FROM_RELHEAD_PIETY = 0.02,			-- Authority from each 100 piety of religious head
+	AUTHORITY_FROM_IMMORAL_HEAD = -0.1,				-- Authority from having an immoral religious head	
 	AUTHORITY_FROM_RELHEAD_DIPLOMACY = 0.05,		-- Authority from each 10 diplomacy of religious head
 	AUTHORITY_FROM_RELHEAD_HOLY_SITE = 0.05,		-- Authority from religious head controlling a holy site (does not stack)
 	AUTHORITY_FROM_ORG_RELIGION = 0.2,				-- Authority from being an organized religion
 	DIVINE_BLOOD_FERTILITY_MULT = 0.25,				-- Fertility multiplier in a religious close kin marriage
+	ELECTOR_TITLE_CAMPAIGN_FUND_FACTOR = 1,			-- The effect of money in the Campaign Fund when the Pope is choosing a new Cardinal (money * factor)
+	ELECTOR_TITLE_OPINION_FACTOR = 3.5,
+	ELECTOR_TITLE_REALM_POWER_FACTOR = 0.1,
+	ELECTOR_TITLE_CULTURE_GROUP_FACTOR = 50,
+	ELECTOR_TITLE_CULTURE_FACTOR = 200,
+	ELECTOR_TITLE_LEARNING_FACTOR = 2,
+	ELECTOR_TITLE_PIETY_FACTOR = 0.1,
+	ELECTOR_TITLE_AGE_FACTOR = 2,
+	ELECTOR_TITLE_AT_CAPITAL_FACTOR = 100,
+	ELECTOR_FAMOUS_DYNASTY_FACTOR = 1,
+	ELECTOR_TRAITS_FACTOR = 1.0,					-- Effect of personality traits that the church likes
+	HERESY_TAKEOVER_PROVINCES = 5					-- The number of provinces a heresy needs MORE than the current norm for it to become the new Orthodoxy	
 },
 
 NEconomy = {
@@ -568,10 +616,14 @@ NMilitary = {
 	NUMBER_OF_TROOPS_PER_GALLEY = 100,				-- Number of men each galley can hold
 	FRIENDLY_TERRITORY_LEVY_RETURN_PERCENT = 1.0,	-- Percent of subunit that returns to levy when unit is disbanded in friendly territory
 	OTHER_TERRITORY_LEVY_RETURN_PERCENT = 0.5,		-- Percent of subunit that returns to levy when unit is disbanded in non-friendly territory
-	MERCENARY_MAINTENANCE_FACTOR = 3,				-- Maintenance factor for NORMAL mercenary units
+	LEVY_MAINTENANCE_FACTOR = 1.5,					-- General maintenance factor for levy troops
+	HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE = 0.50,	
+	HOLDING_LEVY_SIZE_OWNER_MARTIAL_MULT = 0.05,	-- Levy size modifier: Each point of the holding owner's Martial skill is multiplied with this and added to HOLDING_LEVY_SIZE_OWNER_MARTIAL_BASE
+	MERCENARY_MAINTENANCE_FACTOR = 3.0,				-- Maintenance factor for NORMAL mercenary units	
 	MERCENARY_VASSAL_MAINTENANCE_FACTOR = 0.5,		-- Maintenance factor for VASSALIZED mercenary units
 	MERCENARY_HIRE_COST_FACTOR = 0.2,				-- Hire cost factor for mercenary units
 	HOLY_ORDER_HIRE_COST_FACTOR = 0.5,				-- Conversion of nominal gold cost to piety cost when hiring Holy Orders
+	HOLY_ORDER_DYNASTY_HIRE_COST_FACTOR = 0.25,		-- Reduction of cost if the Holy Order is controlled by a dynasty member	
 	VASSAL_MERC_HIRE_COST_FACTOR = 0.5,				-- Fraction of nominal hire cost when hiring vassal mercenaries or holy orders
 	MERCENARY_HIRE_DISTANCE_THRESHOLD = 450,		-- Mercs will not be available if the province of origin is more distant from your capital
 	OPINION_WHEN_MARSHAL_INSTEAD_OF_SELF = 25,		-- Below this opinion value a vassal tends to use his marshal instead of himself when someone asks to raise his troops
@@ -579,8 +631,9 @@ NMilitary = {
 	BATTLE_WARSCORE_WORTH = 75,						-- Warscore from battles are multiplied with this value
 	BATTLE_WARSCORE_DEFENDER_MULTIPLIER = 1.00,		-- Defenders wins are multiplied with this value, which also means they get more prestige for a win
 	BATTLE_MINIMUM_WARSCORE = 0.2,					-- Battles below this value(in actual percentage) are removed from warscore calculations
-	MIN_LEVY_RAISE_OPINION_THRESHOLD = -100,		-- Below this opinion value you'll get the least amount of troops possible
+	MIN_LEVY_RAISE_OPINION_THRESHOLD = -25,			-- Below this opinion value you'll get the least amount of troops possible
 	MAX_LEVY_RAISE_OPINION_THRESHOLD = 100,			-- Above this opinion value you'll get the max amount of troops possible
+	MIN_LEVIES_ABOVE_OPINION_THRESHOLD = 0,			-- The minimum percentage of levies that will be provided if opinion is above threshold 	
 	LEVY_PERCENT_BEFORE_CAN_RAISE = 0.2,			-- Needs at least this much % of full levy before we can raise it
 	SIEGE_DAMAGE = 0,								-- Siege attack values are multiplied by this value(when not doing a sally)
 	PERCENT_OF_GARRISON_DETACHED = 0.1,				-- This percent of the garrison is detached from the winning unit of a siege
@@ -610,7 +663,7 @@ NMilitary = {
 	CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS = 15,	-- Amount of warscore per year since attacker/defender started getting the bonus
 	CONTESTED_TITLE_OCCUPIED_WARSCORE_BONUS_INDEP = 20,	-- Amount of warscore per year since attacker/defender started getting the bonus, for independence wars (can be overridden separately in religion scripts)
 	REVOLTRISK_REDUCTION_PER_YEAR = 1,
-	DIFFERENT_RELIGIONGROUP_SUPPLY_PENALTY = -0.25,	-- Only 75% supply in provinces with different religios group
+	DIFFERENT_RELIGIONGROUP_SUPPLY_PENALTY = -0.25,	-- Only 25% supply in provinces with different religios group
 	MONTHS_UNTIL_REBEL_WIN = 12,					-- Number of days until province is totally conquered by rebels
 	OWN_SETTLEMENT_SUPPLY_BONUS = 0.25,				-- Extra supply from being in home realm
 	NEUTRAL_SETTLEMENT_SUPPLY_BONUS = 0.125,		-- Neutral supply bonus
@@ -642,6 +695,8 @@ NMilitary = {
 	HIGH_DECADENCE_MORALE_MOD = 1.5,				-- Extra Morale damage taken when at 100% decadence
 	CAPTURED_CLOSE_MALE_RELATIVE_WAR_SCORE = 5.0,	-- War score for holding a close male relative prisoner
 	CAPTURED_HEIR_WAR_SCORE = 50.0,					-- War score for holding the heir prisoner
+	
+	EVENT_TROOPS_SIZE_MULT = 1.0,							-- Applied to match_mult to determine size of troops spawned from events & history
 	
 	OCCUPATION_PENALTY_MONTHS = 60,					-- This and below are different modifier lengths applied to settlements upon conquest
 	OCCUPATION_PENALTY_MONTHS_DIFFERENT_RELIGION = 0,
@@ -758,6 +813,26 @@ NMilitary = {
 	COMMAND_MODIFIER_MARTIAL_MULTIPLIER = 0.05,
 	
 	MAX_RIVER_MOVEMENT_FORT_LEVEL = 10.0,
+	BOTTLENECK_SIZE_MODIFIER = 1.0,
+	BOTTLENECK_DEFENDER_MARTIAL_MODIFIER = 1.0,
+	BOTTLENECK_ATTACKER_MARTIAL_MODIFIER = 1.0,
+	BOTTLENECK_CHANCE_LEADER_CAP = 95,
+	BOTTLENECK_CHANCE_MAX = 100,
+	BOTTLENECK_CHOKE_TROOP_CAP = 300,		-- THIS IS SPARTAAAAAAAAA!!!!	
+	
+	CAPITAL_COUNTY_VASSAL_COUNT_LEVY_MULT = 1,	-- Used instead of CAPITAL_COUNTY_LEVY_MULT for vassal counts
+	CAPITAL_COUNTY_VASSAL_LEVY_MULT = 1.25,		-- Used instead of CAPITAL_COUNTY_LEVY_MULT for non-count vassals
+	CAPITAL_COUNTY_LEVY_MULT = 1.5,				-- Multiplier to direct levies in the capital county
+	CAPITAL_COUNTY_LIEGE_LEVY_MULT = 1,			-- Multiplier to liege levies in the capital county
+	CAPITAL_DUCHY_VASSAL_LEVY_MULT = 1.15,		-- Used instead of CAPITAL_DUCHY_LEVY_MULT for non-count vassals
+	CAPITAL_DUCHY_LEVY_MULT = 1.25,
+	CAPITAL_DUCHY_LIEGE_LEVY_MULT = 0.75,
+	CAPITAL_KINGDOM_LEVY_MULT = 1,
+	CAPITAL_KINGDOM_LIEGE_LEVY_MULT = 0.5,
+	CAPITAL_EMPIRE_LEVY_MULT = 1,
+	CAPITAL_EMPIRE_LIEGE_LEVY_MULT = 0.35,
+	OUTSIDE_LEVY_MULT = 1,						-- Multiplier to direct levies outside all capital regions
+	OUTSIDE_LIEGE_LEVY_MULT = 0.35				-- Multiplier to liege levies outside all capital regions	
 },
 
 NTechnology = {
@@ -783,30 +858,30 @@ NTechnology = {
 	START_MIL_CATHOLIC  = 0.5,
 	START_ECO_CATHOLIC  = 0.5,
 	START_CUL_CATHOLIC  = 0.5,
-	END_MIL_CATHOLIC    = 5.0,
-	END_ECO_CATHOLIC    = 5.0,
-	END_CUL_CATHOLIC    = 5.0,
-	END_REN_CLOSE       = 7.0, -- Tech level at the center of the renaissance
-	END_REN_FAR         = 6.0, -- Tech level on the fringe of the renaissance
+	END_MIL_CATHOLIC    = 45.0,
+	END_ECO_CATHOLIC    = 45.0,
+	END_CUL_CATHOLIC    = 45.0,
+	END_REN_CLOSE       = 65.0, -- Tech level at the center of the renaissance
+	END_REN_FAR         = 55.0, -- Tech level on the fringe of the renaissance
 	REN_PROVINCE        = 328, -- Province where the Renaissance is centered
 	START_MIL_MUSLIM    = 1.0,
 	START_ECO_MUSLIM    = 1.0,
 	START_CUL_MUSLIM    = 1.0,
-	END_MIL_MUSLIM      = 4.5,
-	END_ECO_MUSLIM      = 4.5,
-	END_CUL_MUSLIM      = 4.5,
+	END_MIL_MUSLIM      = 40,
+	END_ECO_MUSLIM      = 40,
+	END_CUL_MUSLIM      = 40,
 	START_MIL_OTHER     = 1.0,
 	START_ECO_OTHER     = 0.0,
 	START_CUL_OTHER     = 0.0,
-	END_MIL_OTHER       = 4.5,
-	END_ECO_OTHER       = 4.5,
-	END_CUL_OTHER       = 4.5,
+	END_MIL_OTHER       = 40,
+	END_ECO_OTHER       = 40,
+	END_CUL_OTHER       = 40,
 	START_MIL_BYZANTIUM = 0.0,
 	START_ECO_BYZANTIUM = 1.0,
 	START_CUL_BYZANTIUM = 1.0,
-	END_MIL_BYZANTIUM   = 4.5,
-	END_ECO_BYZANTIUM   = 4.5,
-	END_CUL_BYZANTIUM   = 4.5,
+	END_MIL_BYZANTIUM   = 40,
+	END_ECO_BYZANTIUM   = 40,
+	END_CUL_BYZANTIUM   = 40,
 },
 
 NDisease = {
@@ -850,10 +925,18 @@ NAI =
 	MARRIAGE_AI_PRESTIGE_VALUE = 0.5,						-- Multiplier for how highly AI values prestige when arranging marriages and evaluating marriage offers
 	MAX_KING_TITLES_TO_CREATE = 0,							-- AI will not seek to create/usurp more King-level titles than this (0 for unlimited)
 	MAX_EMPIRE_TITLES_TO_CREATE = 1,						-- AI will not seek to create/usurp more Empire-level titles than this (0 for unlimited)
-	AI_EMPEROR_CREATES_KINGDOMS = 0,						-- If set to 1, AI Emperors will create King-level titles
+	AI_EMPEROR_CREATES_KINGDOMS = 1,						-- If set to 1, AI Emperors will create King-level titles
+	AI_ALWAYS_CREATES_DUCHIES = 1,							-- If set to 1, AI will always create Duchy titles even if it has Gavelkind etc	
 	AI_ASSAULT_RATIO = 12,									-- AI will launch assaults at this ratio of attackers to defenders
 	HARD_DIFF_AI_ATTRITION = 0.5,							-- AI attrition multiplier at Hard difficulty
 	V_HARD_DIFF_AI_ATTRITION = 0.25,						-- AI attrition multiplier at Very Hard difficulty
+	MINIMUM_IMPRISONED_YEARS = 2,							-- AI will keep a newly imprisoned character locked up at least this long before releasing them (reduced for important characters)
+	BASE_AI_ARMY_SIZE = 10000,								-- Base size that AI will use when forming armies (multiplied by supply tech)
+	DESIRED_CONSORTS = 3,									-- AI will always want at least this many concubines, if they lack sons
+	RAID_MAX_REALM_SIZE = 24,								-- Realms with more holdings than this will never go on Raids
+	RAID_AGGRESSION = 18,									-- General frequency of raids. A LOWER number means more often!
+	RAID_PREP_INV_SPARE_SAME_CULTURE = 1,					-- AI of religions that allow prepared invasions will not raid provinces in their own culture group (to prevent intra-Scandinavian raids)
+	RAID_SPARE_ACCEPTED_RELIGIONS = 1						-- AI will not raid rulers of other religions in the same religion group, unless heresy vs parent religion
 },
 
 NFrontend = 
@@ -980,7 +1063,7 @@ NRulerDesigner =
 	COST_SAME_RELIGION_OPINION = 0.5,
 	COST_AMBITION_OPINION = 0,
 	COST_GENERAL_OPINION = 0.75,
-	MAX_AGE = 50,
+	MAX_AGE = 60,
 },
 
 }

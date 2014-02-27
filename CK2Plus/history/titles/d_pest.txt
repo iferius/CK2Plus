@@ -1,31 +1,27 @@
 
-867.1.1=
-{
-liege="k_bulgaria"
+867.1.1 = {
+liege = "k_bulgaria"
 }
-867.1.1=
-{
-holder=168072
+867.1.1 = {
+holder = 168072
 }
-880.1.1=
-{
-holder=0
+880.1.1 = {
+holder = 0
+liege = 0
 }
-
-
-1299.1.1=
-{
-liege="k_hungary"
+895.1.1 = {
+	de_jure_liege = k_magyar
 }
-1299.1.1=
-{
-holder=93794
+1000.12.25 = {
+	de_jure_liege = k_hungary
 }
-1301.1.1=
-{
-holder=93796
+1299.1.1 = {
+liege = "k_hungary"
+holder = 93794
 }
-1325.1.1=
-{
-holder=469500
+1301.1.1 = {
+holder = 93796
+}
+1325.1.1 = {
+holder = 469500
 }
